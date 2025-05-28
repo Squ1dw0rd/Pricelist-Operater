@@ -1,0 +1,39 @@
+# AU Ind D 2024 price List for 1550 siapower Configuration
+supplier_name: "SIA Abrasives"
+file_patterns:
+  - "*AU Ind D*.xlsx"
+  - "*siapower*.xlsx"
+
+# Column mappings for SIA Abrasives files
+column_mappings:
+  sku:
+    - "au d level industrial 37"  # Product level column
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+  product_name:
+    - "sia abrasives price list 2024  australia"  # Title column
+    - "description"
+    - "product name"
+  unit_price:
+    - "unit price"
+    - "list price"
+    - "price"
+    - "cost"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "SIA Abrasives"
+  currency:
+    default_value: "AUD"
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

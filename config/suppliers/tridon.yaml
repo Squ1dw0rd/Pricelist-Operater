@@ -1,0 +1,50 @@
+# 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies Configuration
+supplier_name: "Tridon"
+file_patterns:
+  - "*Tridon*.xlsx"
+  - "*tridon*.xlsx"
+
+# Column mappings for Tridon files
+column_mappings:
+  sku:
+    - "003483"  # First column contains supplier codes
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+  product_name:
+    - "whitelaw tooling supplies pty ltd"  # Company name column
+    - "description"
+    - "product name"
+    - "item description"
+  unit_price:
+    - "unit price"
+    - "list price"
+    - "price"
+    - "cost"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+    - "manufacturer"
+  category:
+    - "date"
+    - "category"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Tridon"
+  currency:
+    default_value: "AUD"
+
+# Validation overrides
+validation_overrides:
+  price_range_check:
+    min_price: 0.01
+    max_price: 2000.00
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

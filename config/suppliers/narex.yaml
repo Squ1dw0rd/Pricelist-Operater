@@ -1,0 +1,56 @@
+# Narex 2025 Configuration
+supplier_name: "Narex"
+file_patterns:
+  - "*Narex*.csv"
+  - "*narex*.csv"
+
+# Column mappings for Narex files
+# Note: Narex has a non-standard format with data in columns 0, 1, and 3
+column_mappings:
+  sku:
+    - "201207"  # First column contains SKU-like codes
+    - "code"
+    - "product code"
+    - "part number"
+  product_name:
+    - "vhu 36a"  # Second column contains product names
+    - "description"
+    - "product name"
+  unit_price:
+    - "487000"  # Third column contains prices (need to format)
+    - "price"
+    - "unit price"
+    - "list price"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Narex"
+  currency:
+    default_value: "AUD"
+  unit_price:
+    # Convert price format from "487000" to "4870.00"
+    divide_by: 100
+    format: "currency"
+
+# Validation overrides
+validation_overrides:
+  price_range_check:
+    min_price: 0.01
+    max_price: 50000.00
+
+# File processing settings
+file_settings:
+  header_row: 0  # No proper header row
+  skip_rows: 4   # Skip the title rows
+  encoding: "utf-8"
+  delimiter: ","
+  
+# Special handling for non-standard format
+special_handling:
+  skip_empty_rows: true
+  skip_rows_with_text: ["Vhu", "Basic accessories", "Tool accessories"]
+  price_column_format: "remove_commas_and_dollar"

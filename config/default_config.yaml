@@ -1,0 +1,139 @@
+# Default Configuration for Supplier Price List Consolidation Tool
+
+# Standard schema for master price list
+master_schema:
+  required_fields:
+    - sku
+    - product_name
+    - unit_price
+    - supplier_name
+  optional_fields:
+    - description
+    - category
+    - unit_of_measure
+    - currency
+    - stock_status
+    - discount_1
+    - discount_2
+    - net_price
+
+# Default column mappings (can be overridden per supplier)
+default_column_mappings:
+  sku:
+    - "sku"
+    - "product code"
+    - "part number"
+    - "item code"
+    - "code"
+  product_name:
+    - "product name"
+    - "description"
+    - "short description"
+    - "item description"
+    - "name"
+  unit_price:
+    - "unit price"
+    - "list price"
+    - "price"
+    - "cost"
+    - "unit cost"
+    - "2025 list price"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+    - "manufacturer"
+  description:
+    - "description"
+    - "long description"
+    - "product description"
+  category:
+    - "category"
+    - "product category"
+    - "type"
+  unit_of_measure:
+    - "uom"
+    - "unit"
+    - "pack qty"
+    - "quantity"
+  currency:
+    - "currency"
+    - "curr"
+  stock_status:
+    - "stock"
+    - "stock status"
+    - "availability"
+  discount_1:
+    - "discount 1"
+    - "disc 1"
+  discount_2:
+    - "discount 2"
+    - "disc 2"
+  net_price:
+    - "net price"
+    - "2025 net price"
+    - "wts sell"
+
+# Validation rules
+validation_rules:
+  required_field_check: true
+  price_range_check:
+    enabled: true
+    min_price: 0.01
+    max_price: 100000.00
+  iqr_outlier_detection:
+    enabled: true
+    multiplier: 1.5
+  duplicate_sku_check: true
+  data_type_validation: true
+
+# File processing settings
+file_processing:
+  max_file_size_mb: 100
+  encoding_detection: true
+  skip_empty_rows: true
+  header_detection_rows: 10
+
+# Output settings
+output:
+  directory_sheet_name: "Directory"
+  include_processing_metadata: true
+  hyperlink_color: "0000FF"
+  header_style:
+    bold: true
+    background_color: "E6E6FA"
+  
+# Enhanced logging settings
+logging:
+  level: "INFO"
+  log_directory: "logs"
+  file_rotation: true
+  max_log_files: 5
+  max_log_size_mb: 10
+  console_output: true
+  performance_logging: true
+  memory_monitoring: false
+  session_tracking: true
+
+# Error handling settings
+error_handling:
+  continue_on_file_error: true
+  max_errors_per_file: 100
+  create_error_reports: true
+  backup_failed_files: false
+  retry_attempts: 3
+  retry_delay_seconds: 1
+
+# User interface settings
+ui:
+  progress_bars: true
+  verbose_output: false
+  interactive_mode: false
+  dry_run_mode: false
+  confirmation_prompts: false
+
+# Performance settings
+performance:
+  batch_size: 1000
+  memory_limit_mb: 2048
+  parallel_processing: false
+  chunk_size: 10000

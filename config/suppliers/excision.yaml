@@ -1,0 +1,38 @@
+# Excision 2025 Configuration
+supplier_name: "Excision"
+file_patterns:
+  - "*Excision 2025*.xlsx"
+  - "*excision 2025*.xlsx"
+
+# Column mappings for Excision files
+column_mappings:
+  sku:
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+  product_name:
+    - "description"
+    - "product name"
+    - "item description"
+  unit_price:
+    - "unit price"
+    - "list price"
+    - "price"
+    - "cost"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Excision"
+  currency:
+    default_value: "AUD"
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

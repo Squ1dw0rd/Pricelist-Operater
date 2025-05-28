@@ -1,0 +1,170 @@
+2025-05-27 14:23:15,469 - ERROR - __exit__:217 - Failed Processing Narex after 0.01s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:15,470 - ERROR - _process_single_file_safe:283 - Error processing Narex 2025.csv: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:15,487 - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.02s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:15,488 - ERROR - _process_single_file_safe:283 - Error processing Carbide End Mill Price List 2025.xls: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:15,499 - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.01s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:15,500 - ERROR - _process_single_file_safe:283 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:16,594 - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.09s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:16,594 - ERROR - _process_single_file_safe:283 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:16,632 - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.03s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:16,633 - ERROR - _process_single_file_safe:283 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:19,845 - ERROR - __exit__:217 - Failed Processing Dormer after 3.21s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:19,845 - ERROR - _process_single_file_safe:283 - Error processing Dormer 2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:20,047 - ERROR - __exit__:217 - Failed Processing Excision after 0.20s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:20,047 - ERROR - _process_single_file_safe:283 - Error processing Excision 2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:20,684 - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.63s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:20,685 - ERROR - _process_single_file_safe:283 - Error processing EXCISION YG-1 2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:21,059 - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.37s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:21,059 - ERROR - _process_single_file_safe:283 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:21,265 - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.20s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:21,266 - ERROR - _process_single_file_safe:283 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:21,688 - ERROR - __exit__:217 - Failed Processing Norton after 0.42s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:21,689 - ERROR - _process_single_file_safe:283 - Error processing Norton 2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:21,989 - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.30s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:21,989 - ERROR - _process_single_file_safe:283 - Error processing Price List - Master (01-Apr-2025).xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:22,427 - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.44s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:22,427 - ERROR - _process_single_file_safe:283 - Error processing PST_full_ pricefile_2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:22,837 - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.41s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:22,838 - ERROR - _process_single_file_safe:283 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:23,092 - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.25s: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-05-27 14:23:23,093 - ERROR - _process_single_file_safe:283 - Error processing POINTTECH_pricelist_WTS.pdf: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-05-27 14:23:23,094 - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 7.64s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Carbide End Mill Price List 2025.xls: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Dormer 2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Excision 2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\EXCISION YG-1 2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Norton 2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\PST_full_ pricefile_2025.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 'ConfigManager' object has no attribute 'logger'
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: 'ConfigManager' object has no attribute 'logger'
+Session: 20250527_142315
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+

@@ -1,0 +1,58 @@
+# Price List - Master (01-Apr-2025) Configuration
+supplier_name: "Master Price List"
+file_patterns:
+  - "*Master*.xlsx"
+  - "*master*.xlsx"
+  - "*Price List - Master*.xlsx"
+
+# Column mappings for Master Price List files
+column_mappings:
+  sku:
+    - "partno"
+    - "part no"
+    - "product code"
+    - "item code"
+    - "code"
+  product_name:
+    - "description"
+    - "product name"
+    - "short description"
+    - "item description"
+  unit_price:
+    - "wholesale exgst"
+    - "wholesale ex gst"
+    - "unit price"
+    - "list price"
+    - "price"
+  supplier_name:
+    - "brand"
+    - "supplier"
+    - "vendor"
+    - "manufacturer"
+  category:
+    - "product range"
+    - "category"
+    - "type"
+  description:
+    - "rrp incgst"
+    - "rrp inc gst"
+    - "description"
+
+# Data transformations
+transformations:
+  supplier_name:
+    use_column: "brand"  # Use the brand column as supplier name
+  currency:
+    default_value: "AUD"
+
+# Validation overrides
+validation_overrides:
+  price_range_check:
+    min_price: 0.01
+    max_price: 10000.00
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

@@ -1,0 +1,48 @@
+# Norton 2025 Configuration
+supplier_name: "Norton"
+file_patterns:
+  - "*Norton*.xlsx"
+  - "*norton*.xlsx"
+
+# Column mappings for Norton files
+column_mappings:
+  sku:
+    - "v9a254"  # First column appears to contain SKU codes
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+  product_name:
+    - "20326468_redlands recondition sup pl_sg price list 010425"
+    - "redlands recondition sup pl"
+    - "description"
+    - "product name"
+  unit_price:
+    - "pricing effective 01042025  price ex gst price per ea"
+    - "price ex gst"
+    - "unit price"
+    - "list price"
+    - "price"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+    - "manufacturer"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Norton"
+  currency:
+    default_value: "AUD"
+
+# Validation overrides
+validation_overrides:
+  price_range_check:
+    min_price: 0.01
+    max_price: 5000.00
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

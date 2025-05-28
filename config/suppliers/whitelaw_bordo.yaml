@@ -1,0 +1,39 @@
+# Whitelaw Bordo Price File Discount Structure 3-25 V1.2 Configuration
+supplier_name: "Whitelaw Bordo"
+file_patterns:
+  - "*Whitelaw Bordo*.xlsx"
+  - "*whitelaw bordo*.xlsx"
+
+# Column mappings for Whitelaw Bordo files
+column_mappings:
+  sku:
+    - "group"  # First column contains group codes
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+  product_name:
+    - "group1"  # Another group column
+    - "description"
+    - "product name"
+  unit_price:
+    - "total"  # Total column contains prices
+    - "unit price"
+    - "list price"
+    - "price"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Whitelaw Bordo"
+  currency:
+    default_value: "AUD"
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

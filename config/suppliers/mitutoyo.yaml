@@ -1,0 +1,48 @@
+# Mitutoyo updated Pricelist Configuration
+supplier_name: "Mitutoyo"
+file_patterns:
+  - "*Mitutoyo*.xlsx"
+  - "*mitutoyo*.xlsx"
+
+# Column mappings for Mitutoyo files
+column_mappings:
+  sku:
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+    - "order code"
+  product_name:
+    - "description"
+    - "product name"
+    - "short description"
+    - "item description"
+  unit_price:
+    - "unit price"
+    - "list price"
+    - "price"
+    - "cost"
+    - "sell price"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+    - "manufacturer"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Mitutoyo"
+  currency:
+    default_value: "AUD"
+
+# Validation overrides
+validation_overrides:
+  price_range_check:
+    min_price: 0.01
+    max_price: 20000.00
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

@@ -1,0 +1,39 @@
+# Whitelaw Combined Site Price Book 2025-RM Configuration
+supplier_name: "Whitelaw Combined"
+file_patterns:
+  - "*Whitelaw Combined*.xls"
+  - "*whitelaw combined*.xls"
+
+# Column mappings for Whitelaw Combined files
+column_mappings:
+  sku:
+    - "maketo"  # First column contains codes
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+  product_name:
+    - "suggested qh list"  # Second column
+    - "description"
+    - "product name"
+  unit_price:
+    - "effective july 2024"  # Price column
+    - "unit price"
+    - "list price"
+    - "price"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Whitelaw Combined"
+  currency:
+    default_value: "AUD"
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

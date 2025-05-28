@@ -1,0 +1,46 @@
+# Guhring AUS Stock List 2025 - Reseller Configuration
+supplier_name: "Guhring"
+file_patterns:
+  - "*Guhring*.xlsx"
+  - "*guhring*.xlsx"
+
+# Column mappings for Guhring files
+column_mappings:
+  sku:
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+  product_name:
+    - "description"
+    - "product name"
+    - "short description"
+  unit_price:
+    - "60 dc reseller price"
+    - "reseller price"
+    - "unit price"
+    - "list price"
+    - "price"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+    - "manufacturer"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Guhring"
+  currency:
+    default_value: "AUD"
+
+# Validation overrides
+validation_overrides:
+  price_range_check:
+    min_price: 0.01
+    max_price: 10000.00
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

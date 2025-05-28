@@ -1,0 +1,49 @@
+# EXCISION YG-1 2025 Configuration
+supplier_name: "Excision YG-1"
+file_patterns:
+  - "*EXCISION YG-1*.xlsx"
+  - "*excision yg-1*.xlsx"
+  - "*YG-1*.xlsx"
+
+# Column mappings for Excision YG-1 files
+column_mappings:
+  sku:
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+    - "barcode no"
+  product_name:
+    - "description"
+    - "product name"
+    - "short description"
+    - "item description"
+  unit_price:
+    - "unit price"
+    - "list price"
+    - "price"
+    - "cost"
+    - "sell price"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+    - "manufacturer"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Excision YG-1"
+  currency:
+    default_value: "AUD"
+
+# Validation overrides
+validation_overrides:
+  price_range_check:
+    min_price: 0.01
+    max_price: 5000.00
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"

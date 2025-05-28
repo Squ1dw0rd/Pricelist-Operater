@@ -1,0 +1,41 @@
+# Carbide End Mill Price List 2025 Configuration
+supplier_name: "Carbide End Mill"
+file_patterns:
+  - "*Carbide End Mill*.xls"
+  - "*carbide end mill*.xls"
+
+# Column mappings for Carbide End Mill files
+column_mappings:
+  sku:
+    - "flat end mill 2f4f"  # First column contains product types
+    - "code"
+    - "product code"
+    - "part number"
+    - "item code"
+  product_name:
+    - "ball nose end mill 2f"  # Product descriptions
+    - "ball nose end mill 4f"
+    - "corner radius 4f"
+    - "description"
+    - "product name"
+  unit_price:
+    - "unit price"
+    - "list price"
+    - "price"
+    - "cost"
+  supplier_name:
+    - "supplier"
+    - "vendor"
+
+# Data transformations
+transformations:
+  supplier_name:
+    default_value: "Carbide End Mill"
+  currency:
+    default_value: "AUD"
+
+# File processing settings
+file_settings:
+  header_row: 1
+  skip_rows: 0
+  encoding: "utf-8"
