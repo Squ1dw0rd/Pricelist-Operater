@@ -251,6 +251,26 @@ class PriceListConsolidator:
                     mapping_report['mapped_fields'],
                     mapping_report['unmapped_columns']
                 )
+
+                # Check configuration and save intermediate CSV
+                save_csv_flag = self.config.get('output_options', {}).get('save_intermediate_standardized_csvs', False)
+                if save_csv_flag and not mapped_df.empty: # Also ensure mapped_df is not empty
+                    try:
+                        csv_output_dir = Path("output") / "standardized_csvs"
+                        csv_output_dir.mkdir(parents=True, exist_ok=True)
+                        
+                        # Sanitize supplier_name for filename
+                        safe_supplier_name = "".join(c if c.isalnum() or c in ['_', '-'] else '_' for c in supplier_name)
+                        # Replace multiple underscores with one, and remove leading/trailing
+                        safe_supplier_name = '_'.join(filter(None, safe_supplier_name.split('_')))
+
+                        csv_filename = f"{safe_supplier_name}_standardized.csv"
+                        full_csv_path = csv_output_dir / csv_filename
+                        
+                        mapped_df.to_csv(full_csv_path, index=False, encoding='utf-8')
+                        self.logger.info(f"Saved standardized data for {supplier_name} to {full_csv_path}")
+                    except Exception as e_csv:
+                        self.logger.error(f"Failed to save intermediate CSV for {supplier_name}: {e_csv}")
                 
                 # Check for missing required fields
                 if mapping_report['missing_required_fields']:

@@ -101,6 +101,10 @@ output:
   header_style:
     bold: true
     background_color: "E6E6FA"
+
+# Output options
+output_options:
+  save_intermediate_standardized_csvs: false
   
 # Enhanced logging settings
 logging:
