@@ -28,39 +28,61 @@ class PriceListConsolidator:
     """Enhanced main application class for consolidating supplier price lists."""
     
     def __init__(self, config_dir: str = "config", log_level: str = "INFO"):
-        """
-        Initialize the consolidator with enhanced logging and error handling.
+        # 1. Initialize ConfigManager first.
+        # It does not take a logger in its own __init__, but uses global logging.
+        # We will set its instance logger later.
+        self.config_manager = ConfigManager(config_dir)
+
+        # 2. Get the base configuration from ConfigManager.
+        self.config = self.config_manager.get_config()
         
-        Args:
-            config_dir: Directory containing configuration files
-            log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
-        """
-        # Setup enhanced logging first, so logger is available for ConfigManager
-        # self.config is still default here, will be updated after ConfigManager init
-        temp_config = self.config_manager.get_config() 
-        temp_config['logging']['level'] = log_level # Update temp config with desired log level
-        self.logger_system = setup_logging(temp_config)
+        # Handle cases where default_config.yaml might be missing or malformed.
+        if not self.config:
+            # Fallback to a very basic config for logging if everything else fails
+            self.config = {'logging': {'level': 'ERROR', 'format': '%(asctime)s - %(levelname)s - %(message)s'}}
+            # Use standard logging to output a critical error if config is missing
+            import logging # Ensure logging is imported if not already at module level for this fallback
+            logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+            logging.error("CRITICAL: Default configuration (default_config.yaml) failed to load or is empty. " +
+                          "PriceListConsolidator will use a minimal fallback configuration for logging. " +
+                          "Please ensure 'default_config.yaml' is present and correct in the config directory.")
+            # Depending on desired robustness, might raise an error here.
+            # For now, we'll let setup_logging use this minimal config.
+
+        # 3. Override log level from the log_level parameter.
+        # Ensure 'logging' key exists in self.config, initialize if not.
+        if 'logging' not in self.config:
+            self.config['logging'] = {} # Should not happen if default_config.yaml is present
+        self.config['logging']['level'] = log_level.upper() # Ensure level is uppercase
+
+        # 4. Setup the application's logging system using the (potentially modified) config.
+        self.logger_system = setup_logging(self.config)
         self.logger = self.logger_system.get_logger()
 
-        self.config_manager = ConfigManager(config_dir, logger=self.logger) # Pass logger here
-        self.config = self.config_manager.get_config() # This will now use the logger
+        # 5. Assign the created application logger to the ConfigManager instance.
+        # This allows ConfigManager's internal methods (like get_supplier_config)
+        # to use the application-configured logger via 'self.config_manager.logger'.
+        self.config_manager.logger = self.logger
         
-        # Update the config with the provided log_level (this happens after ConfigManager is initialized)
-        self.config['logging']['level'] = log_level
-        
-        # Log session start
+        # Now ConfigManager can use its self.logger for its own logging needs.
+        # Example: self.config_manager._load_supplier_configs() might use self.config_manager.logger internally.
+        # If ConfigManager's methods were called before this point and tried to use self.logger,
+        # they would have failed or used a different logger.
+
+        # Log session start (can now use the fully configured logger)
         self.logger_system.log_session_start(self.config)
         
-        # Validate configuration
+        # Validate overall configuration (ConfigManager can use its assigned logger for this)
+        # Ensure validate_config is called after config_manager.logger is set, if it uses the logger.
         config_errors = self.config_manager.validate_config()
         if config_errors:
             for error in config_errors:
                 self.logger.error(f"Configuration error: {error}")
-            raise ValueError("Invalid configuration")
+            # The original code raised a ValueError here.
+            raise ValueError(f"Invalid configuration. Errors: {'; '.join(config_errors)}")
         
-        self.logger.info("Price List Consolidator initialized successfully")
+        self.logger.info("Price List Consolidator initialized successfully.")
         
-        # Performance tracking
         self.performance_stats = {
             'files_processed': 0,
             'total_records': 0,
@@ -258,7 +280,7 @@ class PriceListConsolidator:
                     try:
                         csv_output_dir = Path("output") / "standardized_csvs"
                         csv_output_dir.mkdir(parents=True, exist_ok=True)
-                        
+
                         # Sanitize supplier_name for filename
                         safe_supplier_name = "".join(c if c.isalnum() or c in ['_', '-'] else '_' for c in supplier_name)
                         # Replace multiple underscores with one, and remove leading/trailing
@@ -266,7 +288,7 @@ class PriceListConsolidator:
 
                         csv_filename = f"{safe_supplier_name}_standardized.csv"
                         full_csv_path = csv_output_dir / csv_filename
-                        
+
                         mapped_df.to_csv(full_csv_path, index=False, encoding='utf-8')
                         self.logger.info(f"Saved standardized data for {supplier_name} to {full_csv_path}")
                     except Exception as e_csv:
