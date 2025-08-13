@@ -35,19 +35,22 @@ class PriceListConsolidator:
             config_dir: Directory containing configuration files
             log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
         """
-        # Setup enhanced logging first, so logger is available for ConfigManager
-        # self.config is still default here, will be updated after ConfigManager init
-        temp_config = self.config_manager.get_config() 
-        temp_config['logging']['level'] = log_level # Update temp config with desired log level
-        self.logger_system = setup_logging(temp_config)
-        self.logger = self.logger_system.get_logger()
+        # 1. Initialize ConfigManager first. It will use a basic logger initially.
+        self.config_manager = ConfigManager(config_dir)
 
-        self.config_manager = ConfigManager(config_dir, logger=self.logger) # Pass logger here
-        self.config = self.config_manager.get_config() # This will now use the logger
+        # 2. Get the configuration from it.
+        self.config = self.config_manager.get_config()
         
-        # Update the config with the provided log_level (this happens after ConfigManager is initialized)
+        # 3. Set the desired log level from the CLI/arguments.
         self.config['logging']['level'] = log_level
         
+        # 4. Set up the main application logger system.
+        self.logger_system = setup_logging(self.config)
+        self.logger = self.logger_system.get_logger()
+
+        # 5. Pass the configured logger back to the config_manager.
+        self.config_manager.logger = self.logger
+
         # Log session start
         self.logger_system.log_session_start(self.config)
         
@@ -229,8 +232,11 @@ class PriceListConsolidator:
         """
         try:
             with ContextualLogger(self.logger, f"Processing {supplier_name}", logging.DEBUG):
+                # Get supplier-specific configuration
+                supplier_specific_config = self.config_manager.get_supplier_config(supplier_name)
+
                 # Parse file
-                raw_df = parse_file(str(file_path), self.config, supplier_name)
+                raw_df = parse_file(str(file_path), supplier_specific_config, supplier_name)
                 self.logger.debug(f"Parsed {len(raw_df)} rows from {file_path.name}")
                 
                 if raw_df.empty:
@@ -240,8 +246,6 @@ class PriceListConsolidator:
                     }
                 
                 # Map columns
-                # Get supplier-specific configuration
-                supplier_specific_config = self.config_manager.get_supplier_config(supplier_name)
                 mapper = create_column_mapper(supplier_specific_config, supplier_name, self.logger) # Pass self.logger
                 mapped_df, mapping_report = mapper.map_columns(raw_df)
                 

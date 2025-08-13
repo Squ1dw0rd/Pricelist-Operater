@@ -618,7 +618,7 @@ def validate_args(args) -> List[str]:
     errors = []
     
     # Check for required arguments based on mode
-    if not args.interactive and not args.create_config and not args.validate_config and not args.list_configs:
+    if not args.interactive and not args.create_config and not args.validate_config and not args.list_configs and not args.single_file:
         if not args.input_directory:
             errors.append("Input directory is required when not in interactive mode")
         elif not os.path.exists(args.input_directory):

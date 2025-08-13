@@ -241,51 +241,178 @@ class ExcelParser(BaseParser):
 
 class PDFParser(BaseParser):
     """Parser for PDF files."""
-    
+
     def parse(self, file_path: str, supplier_name: str = None) -> pd.DataFrame:
-        """Parse a PDF file."""
+        """Parse a PDF file, with fallback to text extraction."""
         try:
-            tables = []
+            # Check for a custom strategy in supplier-specific config
+            strategy = self.config.get('file_settings', {}).get('pdf_options', {}).get('strategy')
+
+            if strategy == 'pointtech_custom':
+                df_custom = self._parse_pointtech_custom(file_path, supplier_name)
+                if df_custom is not None and not df_custom.empty:
+                    logging.info(f"Successfully parsed PDF with custom strategy '{strategy}'")
+                    return df_custom
+
+            # First, try to extract tables
+            df = self._parse_tables(file_path)
             
-            with pdfplumber.open(file_path) as pdf:
-                for page_num, page in enumerate(pdf.pages):
-                    # Extract tables from the page
-                    page_tables = page.extract_tables()
-                    
-                    for table in page_tables:
-                        if table and len(table) > 1:  # Must have header and at least one data row
-                            # Convert table to DataFrame
-                            df = pd.DataFrame(table[1:], columns=table[0])
-                            
-                            # Clean and filter
-                            df = df.dropna(how='all')  # Remove empty rows
-                            df = df.loc[:, df.notna().any()]  # Remove empty columns
-                            
-                            if len(df) > 0 and len(df.columns) > 2:  # Must have reasonable data
-                                tables.append(df)
+            # Check if table parsing was successful
+            required_fields = self.config.get('master_schema', {}).get('required_fields', [])
+            if required_fields and df is not None:
+                # Clean column names before checking
+                df.columns = self._clean_column_names(df.columns.tolist())
+
+                mapped_cols = [col for col in df.columns if col in required_fields]
+                # If we don't have at least 2 required fields, try text parsing
+                if len(mapped_cols) < 2:
+                    logging.warning(f"Table parsing yielded few required columns for {file_path}. Trying text extraction.")
+                    df_text = self._parse_text_with_regex(file_path, supplier_name)
+                    if df_text is not None and not df_text.empty:
+                        logging.info(f"Successfully parsed text from PDF file: {file_path}")
+                        return df_text
             
-            if not tables:
-                raise ValueError("No tables found in PDF")
+            if df is not None:
+                logging.info(f"Successfully parsed tables from PDF file: {file_path}")
+                return df
             
-            # Combine all tables or use the largest one
-            if len(tables) == 1:
-                df = tables[0]
-            else:
-                # Use the table with the most rows
-                df = max(tables, key=len)
-            
-            # Clean column names
-            df.columns = self._clean_column_names(df.columns.tolist())
-            
-            # Convert all data to string type for consistency
-            df = df.astype(str)
-            
-            logging.info(f"Successfully parsed PDF file: {file_path}")
-            return df
-            
+            # If table parsing failed or was insufficient, try text parsing as a fallback
+            logging.warning(f"Table parsing failed or was insufficient for {file_path}. Trying text extraction.")
+            df_text = self._parse_text_with_regex(file_path, supplier_name)
+            if df_text is not None and not df_text.empty:
+                logging.info(f"Successfully parsed text from PDF file: {file_path}")
+                return df_text
+
+            raise ValueError("Could not extract any usable data from PDF")
+
         except Exception as e:
             logging.error(f"Error parsing PDF file {file_path}: {e}")
-            raise
+            # As a last resort, try text parsing if it hasn't been tried
+            if 'df' not in locals() or df is None:
+                 try:
+                    df_text = self._parse_text_with_regex(file_path, supplier_name)
+                    if df_text is not None and not df_text.empty:
+                        logging.info(f"Successfully parsed text from PDF file after initial error: {file_path}")
+                        return df_text
+                 except Exception as text_e:
+                    logging.error(f"Text parsing fallback also failed: {text_e}")
+
+            raise e
+
+    def _parse_tables(self, file_path: str) -> Optional[pd.DataFrame]:
+        """Extracts tables from a PDF."""
+        tables = []
+        with pdfplumber.open(file_path) as pdf:
+            for page in pdf.pages:
+                # Use more robust table extraction settings
+                page_tables = page.extract_tables(table_settings={
+                    "vertical_strategy": "lines",
+                    "horizontal_strategy": "lines",
+                    "snap_tolerance": 5,
+                })
+                for table in page_tables:
+                    if table and len(table) > 1:
+                        df = pd.DataFrame(table[1:], columns=table[0])
+                        df = df.dropna(how='all').loc[:, df.notna().any()]
+                        if not df.empty and len(df.columns) > 1:
+                            tables.append(df)
+
+        if not tables:
+            return None
+
+        # Concatenate all found tables
+        full_df = pd.concat(tables, ignore_index=True)
+
+        # Clean column names
+        full_df.columns = self._clean_column_names(full_df.columns.tolist())
+        return full_df.astype(str)
+
+    def _parse_text_with_regex(self, file_path: str, supplier_name: str = None) -> Optional[pd.DataFrame]:
+        """Fallback to extract data from PDF using regex on raw text."""
+        logging.info(f"Attempting regex-based text extraction for {file_path}")
+
+        # Regex to capture SKU, Description, and Price. This is a generic pattern.
+        # It looks for:
+        # 1. SKU: Starts with a word character, can contain letters, numbers, hyphens, dots.
+        # 2. Description: Any characters, non-greedy.
+        # 3. Price: A decimal number, optionally with a dollar sign and commas.
+        product_line_regex = re.compile(
+            r'^(?P<sku>[\w.-]+)\s+'
+            r'(?P<description>.*?)\s{2,}'
+            r'(?P<price>\$?\d{1,3}(?:,?\d{3})*\.\d{2})\s*$'
+        )
+
+        data = []
+        with pdfplumber.open(file_path) as pdf:
+            for page_num, page in enumerate(pdf.pages, 1):
+                text = page.extract_text(x_tolerance=2, y_tolerance=2)
+                if not text:
+                    continue
+
+                for line_num, line in enumerate(text.split('\n')):
+                    line = line.strip()
+                    if not line:
+                        continue
+
+                    match = product_line_regex.match(line)
+                    if match:
+                        data.append(match.groupdict())
+                    else:
+                        # Log lines that don't match for debugging, but be careful not to be too verbose
+                        if page_num < 3 and line_num < 20: # Limit logging to first few lines of first few pages
+                             logging.debug(f"Line did not match regex on page {page_num}: '{line}'")
+
+        if not data:
+            logging.warning(f"Regex parsing found no data in {file_path}")
+            return None
+
+        df = pd.DataFrame(data)
+
+        # Rename columns to match the expected schema
+        column_rename = {
+            'sku': 'sku',
+            'description': 'product_name',
+            'price': 'unit_price'
+        }
+        df.rename(columns=column_rename, inplace=True)
+
+        # Add supplier name if it's not in the data
+        if 'supplier_name' not in df.columns and supplier_name:
+            df['supplier_name'] = supplier_name
+
+        logging.info(f"Successfully extracted {len(df)} records using regex from {file_path}")
+        return df
+
+    def _parse_pointtech_custom(self, file_path: str, supplier_name: str) -> Optional[pd.DataFrame]:
+        """Custom parser for Pointtech PDFs."""
+        logging.info(f"Using custom Pointtech PDF parser for {file_path}")
+        data = []
+        with pdfplumber.open(file_path) as pdf:
+            for page in pdf.pages:
+                text = page.extract_text()
+                if not text:
+                    continue
+                for line in text.split('\n'):
+                    parts = line.strip().split()
+                    if len(parts) > 2:
+                        # Assume SKU is the first part, price is the last, description is the middle
+                        sku = parts[0]
+                        price = parts[-1]
+                        description = " ".join(parts[1:-1])
+
+                        # Basic validation to see if it looks like a product line
+                        is_price = re.match(r'^\$?\d+\.\d{2}$', price)
+                        if is_price and len(sku) > 3:
+                            data.append({
+                                'sku': sku,
+                                'product_name': description,
+                                'unit_price': price,
+                                'supplier_name': supplier_name
+                            })
+        if not data:
+            return None
+
+        return pd.DataFrame(data)
 
 
 class FileParserFactory:

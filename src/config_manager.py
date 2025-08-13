@@ -13,18 +13,31 @@ import copy
 class ConfigManager:
     """Manages configuration settings for the application."""
     
-    def __init__(self, config_dir: str = "config"):
+    def __init__(self, config_dir: str = "config", logger: Optional[logging.Logger] = None):
         """
         Initialize the configuration manager.
         
         Args:
             config_dir: Directory containing configuration files
+            logger: Optional logger instance
         """
         self.config_dir = Path(config_dir)
         self.default_config_path = self.config_dir / "default_config.yaml"
         self.supplier_configs_dir = self.config_dir / "suppliers"
         self.config = {}
         self.supplier_configs = {}
+
+        if logger:
+            self.logger = logger
+        else:
+            # Create a basic logger if none is provided
+            self.logger = logging.getLogger(__name__)
+            if not self.logger.handlers:
+                handler = logging.StreamHandler()
+                formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+                handler.setFormatter(formatter)
+                self.logger.addHandler(handler)
+                self.logger.setLevel(logging.INFO)
         
         # Create supplier configs directory if it doesn't exist
         self.supplier_configs_dir.mkdir(exist_ok=True)
@@ -37,12 +50,12 @@ class ConfigManager:
         try:
             with open(self.default_config_path, 'r', encoding='utf-8') as file:
                 self.config = yaml.safe_load(file)
-            logging.info(f"Loaded default configuration from {self.default_config_path}")
+            self.logger.info(f"Loaded default configuration from {self.default_config_path}")
         except FileNotFoundError:
-            logging.error(f"Default configuration file not found: {self.default_config_path}")
+            self.logger.error(f"Default configuration file not found: {self.default_config_path}")
             raise
         except yaml.YAMLError as e:
-            logging.error(f"Error parsing default configuration: {e}")
+            self.logger.error(f"Error parsing default configuration: {e}")
             raise
     
     def _load_supplier_configs(self) -> None:
@@ -53,9 +66,9 @@ class ConfigManager:
                 with open(config_file, 'r', encoding='utf-8') as file:
                     supplier_config = yaml.safe_load(file)
                     self.supplier_configs[supplier_name] = supplier_config
-                logging.info(f"Loaded supplier configuration for {supplier_name}")
+                self.logger.info(f"Loaded supplier configuration for {supplier_name}")
             except yaml.YAMLError as e:
-                logging.error(f"Error parsing supplier configuration {config_file}: {e}")
+                self.logger.error(f"Error parsing supplier configuration {config_file}: {e}")
     
     def get_config(self, key: str = None) -> Any:
         """
