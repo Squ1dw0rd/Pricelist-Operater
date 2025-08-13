@@ -1,0 +1,16 @@
+2025-08-13 12:02:55,789 - ERROR - __exit__:217 - Failed Processing Testsupplier after 0.01s: list indices must be integers or slices, not str
+Session: 20250813_120255
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-08-13 12:02:55,790 - ERROR - _process_single_file_safe:310 - Error processing TestSupplier_Pricelist.csv: list indices must be integers or slices, not str
+Session: 20250813_120255
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-08-13 12:02:55,791 - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\Pricelist Operater\tests\temp_test_input after 0.03s: No files were successfully processed. Errors:
+  - C:\Users\Luke\Pricelist Operater\tests\temp_test_input\TestSupplier_Pricelist.csv: list indices must be integers or slices, not str
+Session: 20250813_120255
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+

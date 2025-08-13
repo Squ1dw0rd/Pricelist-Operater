@@ -40,20 +40,20 @@ class ColoredTextTestResult(unittest.TextTestResult):
         if self.start_time is None:
             self.start_time = time.time()
         
-        if self.verbosity > 1:
+        if self.showAll or self.dots:  # Use proper attributes instead of verbosity
             self.stream.write(f"Running {test._testMethodName}... ")
             self.stream.flush()
     
     def addSuccess(self, test):
         super().addSuccess(test)
-        if self.verbosity > 1:
-            self.stream.write("✅ PASS\n")
+        if self.showAll or self.dots:  # Use proper attributes instead of verbosity
+            self.stream.write("[PASS] PASS\n")
     
     def addError(self, test, err):
         super().addError(test, err)
         self.test_results.errors += 1
-        if self.verbosity > 1:
-            self.stream.write("❌ ERROR\n")
+        if self.showAll or self.dots:  # Use proper attributes instead of verbosity
+            self.stream.write("[FAIL] ERROR\n")
         
         self.test_results.details.append({
             'test': str(test),
@@ -64,8 +64,8 @@ class ColoredTextTestResult(unittest.TextTestResult):
     def addFailure(self, test, err):
         super().addFailure(test, err)
         self.test_results.failures += 1
-        if self.verbosity > 1:
-            self.stream.write("❌ FAIL\n")
+        if self.showAll or self.dots:  # Use proper attributes instead of verbosity
+            self.stream.write("[FAIL] FAIL\n")
         
         self.test_results.details.append({
             'test': str(test),
@@ -76,8 +76,8 @@ class ColoredTextTestResult(unittest.TextTestResult):
     def addSkip(self, test, reason):
         super().addSkip(test, reason)
         self.test_results.skipped += 1
-        if self.verbosity > 1:
-            self.stream.write("⏭️ SKIP\n")
+        if self.showAll or self.dots:  # Use proper attributes instead of verbosity
+            self.stream.write("[SKIP] SKIP\n")
     
     def stopTestRun(self):
         super().stopTestRun()
@@ -159,13 +159,13 @@ def print_test_summary(results, duration):
     
     # Overall status
     if results.failures == 0 and results.errors == 0:
-        status = "✅ ALL TESTS PASSED"
+        status = "[PASS] ALL TESTS PASSED"
         status_color = "green"
     elif results.failures > 0 or results.errors > 0:
-        status = "❌ SOME TESTS FAILED"
+        status = "[FAIL] SOME TESTS FAILED"
         status_color = "red"
     else:
-        status = "⚠️ NO TESTS RUN"
+        status = "[WARN] NO TESTS RUN"
         status_color = "yellow"
     
     print(f"\nOverall Status: {status}")
@@ -193,10 +193,10 @@ def run_integration_tests():
         config = config_manager.get_config()
         
         if config and 'master_schema' in config:
-            print("   ✅ Configuration loaded successfully")
+            print("   [PASS] Configuration loaded successfully")
             integration_results.tests_run += 1
         else:
-            print("   ❌ Configuration loading failed")
+            print("   [FAIL] Configuration loading failed")
             integration_results.failures += 1
             integration_results.tests_run += 1
         
@@ -209,20 +209,20 @@ def run_integration_tests():
         # Test CSV parser
         csv_parser = parser_factory.get_parser('.csv')
         if csv_parser:
-            print("   ✅ CSV parser available")
+            print("   [PASS] CSV parser available")
             integration_results.tests_run += 1
         else:
-            print("   ❌ CSV parser not available")
+            print("   [FAIL] CSV parser not available")
             integration_results.failures += 1
             integration_results.tests_run += 1
         
         # Test Excel parser
         xlsx_parser = parser_factory.get_parser('.xlsx')
         if xlsx_parser:
-            print("   ✅ Excel parser available")
+            print("   [PASS] Excel parser available")
             integration_results.tests_run += 1
         else:
-            print("   ❌ Excel parser not available")
+            print("   [FAIL] Excel parser not available")
             integration_results.failures += 1
             integration_results.tests_run += 1
         
@@ -235,10 +235,10 @@ def run_integration_tests():
         mappings, unmapped = mapper.map_columns(test_columns)
         
         if len(mappings) >= 3:
-            print("   ✅ Column mapping working")
+            print("   [PASS] Column mapping working")
             integration_results.tests_run += 1
         else:
-            print("   ❌ Column mapping failed")
+            print("   [FAIL] Column mapping failed")
             integration_results.failures += 1
             integration_results.tests_run += 1
         
@@ -258,10 +258,10 @@ def run_integration_tests():
         validation_result = validator.validate_data(test_data, 'Test Supplier')
         
         if validation_result:
-            print("   ✅ Data validation working")
+            print("   [PASS] Data validation working")
             integration_results.tests_run += 1
         else:
-            print("   ❌ Data validation failed")
+            print("   [FAIL] Data validation failed")
             integration_results.failures += 1
             integration_results.tests_run += 1
         
@@ -273,15 +273,15 @@ def run_integration_tests():
         
         # Test basic functionality
         if hasattr(generator, 'create_workbook'):
-            print("   ✅ Excel generator available")
+            print("   [PASS] Excel generator available")
             integration_results.tests_run += 1
         else:
-            print("   ❌ Excel generator not available")
+            print("   [FAIL] Excel generator not available")
             integration_results.failures += 1
             integration_results.tests_run += 1
     
     except Exception as e:
-        print(f"   ❌ Integration test error: {e}")
+        print(f"   [FAIL] Integration test error: {e}")
         integration_results.errors += 1
         integration_results.tests_run += 1
     
@@ -318,17 +318,17 @@ def check_dependencies():
                 import yaml
             else:
                 __import__(package)
-            print(f"✅ {package}")
+            print(f"[PASS] {package}")
         except ImportError:
-            print(f"❌ {package} - MISSING")
+            print(f"[FAIL] {package} - MISSING")
             missing_packages.append(package)
     
     if missing_packages:
-        print(f"\n⚠️ Missing packages: {', '.join(missing_packages)}")
+        print(f"\n[WARN] Missing packages: {', '.join(missing_packages)}")
         print("Install with: pip install " + " ".join(missing_packages))
         return False
     else:
-        print("\n✅ All dependencies available")
+        print("\n[PASS] All dependencies available")
         return True
 
 
@@ -339,7 +339,7 @@ def main():
     
     # Check dependencies first
     if not check_dependencies():
-        print("\n❌ Cannot run tests - missing dependencies")
+        print("\n[FAIL] Cannot run tests - missing dependencies")
         return 1
     
     # Run unit tests
@@ -372,7 +372,7 @@ def main():
         print("\n🎉 ALL TESTS PASSED!")
         return 0
     else:
-        print(f"\n❌ {total_failures + total_errors} TESTS FAILED")
+        print(f"\n[FAIL] {total_failures + total_errors} TESTS FAILED")
         return 1
 
 

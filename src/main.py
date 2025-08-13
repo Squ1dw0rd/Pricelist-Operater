@@ -35,17 +35,21 @@ class PriceListConsolidator:
             config_dir: Directory containing configuration files
             log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
         """
-        # Setup enhanced logging first, so logger is available for ConfigManager
-        # self.config is still default here, will be updated after ConfigManager init
-        temp_config = self.config_manager.get_config() 
-        temp_config['logging']['level'] = log_level # Update temp config with desired log level
+        # Initialize config manager first
+        self.config_manager = ConfigManager(config_dir)
+        self.config = self.config_manager.get_config()
+        
+        # Setup enhanced logging
+        temp_config = self.config.copy()
+        temp_config['logging']['level'] = log_level
         self.logger_system = setup_logging(temp_config)
         self.logger = self.logger_system.get_logger()
-
-        self.config_manager = ConfigManager(config_dir, logger=self.logger) # Pass logger here
-        self.config = self.config_manager.get_config() # This will now use the logger
         
-        # Update the config with the provided log_level (this happens after ConfigManager is initialized)
+        # Re-initialize config manager with logger
+        self.config_manager = ConfigManager(config_dir, logger=self.logger)
+        self.config = self.config_manager.get_config()
+        
+        # Update the config with the provided log_level
         self.config['logging']['level'] = log_level
         
         # Log session start
@@ -243,7 +247,7 @@ class PriceListConsolidator:
                 # Get supplier-specific configuration
                 supplier_specific_config = self.config_manager.get_supplier_config(supplier_name)
                 mapper = create_column_mapper(supplier_specific_config, supplier_name, self.logger) # Pass self.logger
-                mapped_df, mapping_report = mapper.map_columns(raw_df)
+                mapped_df, mapping_report = mapper.map_columns(raw_df.columns.tolist())
                 
                 # Log mapping results
                 self.logger_system.log_column_mapping(
