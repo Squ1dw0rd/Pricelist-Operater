@@ -104,7 +104,7 @@ output:
 
 # Output options
 output_options:
-  save_intermediate_standardized_csvs: false
+  save_intermediate_standardized_csvs: true
   
 # Enhanced logging settings
 logging:
