@@ -13,6 +13,16 @@ from typing import Dict, List, Optional, Any
 import pandas as pd
 from tqdm import tqdm
 import time
+import sys
+
+def safe_print(message):
+    """Safely print message handling Unicode encoding issues."""
+    try:
+        print(message)
+    except UnicodeEncodeError:
+        # Fallback for non-UTF8 consoles
+        ascii_msg = message.encode('ascii', 'replace').decode('ascii')
+        print(ascii_msg)
 
 # Import our modules
 from config_manager import ConfigManager
@@ -263,8 +273,13 @@ class PriceListConsolidator:
                 
                 # Map columns
                 # Get supplier-specific configuration
-                supplier_specific_config = self.config_manager.get_supplier_config(supplier_name)
-                mapper = create_column_mapper(supplier_specific_config, supplier_name, self.logger) # Pass self.logger
+                try:
+                    supplier_specific_config = self.config_manager.get_supplier_config(supplier_name)
+                except Exception as config_err:
+                    self.logger.warning(f"Could not load supplier config for {supplier_name}: {config_err}, using default config")
+                    supplier_specific_config = self.config
+                
+                mapper = create_column_mapper(supplier_specific_config, supplier_name, self.config_manager, self.logger)
                 mapped_df, mapping_report = mapper.map_columns(raw_df.columns.tolist())
                 
                 # Log mapping results
@@ -448,38 +463,38 @@ def run_consolidation(args):
         if hasattr(args, 'single_file') and args.single_file:
             # Single file processing
             result = consolidator._process_single_file_safe(
-                Path(args.single_file), 
+                Path(args.single_file),
                 args.supplier_name or "Unknown Supplier",
                 100
             )
             
             if result['success']:
-                print(f"✅ Successfully processed {result['supplier_name']}")
-                print(f"   Records: {len(result['mapped_data'])}")
+                safe_print(f"✅ Successfully processed {result['supplier_name']}")
+                safe_print(f"   Records: {len(result['mapped_data'])}")
                 validation_summary = result['validation_result'].get_summary()
-                print(f"   Validation: {validation_summary['error_count']} errors, {validation_summary['warning_count']} warnings")
+                safe_print(f"   Validation: {validation_summary['error_count']} errors, {validation_summary['warning_count']} warnings")
             else:
-                print(f"❌ Error processing file: {result['error']}")
+                safe_print(f"❌ Error processing file: {result['error']}")
                 return 1
         else:
             # Directory processing
             dry_run = getattr(args, 'dry_run', False)
             output_path = consolidator.process_supplier_files(
-                args.input_directory, 
+                args.input_directory,
                 getattr(args, 'output', None),
                 dry_run
             )
             
             if not dry_run:
-                print(f"✅ Consolidation completed successfully!")
-                print(f"📄 Output file: {output_path}")
+                safe_print(f"✅ Consolidation completed successfully!")
+                safe_print(f"📄 Output file: {output_path}")
             else:
-                print(f"✅ Dry run completed successfully!")
-        
+                safe_print(f"✅ Dry run completed successfully!")
+            
         return 0
         
     except Exception as e:
-        print(f"❌ Error: {e}")
+        safe_print(f"❌ Error: {e}")
         return 1
 
 
@@ -499,9 +514,9 @@ def main():
     # Validate arguments
     validation_errors = validate_args(args)
     if validation_errors:
-        print("❌ Argument validation errors:")
+        safe_print("❌ Argument validation errors:")
         for error in validation_errors:
-            print(f"   - {error}")
+            safe_print(f"   - {error}")
         return 1
     
     # Handle interactive mode
@@ -518,7 +533,7 @@ def main():
             print(f"✅ Created supplier configuration template: {config_path}")
             return 0
         except Exception as e:
-            print(f"❌ Error creating configuration: {e}")
+            safe_print(f"❌ Error creating configuration: {e}")
             return 1
     
     if getattr(args, 'validate_config', False):
@@ -536,7 +551,7 @@ def main():
                 print("✅ Configuration is valid!")
                 return 0
         except Exception as e:
-            print(f"❌ Error validating configuration: {e}")
+            safe_print(f"❌ Error validating configuration: {e}")
             return 1
     
     if getattr(args, 'list_configs', False):
@@ -552,7 +567,7 @@ def main():
                 print("📋 No supplier configurations found.")
             return 0
         except Exception as e:
-            print(f"❌ Error listing configurations: {e}")
+            safe_print(f"❌ Error listing configurations: {e}")
             return 1
     
     # Run main consolidation

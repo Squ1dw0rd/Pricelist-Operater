@@ -75,16 +75,23 @@ class BaseParser:
         """
         cleaned = []
         for col in columns:
-            if pd.isna(col):
+            # Handle non-string columns (e.g., lists, dicts, datetime, NaN, etc.)
+            if isinstance(col, (list, dict)):
+                col = str(col)
+            elif pd.isna(col) or col is None:
                 cleaned.append(f"unnamed_column_{len(cleaned)}")
+                continue
             else:
-                # Convert to string and clean
-                col_str = str(col).strip().lower()
-                # Remove extra whitespace and newlines
-                col_str = re.sub(r'\s+', ' ', col_str)
-                # Remove special characters except spaces and underscores
-                col_str = re.sub(r'[^\w\s]', '', col_str)
-                cleaned.append(col_str)
+                # Force conversion to string for any other type (datetime, int, float, etc.)
+                col = str(col)
+            
+            # Clean the string
+            col_str = col.strip().lower()
+            # Remove extra whitespace and newlines
+            col_str = re.sub(r'\s+', ' ', col_str)
+            # Remove special characters except spaces and underscores
+            col_str = re.sub(r'[^\w\s]', '', col_str)
+            cleaned.append(col_str)
         
         return cleaned
 
@@ -104,12 +111,16 @@ class CSVParser(BaseParser):
             
             for delimiter in delimiters:
                 try:
-                    df = pd.read_csv(file_path, encoding=encoding, delimiter=delimiter, 
+                    df = pd.read_csv(file_path, encoding=encoding, delimiter=delimiter,
                                    header=None, dtype=str)
+                    print(f"DEBUG CSV initial read - columns: {df.columns.tolist()}")
+                    print(f"DEBUG CSV initial read - column types: {[type(c) for c in df.columns]}")
+                    print(f"DEBUG CSV initial read - first few rows: {df.head(2).to_dict('records')}")
                     # Check if we got reasonable data
                     if len(df.columns) > 1 and len(df) > 0:
                         break
-                except Exception:
+                except Exception as delim_err:
+                    print(f"DEBUG CSV delimiter {delimiter} failed: {delim_err}")
                     continue
             
             if df is None:
@@ -117,10 +128,13 @@ class CSVParser(BaseParser):
             
             # Detect header row
             header_row = self._detect_header_row(df)
+            print(f"DEBUG CSV detected header row: {header_row}")
             
             # Re-read with proper header
             df = pd.read_csv(file_path, encoding=encoding, delimiter=delimiter,
                            header=header_row, dtype=str)
+            print(f"DEBUG CSV re-read columns: {df.columns.tolist()}")
+            print(f"DEBUG CSV re-read column types: {[type(c) for c in df.columns]}")
             
             # Clean column names
             df.columns = self._clean_column_names(df.columns.tolist())
@@ -200,12 +214,18 @@ class ExcelParser(BaseParser):
         
         # Read the target sheet
         df = pd.read_excel(excel_file, sheet_name=target_sheet, header=None, dtype=str)
+        print(f"DEBUG XLSX initial read - sheet: {target_sheet}, columns: {df.columns.tolist()}")
+        print(f"DEBUG XLSX initial read - column types: {[type(c) for c in df.columns]}")
+        print(f"DEBUG XLSX initial read - first few rows: {df.head(2).to_dict('records')}")
         
         # Detect header row
         header_row = self._detect_header_row(df)
+        print(f"DEBUG XLSX detected header row: {header_row}")
         
         # Re-read with proper header
         df = pd.read_excel(excel_file, sheet_name=target_sheet, header=header_row, dtype=str)
+        print(f"DEBUG XLSX re-read columns: {df.columns.tolist()}")
+        print(f"DEBUG XLSX re-read column types: {[type(c) for c in df.columns]}")
         
         # Clean column names
         df.columns = self._clean_column_names(df.columns.tolist())
@@ -221,12 +241,18 @@ class ExcelParser(BaseParser):
         """Parse XLS file using xlrd."""
         # Read with xlrd engine
         df = pd.read_excel(file_path, engine='xlrd', header=None, dtype=str)
+        print(f"DEBUG XLS initial read - columns: {df.columns.tolist()}")
+        print(f"DEBUG XLS initial read - column types: {[type(c) for c in df.columns]}")
+        print(f"DEBUG XLS initial read - first few rows: {df.head(2).to_dict('records')}")
         
         # Detect header row
         header_row = self._detect_header_row(df)
+        print(f"DEBUG XLS detected header row: {header_row}")
         
         # Re-read with proper header
         df = pd.read_excel(file_path, engine='xlrd', header=header_row, dtype=str)
+        print(f"DEBUG XLS re-read columns: {df.columns.tolist()}")
+        print(f"DEBUG XLS re-read column types: {[type(c) for c in df.columns]}")
         
         # Clean column names
         df.columns = self._clean_column_names(df.columns.tolist())
@@ -252,10 +278,14 @@ class PDFParser(BaseParser):
                     # Extract tables from the page
                     page_tables = page.extract_tables()
                     
-                    for table in page_tables:
+                    for table_idx, table in enumerate(page_tables):
                         if table and len(table) > 1:  # Must have header and at least one data row
+                            print(f"DEBUG PDF page {page_num+1}, table {table_idx}: header row = {table[0]}")
+                            print(f"DEBUG PDF header types: {[type(cell) for cell in table[0]]}")
                             # Convert table to DataFrame
                             df = pd.DataFrame(table[1:], columns=table[0])
+                            print(f"DEBUG PDF df columns: {df.columns.tolist()}")
+                            print(f"DEBUG PDF df column types: {[type(c) for c in df.columns]}")
                             
                             # Clean and filter
                             df = df.dropna(how='all')  # Remove empty rows
@@ -273,6 +303,8 @@ class PDFParser(BaseParser):
             else:
                 # Use the table with the most rows
                 df = max(tables, key=len)
+            
+            print(f"DEBUG PDF final df columns: {df.columns.tolist()}")
             
             # Clean column names
             df.columns = self._clean_column_names(df.columns.tolist())

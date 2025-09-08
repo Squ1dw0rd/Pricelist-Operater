@@ -1,0 +1,490 @@
+2025-09-08 13:37:47,451 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250908_133747 ===
+2025-09-08 13:37:47,452 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-08 13:37:47,452 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-08 13:37:47,452 - consolidator - INFO - __init__:84 - Price List Consolidator initialized successfully.
+2025-09-08 13:37:47,453 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-08 13:37:47,454 - consolidator - INFO - process_supplier_files:124 - Found 15 supplier files to process
+2025-09-08 13:37:47,483 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-08 13:37:47,502 - consolidator - ERROR - __exit__:217 - Failed Processing Narex after 0.02s: list indices must be integers or slices, not str
+2025-09-08 13:37:47,502 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Narex 2025.csv: list indices must be integers or slices, not str
+2025-09-08 13:37:47,502 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:47,503 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-08 13:37:47,520 - consolidator - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.02s: list indices must be integers or slices, not str
+2025-09-08 13:37:47,520 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+2025-09-08 13:37:47,520 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:47,521 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-08 13:37:47,531 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.01s: list indices must be integers or slices, not str
+2025-09-08 13:37:47,531 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+2025-09-08 13:37:47,531 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:47,531 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-08 13:37:48,915 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.38s: list indices must be integers or slices, not str
+2025-09-08 13:37:48,916 - consolidator - ERROR - _process_single_file_safe:328 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:48,917 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:48,918 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-08 13:37:48,975 - consolidator - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.06s: list indices must be integers or slices, not str
+2025-09-08 13:37:48,975 - consolidator - ERROR - _process_single_file_safe:328 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:48,975 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:48,976 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-08 13:37:52,853 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 3.88s: list indices must be integers or slices, not str
+2025-09-08 13:37:52,853 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Dormer 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:52,856 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:52,856 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-08 13:37:53,104 - consolidator - ERROR - __exit__:217 - Failed Processing Excision after 0.25s: list indices must be integers or slices, not str
+2025-09-08 13:37:53,104 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Excision 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:53,105 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:53,105 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-08 13:37:53,841 - consolidator - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.74s: list indices must be integers or slices, not str
+2025-09-08 13:37:53,842 - consolidator - ERROR - _process_single_file_safe:328 - Error processing EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:53,842 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:53,842 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-08 13:37:54,404 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.56s: list indices must be integers or slices, not str
+2025-09-08 13:37:54,405 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:54,405 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:54,405 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-08 13:37:54,661 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.26s: list indices must be integers or slices, not str
+2025-09-08 13:37:54,662 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:54,662 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:54,663 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-08 13:37:55,240 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 0.58s: list indices must be integers or slices, not str
+2025-09-08 13:37:55,240 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Norton 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:55,241 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:55,243 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-08 13:37:55,732 - consolidator - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.49s: list indices must be integers or slices, not str
+2025-09-08 13:37:55,733 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:55,733 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:55,733 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-08 13:37:56,298 - consolidator - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.56s: list indices must be integers or slices, not str
+2025-09-08 13:37:56,298 - consolidator - ERROR - _process_single_file_safe:328 - Error processing PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:56,299 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:56,299 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-08 13:37:56,816 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.52s: list indices must be integers or slices, not str
+2025-09-08 13:37:56,817 - consolidator - ERROR - _process_single_file_safe:328 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+2025-09-08 13:37:56,817 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:56,817 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-08 13:37:57,084 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.27s: list indices must be integers or slices, not str
+2025-09-08 13:37:57,085 - consolidator - ERROR - _process_single_file_safe:328 - Error processing POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 13:37:57,085 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 13:37:57,085 - consolidator - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 9.63s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: list indices must be integers or slices, not str
+  - supplier_data\Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Excision 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Norton 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+  - supplier_data\PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 14:08:15,334 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250908_140815 ===
+2025-09-08 14:08:15,334 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-08 14:08:15,335 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-08 14:08:15,335 - consolidator - INFO - __init__:94 - Price List Consolidator initialized successfully.
+2025-09-08 14:08:15,335 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-08 14:08:15,336 - consolidator - INFO - process_supplier_files:134 - Found 15 supplier files to process
+2025-09-08 14:08:15,343 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-08 14:08:15,356 - consolidator - ERROR - __exit__:217 - Failed Processing Narex after 0.01s: list indices must be integers or slices, not str
+2025-09-08 14:08:15,356 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Narex 2025.csv: list indices must be integers or slices, not str
+2025-09-08 14:08:15,357 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:15,357 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-08 14:08:15,382 - consolidator - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.02s: list indices must be integers or slices, not str
+2025-09-08 14:08:15,383 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+2025-09-08 14:08:15,384 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:15,385 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-08 14:08:15,405 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.02s: list indices must be integers or slices, not str
+2025-09-08 14:08:15,405 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+2025-09-08 14:08:15,405 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:15,406 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-08 14:08:16,889 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.48s: list indices must be integers or slices, not str
+2025-09-08 14:08:16,889 - consolidator - ERROR - _process_single_file_safe:338 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:16,890 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:16,891 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-08 14:08:16,952 - consolidator - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.06s: list indices must be integers or slices, not str
+2025-09-08 14:08:16,952 - consolidator - ERROR - _process_single_file_safe:338 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:16,953 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:16,953 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-08 14:08:20,952 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 4.00s: list indices must be integers or slices, not str
+2025-09-08 14:08:20,953 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Dormer 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:20,956 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:20,957 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-08 14:08:21,243 - consolidator - ERROR - __exit__:217 - Failed Processing Excision after 0.29s: list indices must be integers or slices, not str
+2025-09-08 14:08:21,243 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Excision 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:21,243 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:21,244 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-08 14:08:21,940 - consolidator - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.70s: list indices must be integers or slices, not str
+2025-09-08 14:08:21,940 - consolidator - ERROR - _process_single_file_safe:338 - Error processing EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:21,940 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:21,941 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-08 14:08:22,423 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.48s: list indices must be integers or slices, not str
+2025-09-08 14:08:22,423 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:22,424 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:22,424 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-08 14:08:22,711 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.29s: list indices must be integers or slices, not str
+2025-09-08 14:08:22,711 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:22,712 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:22,712 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-08 14:08:23,339 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 0.63s: list indices must be integers or slices, not str
+2025-09-08 14:08:23,340 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Norton 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:23,340 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:23,341 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-08 14:08:23,820 - consolidator - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.48s: list indices must be integers or slices, not str
+2025-09-08 14:08:23,820 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:23,820 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:23,821 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-08 14:08:24,487 - consolidator - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.67s: list indices must be integers or slices, not str
+2025-09-08 14:08:24,487 - consolidator - ERROR - _process_single_file_safe:338 - Error processing PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:24,488 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:24,488 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-08 14:08:25,089 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.60s: list indices must be integers or slices, not str
+2025-09-08 14:08:25,089 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:08:25,090 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:25,090 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-08 14:08:25,394 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.30s: list indices must be integers or slices, not str
+2025-09-08 14:08:25,394 - consolidator - ERROR - _process_single_file_safe:338 - Error processing POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 14:08:25,395 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:08:25,395 - consolidator - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 10.06s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: list indices must be integers or slices, not str
+  - supplier_data\Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Excision 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Norton 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+  - supplier_data\PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 14:22:28,102 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250908_142228 ===
+2025-09-08 14:22:28,102 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-08 14:22:28,102 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-08 14:22:28,102 - consolidator - INFO - __init__:94 - Price List Consolidator initialized successfully.
+2025-09-08 14:22:28,103 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-08 14:22:28,104 - consolidator - INFO - process_supplier_files:134 - Found 15 supplier files to process
+2025-09-08 14:22:28,109 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-08 14:22:28,120 - consolidator - ERROR - __exit__:217 - Failed Processing Narex after 0.01s: list indices must be integers or slices, not str
+2025-09-08 14:22:28,121 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Narex 2025.csv: list indices must be integers or slices, not str
+2025-09-08 14:22:28,121 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:28,122 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-08 14:22:28,137 - consolidator - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.01s: list indices must be integers or slices, not str
+2025-09-08 14:22:28,137 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+2025-09-08 14:22:28,138 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:28,139 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-08 14:22:28,146 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.01s: list indices must be integers or slices, not str
+2025-09-08 14:22:28,147 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+2025-09-08 14:22:28,147 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:28,147 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-08 14:22:29,665 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.52s: list indices must be integers or slices, not str
+2025-09-08 14:22:29,666 - consolidator - ERROR - _process_single_file_safe:338 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:29,667 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:29,668 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-08 14:22:29,769 - consolidator - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.10s: list indices must be integers or slices, not str
+2025-09-08 14:22:29,769 - consolidator - ERROR - _process_single_file_safe:338 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:29,769 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:29,770 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-08 14:22:33,995 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 4.23s: list indices must be integers or slices, not str
+2025-09-08 14:22:33,996 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Dormer 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:33,999 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:33,999 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-08 14:22:34,301 - consolidator - ERROR - __exit__:217 - Failed Processing Excision after 0.30s: list indices must be integers or slices, not str
+2025-09-08 14:22:34,302 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Excision 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:34,302 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:34,302 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-08 14:22:35,176 - consolidator - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.87s: list indices must be integers or slices, not str
+2025-09-08 14:22:35,176 - consolidator - ERROR - _process_single_file_safe:338 - Error processing EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:35,177 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:35,177 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-08 14:22:35,707 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.53s: list indices must be integers or slices, not str
+2025-09-08 14:22:35,708 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:35,708 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:35,709 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-08 14:22:36,060 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.35s: list indices must be integers or slices, not str
+2025-09-08 14:22:36,061 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:36,061 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:36,062 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-08 14:22:36,606 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 0.54s: list indices must be integers or slices, not str
+2025-09-08 14:22:36,607 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Norton 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:36,607 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:36,607 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-08 14:22:36,977 - consolidator - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.37s: list indices must be integers or slices, not str
+2025-09-08 14:22:36,978 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:36,979 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:36,980 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-08 14:22:37,529 - consolidator - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.55s: list indices must be integers or slices, not str
+2025-09-08 14:22:37,530 - consolidator - ERROR - _process_single_file_safe:338 - Error processing PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:37,530 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:37,531 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-08 14:22:37,989 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.46s: list indices must be integers or slices, not str
+2025-09-08 14:22:37,989 - consolidator - ERROR - _process_single_file_safe:338 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:22:37,990 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:37,990 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-08 14:22:38,218 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.23s: list indices must be integers or slices, not str
+2025-09-08 14:22:38,219 - consolidator - ERROR - _process_single_file_safe:338 - Error processing POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 14:22:38,219 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:22:38,220 - consolidator - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 10.12s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: list indices must be integers or slices, not str
+  - supplier_data\Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Excision 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Norton 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+  - supplier_data\PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 14:39:52,495 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250908_143952 ===
+2025-09-08 14:39:52,496 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-08 14:39:52,496 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-08 14:39:52,496 - consolidator - INFO - __init__:94 - Price List Consolidator initialized successfully.
+2025-09-08 14:39:52,496 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-08 14:39:52,497 - consolidator - INFO - process_supplier_files:134 - Found 15 supplier files to process
+2025-09-08 14:39:52,503 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-08 14:39:52,511 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Narex
+2025-09-08 14:39:52,511 - consolidator - ERROR - __exit__:217 - Failed Processing Narex after 0.01s: list indices must be integers or slices, not str
+2025-09-08 14:39:52,511 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Narex 2025.csv: list indices must be integers or slices, not str
+2025-09-08 14:39:52,511 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:52,513 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-08 14:39:52,528 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Carbide End Mill
+2025-09-08 14:39:52,528 - consolidator - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.02s: list indices must be integers or slices, not str
+2025-09-08 14:39:52,528 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+2025-09-08 14:39:52,528 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:52,530 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-08 14:39:52,538 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Whitelaw Combined Site Book Rm
+2025-09-08 14:39:52,538 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.01s: list indices must be integers or slices, not str
+2025-09-08 14:39:52,539 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+2025-09-08 14:39:52,539 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:52,540 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-08 14:39:53,913 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Tridon 003483 Whitelaw Tooling Supplies
+2025-09-08 14:39:53,913 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.37s: list indices must be integers or slices, not str
+2025-09-08 14:39:53,914 - consolidator - ERROR - _process_single_file_safe:343 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:39:53,915 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:53,916 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-08 14:39:53,955 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Au Ind For Siapower
+2025-09-08 14:39:53,956 - consolidator - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.04s: list indices must be integers or slices, not str
+2025-09-08 14:39:53,956 - consolidator - ERROR - _process_single_file_safe:343 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:39:53,956 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:53,957 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-08 14:39:58,095 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Dormer
+2025-09-08 14:39:58,096 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 4.14s: list indices must be integers or slices, not str
+2025-09-08 14:39:58,096 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Dormer 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:39:58,098 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:58,099 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-08 14:39:58,348 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision
+2025-09-08 14:39:58,348 - consolidator - ERROR - __exit__:217 - Failed Processing Excision after 0.25s: list indices must be integers or slices, not str
+2025-09-08 14:39:58,348 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Excision 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:39:58,349 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:58,349 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-08 14:39:59,233 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision Yg
+2025-09-08 14:39:59,234 - consolidator - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.89s: list indices must be integers or slices, not str
+2025-09-08 14:39:59,234 - consolidator - ERROR - _process_single_file_safe:343 - Error processing EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:39:59,235 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:59,235 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-08 14:39:59,689 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring Aus Stock Reseller
+2025-09-08 14:39:59,690 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.46s: list indices must be integers or slices, not str
+2025-09-08 14:39:59,690 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:39:59,690 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:59,691 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-08 14:39:59,936 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Mitutoyo May
+2025-09-08 14:39:59,937 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.25s: list indices must be integers or slices, not str
+2025-09-08 14:39:59,937 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:39:59,937 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:39:59,937 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-08 14:40:00,458 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Norton
+2025-09-08 14:40:00,458 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 0.52s: list indices must be integers or slices, not str
+2025-09-08 14:40:00,458 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Norton 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:40:00,459 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:40:00,459 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-08 14:40:00,879 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Master 01 Apr
+2025-09-08 14:40:00,879 - consolidator - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.42s: list indices must be integers or slices, not str
+2025-09-08 14:40:00,880 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+2025-09-08 14:40:00,880 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:40:00,880 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-08 14:40:01,505 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Pst Full Pricefile
+2025-09-08 14:40:01,505 - consolidator - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.62s: list indices must be integers or slices, not str
+2025-09-08 14:40:01,506 - consolidator - ERROR - _process_single_file_safe:343 - Error processing PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:40:01,506 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:40:01,506 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-08 14:40:02,063 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Whitelaw Bordo File Discount Structure 25 V12
+2025-09-08 14:40:02,064 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.56s: list indices must be integers or slices, not str
+2025-09-08 14:40:02,064 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:40:02,065 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:40:02,065 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-08 14:40:02,322 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Pointtech Wts
+2025-09-08 14:40:02,323 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.26s: list indices must be integers or slices, not str
+2025-09-08 14:40:02,323 - consolidator - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 14:40:02,323 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:40:02,324 - consolidator - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 9.83s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: list indices must be integers or slices, not str
+  - supplier_data\Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Excision 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Norton 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+  - supplier_data\PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 14:53:52,179 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250908_145352 ===
+2025-09-08 14:53:52,179 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-08 14:53:52,179 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-08 14:53:52,180 - consolidator - INFO - __init__:94 - Price List Consolidator initialized successfully.
+2025-09-08 14:53:52,180 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-08 14:53:52,181 - consolidator - INFO - process_supplier_files:134 - Found 15 supplier files to process
+2025-09-08 14:53:52,192 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-08 14:53:52,216 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Narex
+2025-09-08 14:53:52,217 - consolidator - ERROR - __exit__:217 - Failed Processing Narex after 0.02s: list indices must be integers or slices, not str
+2025-09-08 14:53:52,218 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Narex 2025.csv: list indices must be integers or slices, not str
+2025-09-08 14:53:52,218 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:52,219 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-08 14:53:52,243 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Carbide End Mill
+2025-09-08 14:53:52,243 - consolidator - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.02s: list indices must be integers or slices, not str
+2025-09-08 14:53:52,245 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+2025-09-08 14:53:52,245 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:52,246 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-08 14:53:52,255 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Whitelaw Combined Site Book Rm
+2025-09-08 14:53:52,256 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.01s: list indices must be integers or slices, not str
+2025-09-08 14:53:52,256 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+2025-09-08 14:53:52,256 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:52,256 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-08 14:53:53,891 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Tridon 003483 Whitelaw Tooling Supplies
+2025-09-08 14:53:53,892 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.63s: list indices must be integers or slices, not str
+2025-09-08 14:53:53,892 - consolidator - ERROR - _process_single_file_safe:343 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:53:53,894 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:53,894 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-08 14:53:53,942 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Au Ind For Siapower
+2025-09-08 14:53:53,943 - consolidator - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.05s: list indices must be integers or slices, not str
+2025-09-08 14:53:53,943 - consolidator - ERROR - _process_single_file_safe:343 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:53:53,944 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:53,944 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-08 14:53:57,967 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Dormer
+2025-09-08 14:53:57,968 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 4.02s: list indices must be integers or slices, not str
+2025-09-08 14:53:57,968 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Dormer 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:53:57,972 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:57,972 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-08 14:53:58,250 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision
+2025-09-08 14:53:58,250 - consolidator - ERROR - __exit__:217 - Failed Processing Excision after 0.28s: list indices must be integers or slices, not str
+2025-09-08 14:53:58,251 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Excision 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:53:58,251 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:58,251 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-08 14:53:59,000 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision Yg
+2025-09-08 14:53:59,001 - consolidator - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.75s: list indices must be integers or slices, not str
+2025-09-08 14:53:59,001 - consolidator - ERROR - _process_single_file_safe:343 - Error processing EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:53:59,002 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:59,002 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-08 14:53:59,541 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring Aus Stock Reseller
+2025-09-08 14:53:59,541 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.54s: list indices must be integers or slices, not str
+2025-09-08 14:53:59,541 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:53:59,542 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:59,542 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-08 14:53:59,828 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Mitutoyo May
+2025-09-08 14:53:59,828 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.29s: list indices must be integers or slices, not str
+2025-09-08 14:53:59,829 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:53:59,829 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:53:59,830 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-08 14:54:00,806 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Norton
+2025-09-08 14:54:00,806 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 0.98s: list indices must be integers or slices, not str
+2025-09-08 14:54:00,807 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Norton 2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:54:00,807 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:54:00,808 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-08 14:54:01,274 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Master 01 Apr
+2025-09-08 14:54:01,276 - consolidator - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.47s: list indices must be integers or slices, not str
+2025-09-08 14:54:01,276 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+2025-09-08 14:54:01,277 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:54:01,278 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-08 14:54:01,857 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Pst Full Pricefile
+2025-09-08 14:54:01,857 - consolidator - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.58s: list indices must be integers or slices, not str
+2025-09-08 14:54:01,858 - consolidator - ERROR - _process_single_file_safe:343 - Error processing PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:54:01,858 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:54:01,859 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-08 14:54:02,300 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Whitelaw Bordo File Discount Structure 25 V12
+2025-09-08 14:54:02,300 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.44s: list indices must be integers or slices, not str
+2025-09-08 14:54:02,300 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+2025-09-08 14:54:02,301 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:54:02,301 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-08 14:54:02,525 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Pointtech Wts
+2025-09-08 14:54:02,526 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.23s: list indices must be integers or slices, not str
+2025-09-08 14:54:02,526 - consolidator - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-08 14:54:02,526 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-08 14:54:02,526 - consolidator - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 10.35s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: list indices must be integers or slices, not str
+  - supplier_data\Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Excision 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Norton 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+  - supplier_data\PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str

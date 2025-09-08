@@ -1,0 +1,170 @@
+2025-09-08 14:22:28,120 - ERROR - __exit__:217 - Failed Processing Narex after 0.01s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:28,121 - ERROR - _process_single_file_safe:338 - Error processing Narex 2025.csv: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:28,137 - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.01s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:28,137 - ERROR - _process_single_file_safe:338 - Error processing Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:28,146 - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.01s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:28,147 - ERROR - _process_single_file_safe:338 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:29,665 - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.52s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:29,666 - ERROR - _process_single_file_safe:338 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:29,769 - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.10s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:29,769 - ERROR - _process_single_file_safe:338 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:33,995 - ERROR - __exit__:217 - Failed Processing Dormer after 4.23s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:33,996 - ERROR - _process_single_file_safe:338 - Error processing Dormer 2025.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:34,301 - ERROR - __exit__:217 - Failed Processing Excision after 0.30s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:34,302 - ERROR - _process_single_file_safe:338 - Error processing Excision 2025.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:35,176 - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.87s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:35,176 - ERROR - _process_single_file_safe:338 - Error processing EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:35,707 - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.53s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:35,708 - ERROR - _process_single_file_safe:338 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:36,060 - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.35s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:36,061 - ERROR - _process_single_file_safe:338 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:36,606 - ERROR - __exit__:217 - Failed Processing Norton after 0.54s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:36,607 - ERROR - _process_single_file_safe:338 - Error processing Norton 2025.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:36,977 - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.37s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:36,978 - ERROR - _process_single_file_safe:338 - Error processing Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:37,529 - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.55s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:37,530 - ERROR - _process_single_file_safe:338 - Error processing PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:37,989 - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.46s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:37,989 - ERROR - _process_single_file_safe:338 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:38,218 - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.23s: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-08 14:22:38,219 - ERROR - _process_single_file_safe:338 - Error processing POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-08 14:22:38,220 - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 10.12s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: list indices must be integers or slices, not str
+  - supplier_data\Carbide End Mill Price List 2025.xls: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: list indices must be integers or slices, not str
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: list indices must be integers or slices, not str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Excision 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\EXCISION YG-1 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Norton 2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: list indices must be integers or slices, not str
+  - supplier_data\PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+Session: 20250908_142228
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+

@@ -34,6 +34,11 @@ class ColumnMapper:
             self.column_mappings = config['default_column_mappings']
         elif 'column_mappings' in config:
             self.column_mappings = config['column_mappings']
+        else:
+            # Fallback to empty dict if no mappings found
+            self.column_mappings = {}
+            if self.logger:
+                self.logger.warning(f"No column mappings found in config for {supplier_name or 'default'}")
         
         # For test compatibility, handle both 'master_schema' and direct field definitions
         if 'master_schema' in config:
@@ -51,9 +56,15 @@ class ColumnMapper:
         
         if self.supplier_name and self.config_manager:
             # Get supplier-specific mappings from config manager
-            supplier_mappings = self.config_manager.get_column_mappings(self.supplier_name)
-            if supplier_mappings:
-                return supplier_mappings
+            try:
+                supplier_mappings = self.config_manager.get_column_mappings(self.supplier_name)
+                if supplier_mappings:
+                    self.logger.info(f"Loaded supplier-specific mappings for {self.supplier_name}")
+                    return supplier_mappings
+                else:
+                    self.logger.warning(f"No supplier-specific config found for {self.supplier_name}, using default mappings")
+            except Exception as e:
+                self.logger.error(f"Error loading supplier config for {self.supplier_name}: {e}, using default mappings")
         
         return default_mappings
     
@@ -77,12 +88,16 @@ class ColumnMapper:
             column_mappings = supplier_mappings
         else:
             column_mappings = self.column_mappings
-            
+        
         original_columns = columns
         # Create mapping dictionary
         mapped_columns = {}
         unmapped_columns = []
         used_columns = set()
+        
+        if not column_mappings:
+            self.logger.warning("No column mappings available, cannot map columns")
+            return {}, original_columns
         
         # Map each standardized field
         for field_name, possible_names in column_mappings.items():
@@ -375,16 +390,17 @@ class ColumnMapper:
         return issues
 
 
-def create_column_mapper(config: Dict[str, Any], supplier_name: str = None, logger: logging.Logger = None) -> ColumnMapper:
+def create_column_mapper(config: Dict[str, Any], supplier_name: str = None, config_manager=None, logger: logging.Logger = None) -> ColumnMapper:
     """
     Create a column mapper instance.
     
     Args:
         config: Configuration dictionary
         supplier_name: Name of the supplier
+        config_manager: ConfigManager instance (optional)
         logger: Logger instance to use for logging
     
     Returns:
         ColumnMapper instance
     """
-    return ColumnMapper(config, supplier_name, logger=logger)
+    return ColumnMapper(config, supplier_name, config_manager=config_manager, logger=logger)
