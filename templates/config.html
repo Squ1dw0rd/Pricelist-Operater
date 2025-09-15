@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configuration Management</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .supplier-list { margin: 20px 0; }
+        .supplier-item { border: 1px solid #ccc; padding: 10px; margin: 5px 0; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Configuration Management</h1>
+
+    <h2>Existing Suppliers</h2>
+    <div class="supplier-list">
+        {% for supplier in suppliers %}
+        <div class="supplier-item">{{ supplier }}</div>
+        {% endfor %}
+    </div>
+
+    <h2>Create New Supplier Config</h2>
+    <form action="/config/create" method="post">
+        <div style="margin: 10px 0;">
+            <label for="supplier_name">Supplier Name:</label><br>
+            <input type="text" id="supplier_name" name="supplier_name" required>
+        </div>
+        <button type="submit">Create Configuration</button>
+    </form>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

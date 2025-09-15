@@ -4,6 +4,7 @@ Handles validation of processed data according to business rules.
 """
 
 import polars as pl
+import pandas as pd
 import logging
 import re
 from typing import Dict, List, Optional, Tuple, Any, Union

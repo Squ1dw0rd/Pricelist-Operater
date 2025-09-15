@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configuration Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Configuration Result</h1>
+
+    {% if success %}
+    <div class="success">
+        <h2>Success!</h2>
+        <p>{{ message }}</p>
+        <p>Supplier: {{ supplier_name }}</p>
+    </div>
+    {% else %}
+    <div class="error">
+        <h2>Error</h2>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+
+    <p><a href="/config">Back to Configuration</a></p>
+</body>
+</html>

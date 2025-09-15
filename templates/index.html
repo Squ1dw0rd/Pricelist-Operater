@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .upload-form { border: 1px solid #ccc; padding: 20px; border-radius: 5px; }
+        .form-group { margin: 10px 0; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="file"] { margin: 10px 0; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>Upload supplier price list files (.csv, .xls, .xlsx, .pdf) for consolidation.</p>
+
+    <div class="upload-form">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="files">Select Files:</label>
+                <input type="file" id="files" name="files" multiple required>
+            </div>
+            <div class="form-group">
+                <label for="output_filename">Output Filename (optional):</label>
+                <input type="text" id="output_filename" name="output_filename" placeholder="Master_Price_List.xlsx">
+            </div>
+            <button type="submit">Process Files</button>
+        </form>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <a href="/config">Manage Configurations</a> |
+        <a href="/status">View Status</a>
+    </div>
+</body>
+</html>

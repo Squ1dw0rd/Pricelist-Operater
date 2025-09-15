@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Processing Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .success { color: green; }
+        .error { color: red; }
+        .result-box { border: 1px solid #ccc; padding: 20px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Processing Result</h1>
+
+    {% if success %}
+    <div class="result-box success">
+        <h2>Success!</h2>
+        <p>Processed {{ processed_files }} files with {{ total_records }} total records.</p>
+        <p><a href="/download/{{ filename }}" target="_blank">Download {{ filename }}</a></p>
+    </div>
+    {% else %}
+    <div class="result-box error">
+        <h2>Error</h2>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+
+    <p><a href="/">Back to Upload</a></p>
+</body>
+</html>

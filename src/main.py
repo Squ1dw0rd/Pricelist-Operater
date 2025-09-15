@@ -568,6 +568,14 @@ def main():
         except Exception as e:
             safe_print(f"❌ Error listing configurations: {e}")
             return 1
+    if getattr(args, 'web_ui', False):
+        try:
+            from web_ui import run_web_ui
+            run_web_ui(host="127.0.0.1", port=8000, config_dir=args.config)
+            return 0
+        except Exception as e:
+            safe_print(f"❌ Error starting web UI: {e}")
+            return 1
     
     # Run main consolidation
     return run_consolidation(args)

@@ -488,3 +488,63 @@
   - supplier_data\PST_full_ pricefile_2025.xlsx: list indices must be integers or slices, not str
   - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: list indices must be integers or slices, not str
   - supplier_data\POINTTECH_pricelist_WTS.pdf: list indices must be integers or slices, not str
+2025-09-15 14:52:52,377 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_145252 ===
+2025-09-15 14:52:52,379 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 14:52:52,380 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 14:52:52,380 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 14:52:52,380 - consolidator - INFO - run_web_ui:322 - Starting web UI on http://config:8000
+2025-09-15 14:53:04,917 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_145304 ===
+2025-09-15 14:53:04,917 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 14:53:04,917 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 14:53:04,917 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 14:53:04,918 - consolidator - INFO - run_web_ui:322 - Starting web UI on http://config:8000
+2025-09-15 14:53:54,958 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_145354 ===
+2025-09-15 14:53:54,958 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 14:53:54,959 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 14:53:54,959 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 14:53:54,959 - consolidator - INFO - run_web_ui:322 - Starting web UI on http://127.0.0.1:8000
+2025-09-15 14:57:48,429 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_145748 ===
+2025-09-15 14:57:48,429 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 14:57:48,430 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 14:57:48,430 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 14:57:48,430 - consolidator - INFO - run_web_ui:322 - Starting web UI on http://127.0.0.1:8000

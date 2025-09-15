@@ -528,6 +528,11 @@ Examples:
     )
     
     parser.add_argument(
+        '--web-ui',
+        action='store_true',
+        help='Launch web-based user interface'
+    )
+    parser.add_argument(
         '--dry-run',
         action='store_true',
         help='Run without generating output files'
@@ -618,12 +623,12 @@ def validate_args(args) -> List[str]:
     errors = []
     
     # Check for required arguments based on mode
-    if not args.interactive and not args.create_config and not args.validate_config and not args.list_configs:
+    if not args.interactive and not args.create_config and not args.validate_config and not args.list_configs and not args.web_ui:
         if not args.input_directory:
             errors.append("Input directory is required when not in interactive mode")
         elif not os.path.exists(args.input_directory):
             errors.append(f"Input directory does not exist: {args.input_directory}")
-        
+
         if not args.output and not args.dry_run:
             errors.append("Output file is required when not in dry-run mode")
     
