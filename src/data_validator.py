@@ -3,8 +3,7 @@ Data Validation Engine for Supplier Price List Consolidation Tool
 Handles validation of processed data according to business rules.
 """
 
-import pandas as pd
-import numpy as np
+import polars as pl
 import logging
 import re
 from typing import Dict, List, Optional, Tuple, Any, Union
@@ -68,41 +67,44 @@ class DataValidator:
         self.validation_rules = config.get('validation_rules', {})
         self.required_fields = config.get('master_schema', {}).get('required_fields', [])
     
-    def validate(self, df: pd.DataFrame, supplier_name: str = None) -> ValidationResult:
+    def validate(self, df: pl.DataFrame, supplier_name: str = None) -> ValidationResult:
         """
         Validate a DataFrame according to configured rules.
-        
+
         Args:
             df: DataFrame to validate
             supplier_name: Name of the supplier (for context)
-        
+
         Returns:
             ValidationResult object
         """
         result = ValidationResult()
-        
+
         logging.info(f"Starting validation for {supplier_name or 'unknown supplier'}")
-        
+
+        # Convert to pandas for validation (easier compatibility)
+        df_pd = df.to_pandas()
+
         # Basic validation
-        self._validate_required_fields(df, result)
-        self._validate_data_types(df, result)
+        self._validate_required_fields(df_pd, result)
+        self._validate_data_types(df_pd, result)
         
         # Business rule validation
         if self.validation_rules.get('price_range_check', {}).get('enabled', False):
-            self._validate_price_range(df, result)
-        
+            self._validate_price_range(df_pd, result)
+
         if self.validation_rules.get('iqr_outlier_detection', {}).get('enabled', False):
-            self._detect_price_outliers(df, result)
-        
+            self._detect_price_outliers(df_pd, result)
+
         if self.validation_rules.get('duplicate_sku_check', False):
-            self._check_duplicate_skus(df, result)
-        
+            self._check_duplicate_skus(df_pd, result)
+
         # Additional validations
-        self._validate_data_completeness(df, result)
-        self._validate_data_formats(df, result)
-        
+        self._validate_data_completeness(df_pd, result)
+        self._validate_data_formats(df_pd, result)
+
         # Generate statistics
-        self._generate_statistics(df, result)
+        self._generate_statistics(df_pd, result)
         
         logging.info(f"Validation completed: {len(result.errors)} errors, {len(result.warnings)} warnings")
         
@@ -342,7 +344,7 @@ class DataValidator:
             result.statistics['duplicate_sku_count'] = len(non_empty_skus) - non_empty_skus.nunique()
 
 
-def validate_data(df: pd.DataFrame, config: Dict[str, Any], supplier_name: str = None) -> ValidationResult:
+def validate_data(df: pl.DataFrame, config: Dict[str, Any], supplier_name: str = None) -> ValidationResult:
     """
     Validate a DataFrame using the configured validation rules.
     

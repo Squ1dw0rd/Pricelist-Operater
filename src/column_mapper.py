@@ -3,7 +3,7 @@ Column Mapping Engine for Supplier Price List Consolidation Tool
 Handles mapping of supplier columns to standardized schema.
 """
 
-import pandas as pd
+import polars as pl
 import logging
 from typing import Dict, List, Optional, Tuple, Any
 from fuzzywuzzy import fuzz, process
@@ -186,18 +186,18 @@ class ColumnMapper:
     
     def _normalize_string(self, text: str) -> str:
         """Normalize string for comparison."""
-        if pd.isna(text):
+        if text is None or str(text).lower() in ('nan', 'none', ''):
             return ""
-        
+
         # Convert to lowercase and remove extra whitespace
         text = str(text).lower().strip()
-        
+
         # Remove special characters except spaces
         text = re.sub(r'[^\w\s]', ' ', text)
-        
+
         # Replace multiple spaces with single space
         text = re.sub(r'\s+', ' ', text)
-        
+
         return text.strip()
     
     def _calculate_confidence(self, field_name: str, mapped_column: str) -> float:
@@ -214,51 +214,55 @@ class ColumnMapper:
         
         return max_score / 100.0  # Convert to 0-1 scale
     
-    def _create_mapped_dataframe(self, df: pd.DataFrame, column_mapping: Dict[str, str]) -> pd.DataFrame:
+    def _create_mapped_dataframe(self, df: pl.DataFrame, column_mapping: Dict[str, str]) -> pl.DataFrame:
         """
         Create a new DataFrame with mapped column names.
-        
+
         Args:
             df: Original DataFrame
             column_mapping: Dictionary mapping original columns to standardized fields
-        
+
         Returns:
             DataFrame with standardized column names
         """
-        mapped_df = pd.DataFrame()
-        
-        # Map known columns
+        # Start with select for known columns
+        select_exprs = []
         for original_col, standard_field in column_mapping.items():
             if original_col in df.columns:
-                mapped_df[standard_field] = df[original_col]
-        
+                select_exprs.append(pl.col(original_col).alias(standard_field))
+
+        if select_exprs:
+            mapped_df = df.select(select_exprs)
+        else:
+            mapped_df = pl.DataFrame()
+
         # Ensure all required fields exist (even if empty)
         for field in self.required_fields:
             if field not in mapped_df.columns:
-                mapped_df[field] = None
-        
+                mapped_df = mapped_df.with_columns(pl.lit(None).alias(field))
+
         # Add optional fields that were mapped
         for field in self.optional_fields:
             if field in column_mapping.values() and field not in mapped_df.columns:
                 original_col = next(k for k, v in column_mapping.items() if v == field)
                 if original_col in df.columns:
-                    mapped_df[field] = df[original_col]
-        
+                    mapped_df = mapped_df.with_columns(pl.col(original_col).alias(field))
+
         return mapped_df
     
-    def suggest_mappings(self, df: pd.DataFrame, threshold: float = 0.6) -> Dict[str, List[Tuple[str, float]]]:
+    def suggest_mappings(self, df: pl.DataFrame, threshold: float = 0.6) -> Dict[str, List[Tuple[str, float]]]:
         """
         Suggest possible mappings for manual review.
-        
+
         Args:
             df: Input DataFrame
             threshold: Minimum confidence threshold for suggestions
-        
+
         Returns:
             Dictionary of field -> [(column, confidence), ...] suggestions
         """
         suggestions = {}
-        original_columns = df.columns.tolist()
+        original_columns = list(df.columns)
         
         for field_name in self.required_fields + self.optional_fields:
             if field_name not in self.column_mappings:
@@ -304,41 +308,43 @@ class ColumnMapper:
         
         return mapped_columns, unmapped_columns, confidence_scores
     
-    def transform_data(self, data, mappings, supplier_name):
+    def transform_data(self, data: pl.DataFrame, mappings: Dict[str, str], supplier_name: str) -> pl.DataFrame:
         """
         Transform data according to mappings.
-        
+
         Args:
             data: DataFrame with original data
             mappings: Dictionary mapping standardized fields to column names
             supplier_name: Name of the supplier
-        
+
         Returns:
             Transformed DataFrame
         """
-        import pandas as pd
-        
-        if data.empty:
+        if data.is_empty():
             # Create empty DataFrame with required columns
-            transformed_data = pd.DataFrame(columns=list(mappings.keys()) + ['supplier_name'])
+            schema = {field: pl.Utf8 for field in list(mappings.keys()) + ['supplier_name']}
+            transformed_data = pl.DataFrame(schema=schema)
         else:
             # Create new DataFrame with mapped columns
-            transformed_data = pd.DataFrame()
-            
-            # Map columns
+            select_exprs = []
             for field_name, column_name in mappings.items():
                 if column_name in data.columns:
-                    transformed_data[field_name] = data[column_name]
-            
+                    select_exprs.append(pl.col(column_name).alias(field_name))
+
+            if select_exprs:
+                transformed_data = data.select(select_exprs)
+            else:
+                transformed_data = pl.DataFrame()
+
             # Add supplier name
-            transformed_data['supplier_name'] = supplier_name
-            
+            transformed_data = transformed_data.with_columns(pl.lit(supplier_name).alias('supplier_name'))
+
             # Convert data types
             if 'unit_price' in transformed_data.columns:
-                # Convert unit_price to float if it's string
-                if transformed_data['unit_price'].dtype == 'object':
-                    transformed_data['unit_price'] = pd.to_numeric(transformed_data['unit_price'], errors='coerce')
-        
+                transformed_data = transformed_data.with_columns(
+                    pl.col('unit_price').cast(pl.Float64, strict=False)
+                )
+
         return transformed_data
     
     def get_missing_required_fields(self, mappings):

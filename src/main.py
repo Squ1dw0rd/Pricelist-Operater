@@ -10,7 +10,6 @@ import logging
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Optional, Any
-import pandas as pd
 from tqdm import tqdm
 import time
 import sys

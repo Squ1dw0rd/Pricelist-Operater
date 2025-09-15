@@ -3,6 +3,7 @@ Excel Output Generator for Supplier Price List Consolidation Tool
 Handles creation of multi-sheet Excel workbooks with directory and hyperlinks.
 """
 
+import polars as pl
 import pandas as pd
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -33,7 +34,7 @@ class ExcelGenerator:
         self.hyperlink_style = self._create_hyperlink_style()
         self.border_style = self._create_border_style()
     
-    def generate_master_workbook(self, supplier_data: Dict[str, pd.DataFrame], 
+    def generate_master_workbook(self, supplier_data: Dict[str, pl.DataFrame],
                                 output_path: str, validation_reports: Dict[str, Any] = None) -> str:
         """
         Generate the master Excel workbook with all supplier data.
@@ -82,7 +83,7 @@ class ExcelGenerator:
         
         return str(output_path)
     
-    def _populate_directory_sheet(self, sheet, supplier_data: Dict[str, pd.DataFrame], 
+    def _populate_directory_sheet(self, sheet, supplier_data: Dict[str, pl.DataFrame],
                                  supplier_sheets: Dict[str, Any], validation_reports: Dict[str, Any] = None):
         """Populate the directory sheet with supplier links and summary."""
         # Title
@@ -166,13 +167,16 @@ class ExcelGenerator:
         # Auto-adjust column widths
         self._auto_adjust_columns(sheet)
     
-    def _populate_supplier_sheet(self, sheet, df: pd.DataFrame, supplier_name: str, 
+    def _populate_supplier_sheet(self, sheet, df: pl.DataFrame, supplier_name: str,
                                validation_reports: Dict[str, Any] = None):
         """Populate a supplier sheet with data."""
+        # Convert to pandas for openpyxl compatibility
+        df_pd = df.to_pandas()
+
         # Title
         sheet['A1'] = f"{supplier_name} - Price List"
         sheet['A1'].font = Font(size=14, bold=True)
-        sheet.merge_cells(f'A1:{self._get_column_letter(len(df.columns))}1')
+        sheet.merge_cells(f'A1:{self._get_column_letter(len(df_pd.columns))}1')
         
         # Metadata
         current_row = 3
@@ -181,7 +185,7 @@ class ExcelGenerator:
             sheet[f'A{current_row}'].font = Font(italic=True)
             current_row += 1
             
-            sheet[f'A{current_row}'] = f"Total Products: {len(df)}"
+            sheet[f'A{current_row}'] = f"Total Products: {len(df_pd)}"
             current_row += 1
             
             # Validation summary
@@ -209,31 +213,31 @@ class ExcelGenerator:
         
         # Data headers
         header_row = current_row
-        for col, column_name in enumerate(df.columns, 1):
+        for col, column_name in enumerate(df_pd.columns, 1):
             cell = sheet.cell(row=header_row, column=col, value=column_name.replace('_', ' ').title())
             cell.font = self.header_style['font']
             cell.fill = self.header_style['fill']
             cell.alignment = self.header_style['alignment']
             cell.border = self.border_style
-        
+
         # Data rows
-        for row_idx, (_, row) in enumerate(df.iterrows(), header_row + 1):
+        for row_idx, (_, row) in enumerate(df_pd.iterrows(), header_row + 1):
             for col_idx, value in enumerate(row, 1):
                 cell = sheet.cell(row=row_idx, column=col_idx)
-                
+
                 # Format value
                 if pd.isna(value):
                     cell.value = ""
                 elif isinstance(value, (int, float)):
                     cell.value = value
                     # Format currency columns
-                    if any(price_col in df.columns[col_idx-1].lower() for price_col in ['price', 'cost']):
+                    if any(price_col in df_pd.columns[col_idx-1].lower() for price_col in ['price', 'cost']):
                         cell.number_format = '"$"#,##0.00'
                 else:
                     cell.value = str(value)
-                
+
                 cell.border = self.border_style
-                
+
                 # Highlight flagged rows if validation data available
                 if validation_reports and supplier_name in validation_reports:
                     report = validation_reports[supplier_name]
@@ -420,7 +424,7 @@ def create_excel_generator(config: Dict[str, Any]) -> ExcelGenerator:
     return ExcelGenerator(config)
 
 
-def generate_master_excel(supplier_data: Dict[str, pd.DataFrame], output_path: str, 
+def generate_master_excel(supplier_data: Dict[str, pl.DataFrame], output_path: str,
                          config: Dict[str, Any], validation_reports: Dict[str, Any] = None) -> str:
     """
     Generate a master Excel workbook with all supplier data.

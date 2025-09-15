@@ -3,6 +3,7 @@ File Parsers for Supplier Price List Consolidation Tool
 Handles parsing of various file formats: CSV, XLS, XLSX, PDF
 """
 
+import polars as pl
 import pandas as pd
 import xlrd
 import pdfplumber
@@ -25,51 +26,51 @@ class BaseParser:
         self.config = config
         self.file_processing_config = config.get('file_processing', {})
     
-    def parse(self, file_path: str, supplier_name: str = None) -> pd.DataFrame:
+    def parse(self, file_path: str, supplier_name: str = None) -> pl.DataFrame:
         """
         Parse a file and return a DataFrame.
-        
+
         Args:
             file_path: Path to the file to parse
             supplier_name: Name of the supplier (for supplier-specific settings)
-        
+
         Returns:
             Parsed data as DataFrame
         """
         raise NotImplementedError("Subclasses must implement parse method")
     
-    def _detect_header_row(self, df: pd.DataFrame, max_rows: int = 10) -> int:
+    def _detect_header_row(self, df: pl.DataFrame, max_rows: int = 10) -> int:
         """
         Detect the header row in a DataFrame.
-        
+
         Args:
             df: DataFrame to analyze
             max_rows: Maximum number of rows to check
-        
+
         Returns:
             Index of the header row
         """
         max_rows = min(max_rows, len(df))
-        
+
         for i in range(max_rows):
-            row = df.iloc[i]
+            row = df.row(i)
             # Check if row has reasonable number of non-null values
-            non_null_count = row.notna().sum()
+            non_null_count = sum(1 for val in row if val is not None and str(val).strip() != "")
             if non_null_count >= 3:  # At least 3 columns with data
                 # Check if values look like headers (strings, not numbers)
                 string_count = sum(1 for val in row if isinstance(val, str) and len(str(val).strip()) > 0)
                 if string_count >= 2:  # At least 2 string values
                     return i
-        
+
         return 0  # Default to first row
     
     def _clean_column_names(self, columns: List[str]) -> List[str]:
         """
         Clean column names for better matching.
-        
+
         Args:
             columns: List of column names
-        
+
         Returns:
             Cleaned column names
         """
@@ -78,13 +79,13 @@ class BaseParser:
             # Handle non-string columns (e.g., lists, dicts, datetime, NaN, etc.)
             if isinstance(col, (list, dict)):
                 col = str(col)
-            elif pd.isna(col) or col is None:
+            elif col is None:
                 cleaned.append(f"unnamed_column_{len(cleaned)}")
                 continue
             else:
                 # Force conversion to string for any other type (datetime, int, float, etc.)
                 col = str(col)
-            
+
             # Clean the string
             col_str = col.strip().lower()
             # Remove extra whitespace and newlines
@@ -92,14 +93,14 @@ class BaseParser:
             # Remove special characters except spaces and underscores
             col_str = re.sub(r'[^\w\s]', '', col_str)
             cleaned.append(col_str)
-        
+
         return cleaned
 
 
 class CSVParser(BaseParser):
     """Parser for CSV files."""
     
-    def parse(self, file_path: str, supplier_name: str = None) -> pd.DataFrame:
+    def parse(self, file_path: str, supplier_name: str = None) -> pl.DataFrame:
         """Parse a CSV file."""
         try:
             # Detect encoding
@@ -111,11 +112,11 @@ class CSVParser(BaseParser):
             
             for delimiter in delimiters:
                 try:
-                    df = pd.read_csv(file_path, encoding=encoding, delimiter=delimiter,
-                                   header=None, dtype=str)
-                    print(f"DEBUG CSV initial read - columns: {df.columns.tolist()}")
-                    print(f"DEBUG CSV initial read - column types: {[type(c) for c in df.columns]}")
-                    print(f"DEBUG CSV initial read - first few rows: {df.head(2).to_dict('records')}")
+                    df = pl.read_csv(file_path, encoding=encoding, separator=delimiter,
+                                    has_header=False, dtypes=pl.Utf8)
+                    print(f"DEBUG CSV initial read - columns: {list(df.columns)}")
+                    print(f"DEBUG CSV initial read - column types: {[str(dtype) for dtype in df.dtypes]}")
+                    print(f"DEBUG CSV initial read - first few rows: {df.head(2).to_dicts()}")
                     # Check if we got reasonable data
                     if len(df.columns) > 1 and len(df) > 0:
                         break
@@ -131,17 +132,17 @@ class CSVParser(BaseParser):
             print(f"DEBUG CSV detected header row: {header_row}")
             
             # Re-read with proper header
-            df = pd.read_csv(file_path, encoding=encoding, delimiter=delimiter,
-                           header=header_row, dtype=str)
-            print(f"DEBUG CSV re-read columns: {df.columns.tolist()}")
-            print(f"DEBUG CSV re-read column types: {[type(c) for c in df.columns]}")
-            
+            df = pl.read_csv(file_path, encoding=encoding, separator=delimiter,
+                            skip_rows=header_row, has_header=True, dtypes=pl.Utf8)
+            print(f"DEBUG CSV re-read columns: {list(df.columns)}")
+            print(f"DEBUG CSV re-read column types: {[str(dtype) for dtype in df.dtypes]}")
+
             # Clean column names
-            df.columns = self._clean_column_names(df.columns.tolist())
-            
+            df = df.rename({old: new for old, new in zip(df.columns, self._clean_column_names(list(df.columns)))})
+
             # Remove empty rows if configured
             if self.file_processing_config.get('skip_empty_rows', True):
-                df = df.dropna(how='all')
+                df = df.filter(~pl.all_horizontal(pl.col("*").is_null()))
             
             logging.info(f"Successfully parsed CSV file: {file_path}")
             return df
@@ -171,7 +172,7 @@ class CSVParser(BaseParser):
 class ExcelParser(BaseParser):
     """Parser for Excel files (.xls and .xlsx)."""
     
-    def parse(self, file_path: str, supplier_name: str = None) -> pd.DataFrame:
+    def parse(self, file_path: str, supplier_name: str = None) -> pl.DataFrame:
         """Parse an Excel file."""
         try:
             file_path = Path(file_path)
@@ -185,82 +186,88 @@ class ExcelParser(BaseParser):
             logging.error(f"Error parsing Excel file {file_path}: {e}")
             raise
     
-    def _parse_xlsx(self, file_path: Path, supplier_name: str = None) -> pd.DataFrame:
-        """Parse XLSX file using openpyxl."""
+    def _parse_xlsx(self, file_path: Path, supplier_name: str = None) -> pl.DataFrame:
+        """Parse XLSX file using polars."""
         # Get sheet name from supplier config if available
         sheet_name = None
         if supplier_name:
             # This would come from supplier-specific config
             pass
-        
+
         # Read all sheets to find the one with data
-        excel_file = pd.ExcelFile(file_path, engine='openpyxl')
-        
-        if sheet_name and sheet_name in excel_file.sheet_names:
+        # Polars doesn't have ExcelFile equivalent, so read each sheet
+        import openpyxl
+        wb = openpyxl.load_workbook(file_path, read_only=True)
+        sheet_names = wb.sheetnames
+
+        if sheet_name and sheet_name in sheet_names:
             target_sheet = sheet_name
         else:
             # Use first sheet or find sheet with most data
-            target_sheet = excel_file.sheet_names[0]
-            if len(excel_file.sheet_names) > 1:
+            target_sheet = sheet_names[0]
+            if len(sheet_names) > 1:
                 max_rows = 0
-                for sheet in excel_file.sheet_names:
+                for sheet in sheet_names:
                     try:
-                        temp_df = pd.read_excel(excel_file, sheet_name=sheet, header=None, nrows=100)
+                        temp_df = pl.read_excel(file_path, sheet_name=sheet, has_header=False, n_rows=100, engine='openpyxl')
                         if len(temp_df) > max_rows:
                             max_rows = len(temp_df)
                             target_sheet = sheet
                     except Exception:
                         continue
-        
+
         # Read the target sheet
-        df = pd.read_excel(excel_file, sheet_name=target_sheet, header=None, dtype=str)
-        print(f"DEBUG XLSX initial read - sheet: {target_sheet}, columns: {df.columns.tolist()}")
-        print(f"DEBUG XLSX initial read - column types: {[type(c) for c in df.columns]}")
-        print(f"DEBUG XLSX initial read - first few rows: {df.head(2).to_dict('records')}")
-        
+        df = pl.read_excel(file_path, sheet_name=target_sheet, has_header=False, dtypes=pl.Utf8, engine='openpyxl')
+        print(f"DEBUG XLSX initial read - sheet: {target_sheet}, columns: {list(df.columns)}")
+        print(f"DEBUG XLSX initial read - column types: {[str(dtype) for dtype in df.dtypes]}")
+        print(f"DEBUG XLSX initial read - first few rows: {df.head(2).to_dicts()}")
+
         # Detect header row
         header_row = self._detect_header_row(df)
         print(f"DEBUG XLSX detected header row: {header_row}")
-        
+
         # Re-read with proper header
-        df = pd.read_excel(excel_file, sheet_name=target_sheet, header=header_row, dtype=str)
-        print(f"DEBUG XLSX re-read columns: {df.columns.tolist()}")
-        print(f"DEBUG XLSX re-read column types: {[type(c) for c in df.columns]}")
-        
+        df = pl.read_excel(file_path, sheet_name=target_sheet, skip_rows=header_row, has_header=True, dtypes=pl.Utf8, engine='openpyxl')
+        print(f"DEBUG XLSX re-read columns: {list(df.columns)}")
+        print(f"DEBUG XLSX re-read column types: {[str(dtype) for dtype in df.dtypes]}")
+
         # Clean column names
-        df.columns = self._clean_column_names(df.columns.tolist())
-        
+        df = df.rename({old: new for old, new in zip(df.columns, self._clean_column_names(list(df.columns)))})
+
         # Remove empty rows
         if self.file_processing_config.get('skip_empty_rows', True):
-            df = df.dropna(how='all')
-        
+            df = df.filter(~pl.all_horizontal(pl.col("*").is_null()))
+
         logging.info(f"Successfully parsed XLSX file: {file_path}, sheet: {target_sheet}")
         return df
     
-    def _parse_xls(self, file_path: Path, supplier_name: str = None) -> pd.DataFrame:
+    def _parse_xls(self, file_path: Path, supplier_name: str = None) -> pl.DataFrame:
         """Parse XLS file using xlrd."""
         # Read with xlrd engine
-        df = pd.read_excel(file_path, engine='xlrd', header=None, dtype=str)
-        print(f"DEBUG XLS initial read - columns: {df.columns.tolist()}")
-        print(f"DEBUG XLS initial read - column types: {[type(c) for c in df.columns]}")
-        print(f"DEBUG XLS initial read - first few rows: {df.head(2).to_dict('records')}")
-        
+        df_pd = pd.read_excel(file_path, engine='xlrd', header=None, dtype=str)
+        print(f"DEBUG XLS initial read - columns: {df_pd.columns.tolist()}")
+        print(f"DEBUG XLS initial read - column types: {[type(c) for c in df_pd.columns]}")
+        print(f"DEBUG XLS initial read - first few rows: {df_pd.head(2).to_dict('records')}")
+
         # Detect header row
-        header_row = self._detect_header_row(df)
+        header_row = self._detect_header_row(pl.from_pandas(df_pd))
         print(f"DEBUG XLS detected header row: {header_row}")
-        
+
         # Re-read with proper header
-        df = pd.read_excel(file_path, engine='xlrd', header=header_row, dtype=str)
-        print(f"DEBUG XLS re-read columns: {df.columns.tolist()}")
-        print(f"DEBUG XLS re-read column types: {[type(c) for c in df.columns]}")
-        
+        df_pd = pd.read_excel(file_path, engine='xlrd', header=header_row, dtype=str)
+        print(f"DEBUG XLS re-read columns: {df_pd.columns.tolist()}")
+        print(f"DEBUG XLS re-read column types: {[type(c) for c in df_pd.columns]}")
+
         # Clean column names
-        df.columns = self._clean_column_names(df.columns.tolist())
-        
+        df_pd.columns = self._clean_column_names(df_pd.columns.tolist())
+
         # Remove empty rows
         if self.file_processing_config.get('skip_empty_rows', True):
-            df = df.dropna(how='all')
-        
+            df_pd = df_pd.dropna(how='all')
+
+        # Convert to polars
+        df = pl.from_pandas(df_pd)
+
         logging.info(f"Successfully parsed XLS file: {file_path}")
         return df
 
@@ -283,14 +290,14 @@ class PDFParser(BaseParser):
                             print(f"DEBUG PDF page {page_num+1}, table {table_idx}: header row = {table[0]}")
                             print(f"DEBUG PDF header types: {[type(cell) for cell in table[0]]}")
                             # Convert table to DataFrame
-                            df = pd.DataFrame(table[1:], columns=table[0])
-                            print(f"DEBUG PDF df columns: {df.columns.tolist()}")
-                            print(f"DEBUG PDF df column types: {[type(c) for c in df.columns]}")
-                            
+                            df = pl.DataFrame(table[1:], schema=table[0])
+                            print(f"DEBUG PDF df columns: {list(df.columns)}")
+                            print(f"DEBUG PDF df column types: {[str(dtype) for dtype in df.dtypes]}")
+
                             # Clean and filter
-                            df = df.dropna(how='all')  # Remove empty rows
-                            df = df.loc[:, df.notna().any()]  # Remove empty columns
-                            
+                            df = df.filter(~pl.all_horizontal(pl.col("*").is_null()))  # Remove empty rows
+                            df = df.select([pl.col(col) for col in df.columns if not df[col].is_null().all()])  # Remove empty columns
+
                             if len(df) > 0 and len(df.columns) > 2:  # Must have reasonable data
                                 tables.append(df)
             
@@ -303,15 +310,15 @@ class PDFParser(BaseParser):
             else:
                 # Use the table with the most rows
                 df = max(tables, key=len)
-            
-            print(f"DEBUG PDF final df columns: {df.columns.tolist()}")
-            
+
+            print(f"DEBUG PDF final df columns: {list(df.columns)}")
+
             # Clean column names
-            df.columns = self._clean_column_names(df.columns.tolist())
-            
+            df = df.rename({old: new for old, new in zip(df.columns, self._clean_column_names(list(df.columns)))})
+
             # Convert all data to string type for consistency
-            df = df.astype(str)
-            
+            df = df.cast(pl.Utf8)
+
             logging.info(f"Successfully parsed PDF file: {file_path}")
             return df
             
@@ -353,7 +360,7 @@ class FileParserFactory:
         return ['.csv', '.xls', '.xlsx', '.pdf']
 
 
-def parse_file(file_path: str, config: Dict[str, Any], supplier_name: str = None) -> pd.DataFrame:
+def parse_file(file_path: str, config: Dict[str, Any], supplier_name: str = None) -> pl.DataFrame:
     """
     Parse a file using the appropriate parser.
     
