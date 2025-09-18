@@ -548,3 +548,450 @@
 }
 2025-09-15 14:57:48,430 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
 2025-09-15 14:57:48,430 - consolidator - INFO - run_web_ui:322 - Starting web UI on http://127.0.0.1:8000
+2025-09-15 15:05:17,405 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_150517 ===
+2025-09-15 15:05:17,405 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 15:05:17,405 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 15:05:17,406 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 15:05:17,406 - consolidator - INFO - run_web_ui:374 - Starting web UI on http://127.0.0.1:8000
+2025-09-15 15:05:43,579 - consolidator - INFO - upload_files:98 - Processing 4 uploaded files
+2025-09-15 15:05:43,580 - consolidator - ERROR - upload_files:117 - Upload processing error: 'PriceListConsolidator' object has no attribute 'process_files'
+2025-09-15 15:07:16,283 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_150716 ===
+2025-09-15 15:07:16,284 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 15:07:16,284 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 15:07:16,285 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 15:07:16,286 - consolidator - INFO - run_web_ui:375 - Starting web UI on http://127.0.0.1:8000
+2025-09-15 15:07:47,422 - consolidator - INFO - upload_files:98 - Processing 3 uploaded files
+2025-09-15 15:07:47,423 - consolidator - INFO - __enter__:208 - Starting Processing directory: C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe
+2025-09-15 15:07:47,428 - consolidator - INFO - process_supplier_files:133 - Found 3 supplier files to process
+2025-09-15 15:07:47,439 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-15 15:07:47,531 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.09s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:07:47,532 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:07:47,532 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:07:47,533 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Norton 2025.xlsx (529,342 bytes)
+2025-09-15 15:07:47,634 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 0.10s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:07:47,635 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:07:47,635 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:07:47,637 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Precision Specialty 2025.xlsx (307,082 bytes)
+2025-09-15 15:07:47,756 - consolidator - ERROR - __exit__:217 - Failed Processing Precision Specialty after 0.12s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:07:47,757 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Precision Specialty 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:07:47,758 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Precision Specialty 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:07:47,759 - consolidator - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe after 0.34s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Precision Specialty 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:07:47,759 - consolidator - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Precision Specialty 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:08:21,940 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_150821 ===
+2025-09-15 15:08:21,940 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 15:08:21,940 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 15:08:21,941 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 15:08:21,941 - consolidator - INFO - run_web_ui:375 - Starting web UI on http://127.0.0.1:8000
+2025-09-15 15:08:49,625 - consolidator - INFO - upload_files:98 - Processing 2 uploaded files
+2025-09-15 15:08:49,626 - consolidator - INFO - __enter__:208 - Starting Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif
+2025-09-15 15:08:49,629 - consolidator - INFO - process_supplier_files:133 - Found 2 supplier files to process
+2025-09-15 15:08:49,631 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Dormer 2025.xlsx (3,270,529 bytes)
+2025-09-15 15:08:51,107 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 1.47s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:08:51,108 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:08:51,109 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:08:51,110 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Guhring Price List 2025.xlsx (221,009 bytes)
+2025-09-15 15:08:51,171 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring after 0.06s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:08:51,172 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Guhring Price List 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:08:51,172 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Guhring Price List 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:08:51,174 - consolidator - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif after 1.55s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Guhring Price List 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:08:51,175 - consolidator - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Guhring Price List 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-15 15:53:28,066 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_155328 ===
+2025-09-15 15:53:28,068 - consolidator - INFO - log_session_start:104 - Log Level: DEBUG
+2025-09-15 15:53:28,070 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "DEBUG",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 15:53:28,071 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 15:53:28,072 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-15 15:53:28,074 - consolidator - INFO - process_supplier_files:133 - Found 15 supplier files to process
+2025-09-15 15:53:28,101 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-15 15:53:28,102 - consolidator - DEBUG - __enter__:208 - Starting Processing Narex
+2025-09-15 15:53:29,012 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 184 rows from Narex 2025.csv
+2025-09-15 15:53:29,013 - consolidator - ERROR - __exit__:217 - Failed Processing Narex after 0.91s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:53:29,015 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Narex 2025.csv: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:53:29,016 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:29,018 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-15 15:53:29,018 - consolidator - DEBUG - __enter__:208 - Starting Processing Carbide End Mill
+2025-09-15 15:53:29,193 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 46 rows from Carbide End Mill Price List 2025.xls
+2025-09-15 15:53:29,194 - consolidator - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.18s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:53:29,197 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Carbide End Mill Price List 2025.xls: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:53:29,197 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:29,200 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-15 15:53:29,200 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Combined Site Book Rm
+2025-09-15 15:53:29,251 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 32 rows from Whitelaw Combined Site Price Book  2025-RM.xls
+2025-09-15 15:53:29,253 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.05s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:53:29,256 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:53:29,258 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:29,260 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-15 15:53:29,260 - consolidator - DEBUG - __enter__:208 - Starting Processing Tridon 003483 Whitelaw Tooling Supplies
+2025-09-15 15:53:32,203 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 2.94s: expected duration or datetime, got str
+2025-09-15 15:53:32,205 - consolidator - ERROR - _process_single_file_safe:342 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+2025-09-15 15:53:32,221 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:32,223 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-15 15:53:32,224 - consolidator - DEBUG - __enter__:208 - Starting Processing Au Ind For Siapower
+2025-09-15 15:53:32,536 - consolidator - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.31s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:32,538 - consolidator - ERROR - _process_single_file_safe:342 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:32,540 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:32,542 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-15 15:53:32,543 - consolidator - DEBUG - __enter__:208 - Starting Processing Dormer
+2025-09-15 15:53:42,760 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 10.22s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:42,761 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:42,763 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:42,764 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-15 15:53:42,765 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision
+2025-09-15 15:53:43,265 - consolidator - ERROR - __exit__:217 - Failed Processing Excision after 0.50s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:43,265 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Excision 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:43,266 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:43,267 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-15 15:53:43,267 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision Yg
+2025-09-15 15:53:52,002 - consolidator - ERROR - __exit__:217 - Failed Processing Excision Yg after 8.73s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:52,002 - consolidator - ERROR - _process_single_file_safe:342 - Error processing EXCISION YG-1 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:52,003 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:52,003 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-15 15:53:52,003 - consolidator - DEBUG - __enter__:208 - Starting Processing Guhring Aus Stock Reseller
+2025-09-15 15:53:52,612 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.61s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:52,612 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:52,613 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:52,613 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-15 15:53:52,613 - consolidator - DEBUG - __enter__:208 - Starting Processing Mitutoyo May
+2025-09-15 15:53:52,944 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.33s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:52,945 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:52,945 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:52,946 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-15 15:53:52,946 - consolidator - DEBUG - __enter__:208 - Starting Processing Norton
+2025-09-15 15:53:54,345 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 1.40s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:54,346 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:54,346 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:54,347 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-15 15:53:54,347 - consolidator - DEBUG - __enter__:208 - Starting Processing Master 01 Apr
+2025-09-15 15:53:54,952 - consolidator - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.60s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:54,953 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Price List - Master (01-Apr-2025).xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:54,953 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:54,954 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-15 15:53:54,955 - consolidator - DEBUG - __enter__:208 - Starting Processing Pst Full Pricefile
+2025-09-15 15:53:55,766 - consolidator - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.81s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:55,767 - consolidator - ERROR - _process_single_file_safe:342 - Error processing PST_full_ pricefile_2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:55,767 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:55,768 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-15 15:53:55,769 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Bordo File Discount Structure 25 V12
+2025-09-15 15:53:59,082 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 3.31s: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:59,083 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+2025-09-15 15:53:59,083 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:59,084 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-15 15:53:59,084 - consolidator - DEBUG - __enter__:208 - Starting Processing Pointtech Wts
+2025-09-15 15:53:59,331 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.25s: 'NoneType' object is not subscriptable
+2025-09-15 15:53:59,331 - consolidator - ERROR - _process_single_file_safe:342 - Error processing POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+2025-09-15 15:53:59,332 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:53:59,332 - consolidator - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 31.26s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Carbide End Mill Price List 2025.xls: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Excision 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\EXCISION YG-1 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\PST_full_ pricefile_2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+2025-09-15 15:54:30,147 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_155430 ===
+2025-09-15 15:54:30,147 - consolidator - INFO - log_session_start:104 - Log Level: DEBUG
+2025-09-15 15:54:30,148 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "DEBUG",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 15:54:30,148 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 15:54:30,149 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-15 15:54:30,150 - consolidator - INFO - process_supplier_files:133 - Found 15 supplier files to process
+2025-09-15 15:54:30,155 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-15 15:54:30,155 - consolidator - DEBUG - __enter__:208 - Starting Processing Narex
+2025-09-15 15:54:30,258 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 184 rows from Narex 2025.csv
+2025-09-15 15:54:30,259 - consolidator - ERROR - __exit__:217 - Failed Processing Narex after 0.10s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:30,259 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Narex 2025.csv: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:30,259 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:30,260 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-15 15:54:30,260 - consolidator - DEBUG - __enter__:208 - Starting Processing Carbide End Mill
+2025-09-15 15:54:30,283 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 46 rows from Carbide End Mill Price List 2025.xls
+2025-09-15 15:54:30,283 - consolidator - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.02s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:30,284 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Carbide End Mill Price List 2025.xls: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:30,284 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:30,284 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-15 15:54:30,285 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Combined Site Book Rm
+2025-09-15 15:54:30,294 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 32 rows from Whitelaw Combined Site Price Book  2025-RM.xls
+2025-09-15 15:54:30,295 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.01s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:30,295 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:30,295 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:30,296 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-15 15:54:30,296 - consolidator - DEBUG - __enter__:208 - Starting Processing Tridon 003483 Whitelaw Tooling Supplies
+2025-09-15 15:54:31,440 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.14s: expected duration or datetime, got str
+2025-09-15 15:54:31,440 - consolidator - ERROR - _process_single_file_safe:342 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+2025-09-15 15:54:31,443 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:31,444 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-15 15:54:31,444 - consolidator - DEBUG - __enter__:208 - Starting Processing Au Ind For Siapower
+2025-09-15 15:54:31,594 - consolidator - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.15s: column 'none' is duplicate
+2025-09-15 15:54:31,594 - consolidator - ERROR - _process_single_file_safe:342 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: column 'none' is duplicate
+2025-09-15 15:54:31,594 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:31,595 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-15 15:54:31,595 - consolidator - DEBUG - __enter__:208 - Starting Processing Dormer
+2025-09-15 15:54:37,942 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 27609 rows from Dormer 2025.xlsx
+2025-09-15 15:54:37,943 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 6.35s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:37,943 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:37,944 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:37,945 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-15 15:54:37,945 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision
+2025-09-15 15:54:38,576 - consolidator - ERROR - __exit__:217 - Failed Processing Excision after 0.63s: column 'none' is duplicate
+2025-09-15 15:54:38,577 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Excision 2025.xlsx: column 'none' is duplicate
+2025-09-15 15:54:38,577 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:38,578 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-15 15:54:38,578 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision Yg
+2025-09-15 15:54:50,399 - consolidator - ERROR - __exit__:217 - Failed Processing Excision Yg after 11.82s: column 'none' is duplicate
+2025-09-15 15:54:50,399 - consolidator - ERROR - _process_single_file_safe:342 - Error processing EXCISION YG-1 2025.xlsx: column 'none' is duplicate
+2025-09-15 15:54:50,400 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:50,400 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-15 15:54:50,400 - consolidator - DEBUG - __enter__:208 - Starting Processing Guhring Aus Stock Reseller
+2025-09-15 15:54:51,408 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 5414 rows from Guhring AUS Stock List 2025 - Reseller.xlsx
+2025-09-15 15:54:51,408 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 1.01s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:51,408 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:51,409 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:51,409 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-15 15:54:51,409 - consolidator - DEBUG - __enter__:208 - Starting Processing Mitutoyo May
+2025-09-15 15:54:51,880 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3453 rows from Mitutoyo updated Pricelist_1 May 2023.xlsx
+2025-09-15 15:54:51,880 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.47s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:51,880 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:51,881 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:51,881 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-15 15:54:51,881 - consolidator - DEBUG - __enter__:208 - Starting Processing Norton
+2025-09-15 15:54:52,902 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 1.02s: column 'none' is duplicate
+2025-09-15 15:54:52,902 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Norton 2025.xlsx: column 'none' is duplicate
+2025-09-15 15:54:52,903 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:52,903 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-15 15:54:52,904 - consolidator - DEBUG - __enter__:208 - Starting Processing Master 01 Apr
+2025-09-15 15:54:53,476 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3314 rows from Price List - Master (01-Apr-2025).xlsx
+2025-09-15 15:54:53,476 - consolidator - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.57s: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:53,476 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Price List - Master (01-Apr-2025).xlsx: 'DataFrame' object has no attribute 'empty'
+2025-09-15 15:54:53,477 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:53,477 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-15 15:54:53,477 - consolidator - DEBUG - __enter__:208 - Starting Processing Pst Full Pricefile
+2025-09-15 15:54:54,493 - consolidator - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 1.02s: column 'none' is duplicate
+2025-09-15 15:54:54,493 - consolidator - ERROR - _process_single_file_safe:342 - Error processing PST_full_ pricefile_2025.xlsx: column 'none' is duplicate
+2025-09-15 15:54:54,494 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:54:54,494 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-15 15:54:54,494 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Bordo File Discount Structure 25 V12
+2025-09-15 15:55:01,832 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 7.34s: column 'none' is duplicate
+2025-09-15 15:55:01,833 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'none' is duplicate
+2025-09-15 15:55:01,834 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:55:01,834 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-15 15:55:01,835 - consolidator - DEBUG - __enter__:208 - Starting Processing Pointtech Wts
+2025-09-15 15:55:02,115 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.28s: 'NoneType' object is not subscriptable
+2025-09-15 15:55:02,115 - consolidator - ERROR - _process_single_file_safe:342 - Error processing POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+2025-09-15 15:55:02,116 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:55:02,116 - consolidator - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 31.97s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Carbide End Mill Price List 2025.xls: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: column 'none' is duplicate
+  - supplier_data\Dormer 2025.xlsx: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Excision 2025.xlsx: column 'none' is duplicate
+  - supplier_data\EXCISION YG-1 2025.xlsx: column 'none' is duplicate
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Norton 2025.xlsx: column 'none' is duplicate
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\PST_full_ pricefile_2025.xlsx: column 'none' is duplicate
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'none' is duplicate
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+2025-09-15 15:58:02,387 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_155802 ===
+2025-09-15 15:58:02,388 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 15:58:02,388 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 15:58:02,389 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 15:58:02,389 - consolidator - INFO - run_web_ui:375 - Starting web UI on http://127.0.0.1:8000
+2025-09-15 15:58:15,850 - consolidator - INFO - upload_files:98 - Processing 2 uploaded files
+2025-09-15 15:58:15,851 - consolidator - INFO - __enter__:208 - Starting Processing directory: C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x
+2025-09-15 15:58:15,853 - consolidator - INFO - process_supplier_files:133 - Found 2 supplier files to process
+2025-09-15 15:58:15,855 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x\Dormer 2025.xlsx (3,270,529 bytes)
+2025-09-15 15:58:26,462 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Dormer
+2025-09-15 15:58:26,462 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 10.61s: 'list' object has no attribute 'tolist'
+2025-09-15 15:58:26,463 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: 'list' object has no attribute 'tolist'
+2025-09-15 15:58:26,464 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:58:26,464 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x\Guhring Price List 2025.xlsx (221,009 bytes)
+2025-09-15 15:58:26,913 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring
+2025-09-15 15:58:26,913 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring after 0.45s: 'list' object has no attribute 'tolist'
+2025-09-15 15:58:26,914 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Guhring Price List 2025.xlsx: 'list' object has no attribute 'tolist'
+2025-09-15 15:58:26,915 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x\Guhring Price List 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 15:58:26,915 - consolidator - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x after 11.06s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x\Dormer 2025.xlsx: 'list' object has no attribute 'tolist'
+  - C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x\Guhring Price List 2025.xlsx: 'list' object has no attribute 'tolist'
+2025-09-15 15:58:26,916 - consolidator - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x\Dormer 2025.xlsx: 'list' object has no attribute 'tolist'
+  - C:\Users\Luke\AppData\Local\Temp\tmp7j1p4y8x\Guhring Price List 2025.xlsx: 'list' object has no attribute 'tolist'
+2025-09-15 16:09:46,402 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250915_160946 ===
+2025-09-15 16:09:46,402 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-15 16:09:46,402 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-15 16:09:46,403 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-15 16:09:46,403 - consolidator - INFO - run_web_ui:375 - Starting web UI on http://127.0.0.1:8000
+2025-09-15 16:09:56,513 - consolidator - INFO - upload_files:98 - Processing 2 uploaded files
+2025-09-15 16:09:56,513 - consolidator - INFO - __enter__:208 - Starting Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853
+2025-09-15 16:09:56,515 - consolidator - INFO - process_supplier_files:133 - Found 2 supplier files to process
+2025-09-15 16:09:56,519 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Dormer 2025.xlsx (3,270,529 bytes)
+2025-09-15 16:10:08,561 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Dormer
+2025-09-15 16:10:08,562 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 12.04s: list indices must be integers or slices, not str
+2025-09-15 16:10:08,563 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: list indices must be integers or slices, not str
+2025-09-15 16:10:08,563 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 16:10:08,564 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Guhring Price List 2025.xlsx (221,009 bytes)
+2025-09-15 16:10:09,025 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring
+2025-09-15 16:10:09,026 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring after 0.46s: list indices must be integers or slices, not str
+2025-09-15 16:10:09,029 - consolidator - ERROR - _process_single_file_safe:342 - Error processing Guhring Price List 2025.xlsx: list indices must be integers or slices, not str
+2025-09-15 16:10:09,029 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Guhring Price List 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-15 16:10:09,030 - consolidator - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853 after 12.52s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Guhring Price List 2025.xlsx: list indices must be integers or slices, not str
+2025-09-15 16:10:09,031 - consolidator - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Guhring Price List 2025.xlsx: list indices must be integers or slices, not str
+2025-09-17 08:22:36,371 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250917_082236 ===
+2025-09-17 08:22:36,372 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-17 08:22:36,372 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-17 08:22:36,374 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-17 08:22:36,374 - consolidator - INFO - run_web_ui:375 - Starting web UI on http://127.0.0.1:8000
+2025-09-17 08:22:49,304 - consolidator - INFO - upload_files:98 - Processing 2 uploaded files
+2025-09-17 08:22:49,305 - consolidator - INFO - __enter__:208 - Starting Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z
+2025-09-17 08:22:49,306 - consolidator - INFO - process_supplier_files:133 - Found 2 supplier files to process
+2025-09-17 08:22:49,312 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Dormer 2025.xlsx (3,270,529 bytes)
+2025-09-17 08:23:00,782 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Dormer
+2025-09-17 08:23:00,787 - consolidator - WARNING - log_column_mapping:161 - Dormer - Unmapped columns: ['brand', 'basic usage area', 'psf', 'discount category', 'dcat sap', 'dcat sopic', 'materialid', 'product code ansi', 'sap no', 'ean', 'gross weight', 'note']
+2025-09-17 08:23:00,788 - consolidator - ERROR - _process_single_file_safe:312 - Failed to save intermediate CSV for Dormer: 'DataFrame' object has no attribute 'to_csv'
+2025-09-17 08:23:00,788 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-17 08:23:00,790 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Guhring Price List 2025.xlsx (221,009 bytes)
+2025-09-17 08:23:01,316 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring
+2025-09-17 08:23:01,317 - consolidator - WARNING - log_column_mapping:161 - Guhring - Unmapped columns: ['list price 2025', '60 dc reseller price', 'unnamed_column_4', 'unnamed_column_5']
+2025-09-17 08:23:01,318 - consolidator - ERROR - _process_single_file_safe:312 - Failed to save intermediate CSV for Guhring: 'DataFrame' object has no attribute 'to_csv'
+2025-09-17 08:23:01,318 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Guhring Price List 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-17 08:23:01,319 - consolidator - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z after 12.01s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Dormer 2025.xlsx: Missing required fields: supplier_name
+  - C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Guhring Price List 2025.xlsx: Missing required fields: unit_price, supplier_name
+2025-09-17 08:23:01,320 - consolidator - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Dormer 2025.xlsx: Missing required fields: supplier_name
+  - C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Guhring Price List 2025.xlsx: Missing required fields: unit_price, supplier_name
+2025-09-17 08:44:57,381 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250917_084457 ===
+2025-09-17 08:44:57,381 - consolidator - INFO - log_session_start:104 - Log Level: INFO
+2025-09-17 08:44:57,381 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "INFO",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-17 08:44:57,382 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-17 08:44:57,382 - consolidator - INFO - run_web_ui:375 - Starting web UI on http://127.0.0.1:8000
+2025-09-17 11:24:45,635 - consolidator - INFO - upload_files:98 - Processing 2 uploaded files
+2025-09-17 11:24:45,636 - consolidator - INFO - __enter__:208 - Starting Processing directory: C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1
+2025-09-17 11:24:45,638 - consolidator - INFO - process_supplier_files:133 - Found 2 supplier files to process
+2025-09-17 11:24:45,653 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Guhring Price List 2025.xlsx (221,009 bytes)
+2025-09-17 11:24:46,450 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring
+2025-09-17 11:24:46,451 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring after 0.80s: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+2025-09-17 11:24:46,452 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Guhring Price List 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+2025-09-17 11:24:46,452 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Guhring Price List 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-17 11:24:46,453 - consolidator - INFO - log_file_processing_start:124 - Processing file: C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Precision Specialty 2025.xlsx (307,082 bytes)
+2025-09-17 11:24:47,426 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Precision Specialty
+2025-09-17 11:24:47,426 - consolidator - ERROR - __exit__:217 - Failed Processing Precision Specialty after 0.97s: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+2025-09-17 11:24:47,427 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Precision Specialty 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+2025-09-17 11:24:47,427 - consolidator - INFO - log_file_processing_end:139 - Completed C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Precision Specialty 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-17 11:24:47,428 - consolidator - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1 after 1.79s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Guhring Price List 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+  - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Precision Specialty 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+2025-09-17 11:24:47,428 - consolidator - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Guhring Price List 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+  - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Precision Specialty 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given

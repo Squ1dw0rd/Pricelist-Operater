@@ -1,0 +1,34 @@
+2025-09-17 11:24:46,451 - ERROR - __exit__:217 - Failed Processing Guhring after 0.80s: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+Session: 20250917_084457
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-17 11:24:46,452 - ERROR - _process_single_file_safe:343 - Error processing Guhring Price List 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+Session: 20250917_084457
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-17 11:24:47,426 - ERROR - __exit__:217 - Failed Processing Precision Specialty after 0.97s: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+Session: 20250917_084457
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-17 11:24:47,427 - ERROR - _process_single_file_safe:343 - Error processing Precision Specialty 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+Session: 20250917_084457
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-17 11:24:47,428 - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1 after 1.79s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Guhring Price List 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+  - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Precision Specialty 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+Session: 20250917_084457
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-17 11:24:47,428 - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Guhring Price List 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+  - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Precision Specialty 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+Session: 20250917_084457
+C:\Users\Luke\Pricelist Operater\src\web_ui.py
+---
+

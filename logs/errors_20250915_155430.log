@@ -1,0 +1,170 @@
+2025-09-15 15:54:30,259 - ERROR - __exit__:217 - Failed Processing Narex after 0.10s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:30,259 - ERROR - _process_single_file_safe:342 - Error processing Narex 2025.csv: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:30,283 - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.02s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:30,284 - ERROR - _process_single_file_safe:342 - Error processing Carbide End Mill Price List 2025.xls: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:30,295 - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.01s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:30,295 - ERROR - _process_single_file_safe:342 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:31,440 - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.14s: expected duration or datetime, got str
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:31,440 - ERROR - _process_single_file_safe:342 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:31,594 - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.15s: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:31,594 - ERROR - _process_single_file_safe:342 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:37,943 - ERROR - __exit__:217 - Failed Processing Dormer after 6.35s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:37,943 - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:38,576 - ERROR - __exit__:217 - Failed Processing Excision after 0.63s: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:38,577 - ERROR - _process_single_file_safe:342 - Error processing Excision 2025.xlsx: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:50,399 - ERROR - __exit__:217 - Failed Processing Excision Yg after 11.82s: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:50,399 - ERROR - _process_single_file_safe:342 - Error processing EXCISION YG-1 2025.xlsx: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:51,408 - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 1.01s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:51,408 - ERROR - _process_single_file_safe:342 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:51,880 - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.47s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:51,880 - ERROR - _process_single_file_safe:342 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:52,902 - ERROR - __exit__:217 - Failed Processing Norton after 1.02s: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:52,902 - ERROR - _process_single_file_safe:342 - Error processing Norton 2025.xlsx: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:53,476 - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.57s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:53,476 - ERROR - _process_single_file_safe:342 - Error processing Price List - Master (01-Apr-2025).xlsx: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:54:54,493 - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 1.02s: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:54:54,493 - ERROR - _process_single_file_safe:342 - Error processing PST_full_ pricefile_2025.xlsx: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:55:01,832 - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 7.34s: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:55:01,833 - ERROR - _process_single_file_safe:342 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'none' is duplicate
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:55:02,115 - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.28s: 'NoneType' object is not subscriptable
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:55:02,115 - ERROR - _process_single_file_safe:342 - Error processing POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:55:02,116 - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 31.97s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Carbide End Mill Price List 2025.xls: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: column 'none' is duplicate
+  - supplier_data\Dormer 2025.xlsx: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Excision 2025.xlsx: column 'none' is duplicate
+  - supplier_data\EXCISION YG-1 2025.xlsx: column 'none' is duplicate
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Norton 2025.xlsx: column 'none' is duplicate
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\PST_full_ pricefile_2025.xlsx: column 'none' is duplicate
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'none' is duplicate
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+Session: 20250915_155430
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+

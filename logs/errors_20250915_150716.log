@@ -1,0 +1,46 @@
+2025-09-15 15:07:47,531 - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.09s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150716
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:07:47,532 - ERROR - _process_single_file_safe:342 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150716
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:07:47,634 - ERROR - __exit__:217 - Failed Processing Norton after 0.10s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150716
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:07:47,635 - ERROR - _process_single_file_safe:342 - Error processing Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150716
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:07:47,756 - ERROR - __exit__:217 - Failed Processing Precision Specialty after 0.12s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150716
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:07:47,757 - ERROR - _process_single_file_safe:342 - Error processing Precision Specialty 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150716
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:07:47,759 - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe after 0.34s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Precision Specialty 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150716
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:07:47,759 - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmp0yfd3mfe\Precision Specialty 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150716
+C:\Users\Luke\Pricelist Operater\src\web_ui.py
+---
+

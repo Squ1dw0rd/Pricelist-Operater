@@ -1,0 +1,5 @@
+2025-09-15 15:05:43,580 - ERROR - upload_files:117 - Upload processing error: 'PriceListConsolidator' object has no attribute 'process_files'
+Session: 20250915_150517
+C:\Users\Luke\Pricelist Operater\src\web_ui.py
+---
+

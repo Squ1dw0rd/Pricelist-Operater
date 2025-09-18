@@ -1,0 +1,34 @@
+2025-09-15 16:10:08,562 - ERROR - __exit__:217 - Failed Processing Dormer after 12.04s: list indices must be integers or slices, not str
+Session: 20250915_160946
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 16:10:08,563 - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: list indices must be integers or slices, not str
+Session: 20250915_160946
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 16:10:09,026 - ERROR - __exit__:217 - Failed Processing Guhring after 0.46s: list indices must be integers or slices, not str
+Session: 20250915_160946
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 16:10:09,029 - ERROR - _process_single_file_safe:342 - Error processing Guhring Price List 2025.xlsx: list indices must be integers or slices, not str
+Session: 20250915_160946
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 16:10:09,030 - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853 after 12.52s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Guhring Price List 2025.xlsx: list indices must be integers or slices, not str
+Session: 20250915_160946
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 16:10:09,031 - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Dormer 2025.xlsx: list indices must be integers or slices, not str
+  - C:\Users\Luke\AppData\Local\Temp\tmpqm8ov853\Guhring Price List 2025.xlsx: list indices must be integers or slices, not str
+Session: 20250915_160946
+C:\Users\Luke\Pricelist Operater\src\web_ui.py
+---
+

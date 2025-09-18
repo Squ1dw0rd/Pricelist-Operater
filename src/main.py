@@ -264,7 +264,7 @@ class PriceListConsolidator:
                 raw_df = parse_file(str(file_path), self.config, supplier_name)
                 self.logger.debug(f"Parsed {len(raw_df)} rows from {file_path.name}")
                 
-                if raw_df.empty:
+                if len(raw_df) == 0:
                     return {
                         'success': False,
                         'error': 'File contains no data or could not be parsed'
@@ -279,18 +279,20 @@ class PriceListConsolidator:
                     supplier_specific_config = self.config
                 
                 mapper = create_column_mapper(supplier_specific_config, supplier_name, self.config_manager, self.logger)
-                mapped_df, mapping_report = mapper.map_columns(raw_df.columns.tolist())
+                mapping_report = mapper.map_columns(raw_df.columns)
+                mapped_dict = mapping_report['mapped_columns']
+                mapped_data_df = mapper.transform_data(raw_df, mapped_dict, supplier_name, mapper.required_fields)
                 
                 # Log mapping results
                 self.logger_system.log_column_mapping(
-                    supplier_name, 
-                    mapping_report['mapped_fields'],
+                    supplier_name,
+                    mapping_report['mapped_columns'],
                     mapping_report['unmapped_columns']
                 )
 
                 # Check configuration and save intermediate CSV
                 save_csv_flag = self.config.get('output_options', {}).get('save_intermediate_standardized_csvs', False)
-                if save_csv_flag and not mapped_df.empty: # Also ensure mapped_df is not empty
+                if save_csv_flag and len(mapped_data_df) > 0: # Also ensure mapped_df is not empty
                     try:
                         csv_output_dir = Path("output") / "standardized_csvs"
                         csv_output_dir.mkdir(parents=True, exist_ok=True)
@@ -303,21 +305,20 @@ class PriceListConsolidator:
                         csv_filename = f"{safe_supplier_name}_standardized.csv"
                         full_csv_path = csv_output_dir / csv_filename
 
-                        mapped_df.to_csv(full_csv_path, index=False, encoding='utf-8')
+                        mapped_data_df.to_csv(full_csv_path, index=False, encoding='utf-8')
                         self.logger.info(f"Saved standardized data for {supplier_name} to {full_csv_path}")
                     except Exception as e_csv:
                         self.logger.error(f"Failed to save intermediate CSV for {supplier_name}: {e_csv}")
                 
-                # Check for missing required fields
-                if mapping_report['missing_required_fields']:
-                    missing_fields = ', '.join(mapping_report['missing_required_fields'])
-                    return {
-                        'success': False,
-                        'error': f'Missing required fields: {missing_fields}'
-                    }
-                
+                # Check for missing required fields after transformation
+                missing_fields = [field for field in mapper.required_fields if field != 'supplier_name' and field not in mapped_data_df.columns]
+                if missing_fields:
+                    missing_fields_str = ', '.join(missing_fields)
+                    self.logger.warning(f"Missing required fields for {supplier_name} (added as None): {missing_fields_str}")
+                    # Continue processing with None columns already added in transform_data
+
                 # Validate data
-                validation_result = validate_data(mapped_df, self.config, supplier_name)
+                validation_result = validate_data(mapped_data_df, self.config, supplier_name)
                 
                 # Log validation results
                 self.logger_system.log_validation_summary(supplier_name, validation_result)
@@ -332,7 +333,7 @@ class PriceListConsolidator:
                 return {
                     'supplier_name': supplier_name,
                     'raw_data': raw_df,
-                    'mapped_data': mapped_df,
+                    'mapped_data': mapped_data_df,
                     'mapping_report': mapping_report,
                     'validation_result': validation_result,
                     'success': True

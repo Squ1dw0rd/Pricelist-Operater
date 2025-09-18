@@ -64,24 +64,23 @@ class BaseParser:
 
         return 0  # Default to first row
     
-    def _clean_column_names(self, columns: List[str]) -> List[str]:
+    def _clean_column_names(self, columns: List[Any]) -> List[str]:
         """
         Clean column names for better matching.
-
+ 
         Args:
-            columns: List of column names
-
+            columns: List of column names (can be any type)
+ 
         Returns:
             Cleaned column names
         """
         cleaned = []
-        for col in columns:
+        for i, col in enumerate(columns):
             # Handle non-string columns (e.g., lists, dicts, datetime, NaN, etc.)
             if isinstance(col, (list, dict)):
                 col = str(col)
             elif col is None:
-                cleaned.append(f"unnamed_column_{len(cleaned)}")
-                continue
+                col = f"unnamed_column_{i}"
             else:
                 # Force conversion to string for any other type (datetime, int, float, etc.)
                 col = str(col)
@@ -113,7 +112,7 @@ class CSVParser(BaseParser):
             for delimiter in delimiters:
                 try:
                     df = pl.read_csv(file_path, encoding=encoding, separator=delimiter,
-                                    has_header=False, dtypes=pl.Utf8)
+                                    has_header=False)
                     print(f"DEBUG CSV initial read - columns: {list(df.columns)}")
                     print(f"DEBUG CSV initial read - column types: {[str(dtype) for dtype in df.dtypes]}")
                     print(f"DEBUG CSV initial read - first few rows: {df.head(2).to_dicts()}")
@@ -123,17 +122,17 @@ class CSVParser(BaseParser):
                 except Exception as delim_err:
                     print(f"DEBUG CSV delimiter {delimiter} failed: {delim_err}")
                     continue
-            
+
             if df is None:
                 raise ValueError("Could not parse CSV file with any delimiter")
-            
+
             # Detect header row
             header_row = self._detect_header_row(df)
             print(f"DEBUG CSV detected header row: {header_row}")
-            
+
             # Re-read with proper header
             df = pl.read_csv(file_path, encoding=encoding, separator=delimiter,
-                            skip_rows=header_row, has_header=True, dtypes=pl.Utf8)
+                            skip_rows=header_row, has_header=True)
             print(f"DEBUG CSV re-read columns: {list(df.columns)}")
             print(f"DEBUG CSV re-read column types: {[str(dtype) for dtype in df.dtypes]}")
 
@@ -217,7 +216,7 @@ class ExcelParser(BaseParser):
                         continue
 
         # Read the target sheet
-        df = pl.read_excel(file_path, sheet_name=target_sheet, has_header=False, dtypes=pl.Utf8, engine='openpyxl')
+        df = pl.read_excel(file_path, sheet_name=target_sheet, has_header=False, engine='openpyxl')
         print(f"DEBUG XLSX initial read - sheet: {target_sheet}, columns: {list(df.columns)}")
         print(f"DEBUG XLSX initial read - column types: {[str(dtype) for dtype in df.dtypes]}")
         print(f"DEBUG XLSX initial read - first few rows: {df.head(2).to_dicts()}")
@@ -226,13 +225,22 @@ class ExcelParser(BaseParser):
         header_row = self._detect_header_row(df)
         print(f"DEBUG XLSX detected header row: {header_row}")
 
-        # Re-read with proper header
-        df = pl.read_excel(file_path, sheet_name=target_sheet, skip_rows=header_row, has_header=True, dtypes=pl.Utf8, engine='openpyxl')
+        # Re-read full sheet without header, then slice for skip_rows
+        full_df = pl.read_excel(file_path, sheet_name=target_sheet, has_header=False, engine='openpyxl')
+        
+        # Use header_row as column names
+        header_values = full_df.row(header_row)
+        num_cols = len(full_df.columns)
+        header_list = [header_values[i] if i < len(header_values) else None for i in range(num_cols)]
+        cleaned_headers = self._clean_column_names(header_list)
+        column_dict = {old: new for old, new in zip(full_df.columns, cleaned_headers)}
+        full_df = full_df.rename(column_dict)
+        
+        # Slice data starting after header_row
+        df = full_df.slice(header_row + 1, None)
+        
         print(f"DEBUG XLSX re-read columns: {list(df.columns)}")
         print(f"DEBUG XLSX re-read column types: {[str(dtype) for dtype in df.dtypes]}")
-
-        # Clean column names
-        df = df.rename({old: new for old, new in zip(df.columns, self._clean_column_names(list(df.columns)))})
 
         # Remove empty rows
         if self.file_processing_config.get('skip_empty_rows', True):

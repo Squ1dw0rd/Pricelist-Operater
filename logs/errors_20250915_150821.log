@@ -1,0 +1,34 @@
+2025-09-15 15:08:51,107 - ERROR - __exit__:217 - Failed Processing Dormer after 1.47s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150821
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:08:51,108 - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150821
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:08:51,171 - ERROR - __exit__:217 - Failed Processing Guhring after 0.06s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150821
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:08:51,172 - ERROR - _process_single_file_safe:342 - Error processing Guhring Price List 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150821
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:08:51,174 - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif after 1.55s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Guhring Price List 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150821
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:08:51,175 - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+  - C:\Users\Luke\AppData\Local\Temp\tmpk4tujiif\Guhring Price List 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250915_150821
+C:\Users\Luke\Pricelist Operater\src\web_ui.py
+---
+

@@ -1,0 +1,170 @@
+2025-09-15 15:53:29,013 - ERROR - __exit__:217 - Failed Processing Narex after 0.91s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:29,015 - ERROR - _process_single_file_safe:342 - Error processing Narex 2025.csv: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:29,194 - ERROR - __exit__:217 - Failed Processing Carbide End Mill after 0.18s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:29,197 - ERROR - _process_single_file_safe:342 - Error processing Carbide End Mill Price List 2025.xls: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:29,253 - ERROR - __exit__:217 - Failed Processing Whitelaw Combined Site Book Rm after 0.05s: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:29,256 - ERROR - _process_single_file_safe:342 - Error processing Whitelaw Combined Site Price Book  2025-RM.xls: 'DataFrame' object has no attribute 'empty'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:32,203 - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 2.94s: expected duration or datetime, got str
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:32,205 - ERROR - _process_single_file_safe:342 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:32,536 - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.31s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:32,538 - ERROR - _process_single_file_safe:342 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:42,760 - ERROR - __exit__:217 - Failed Processing Dormer after 10.22s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:42,761 - ERROR - _process_single_file_safe:342 - Error processing Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:43,265 - ERROR - __exit__:217 - Failed Processing Excision after 0.50s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:43,265 - ERROR - _process_single_file_safe:342 - Error processing Excision 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:52,002 - ERROR - __exit__:217 - Failed Processing Excision Yg after 8.73s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:52,002 - ERROR - _process_single_file_safe:342 - Error processing EXCISION YG-1 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:52,612 - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.61s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:52,612 - ERROR - _process_single_file_safe:342 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:52,944 - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.33s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:52,945 - ERROR - _process_single_file_safe:342 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:54,345 - ERROR - __exit__:217 - Failed Processing Norton after 1.40s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:54,346 - ERROR - _process_single_file_safe:342 - Error processing Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:54,952 - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.60s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:54,953 - ERROR - _process_single_file_safe:342 - Error processing Price List - Master (01-Apr-2025).xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:55,766 - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.81s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:55,767 - ERROR - _process_single_file_safe:342 - Error processing PST_full_ pricefile_2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:59,082 - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 3.31s: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:59,083 - ERROR - _process_single_file_safe:342 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:59,331 - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.25s: 'NoneType' object is not subscriptable
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-15 15:53:59,331 - ERROR - _process_single_file_safe:342 - Error processing POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-15 15:53:59,332 - ERROR - __exit__:217 - Failed Processing directory: supplier_data after 31.26s: No files were successfully processed. Errors:
+  - supplier_data\Narex 2025.csv: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Carbide End Mill Price List 2025.xls: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 'DataFrame' object has no attribute 'empty'
+  - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+  - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Excision 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\EXCISION YG-1 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Price List - Master (01-Apr-2025).xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\PST_full_ pricefile_2025.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: read_excel() got an unexpected keyword argument 'skip_rows'
+  - supplier_data\POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+Session: 20250915_155328
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+

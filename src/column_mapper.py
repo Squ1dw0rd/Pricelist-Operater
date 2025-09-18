@@ -72,7 +72,7 @@ class ColumnMapper:
         """Reload column mappings (useful when config_manager is set after initialization)."""
         self.column_mappings = self._get_column_mappings()
     
-    def map_columns(self, columns, supplier_mappings=None) -> Tuple[Dict[str, str], List[str]]:
+    def map_columns(self, columns, supplier_mappings=None) -> Dict[str, Any]:
         """
         Map column names to standardized schema.
         
@@ -81,7 +81,7 @@ class ColumnMapper:
             supplier_mappings: Optional supplier-specific mappings
         
         Returns:
-            Tuple of (mapped columns dict, unmapped columns list)
+            Report dict with 'mapped_columns', 'unmapped_columns', 'missing_required_fields'
         """
         # Use supplier mappings if provided, otherwise use default mappings
         if supplier_mappings:
@@ -97,32 +97,38 @@ class ColumnMapper:
         
         if not column_mappings:
             self.logger.warning("No column mappings available, cannot map columns")
-            return {}, original_columns
-        
-        # Map each standardized field
-        for field_name, possible_names in column_mappings.items():
-            for column in original_columns:
-                if column not in used_columns:
-                    # Try exact match first (case insensitive)
-                    if column.lower().replace(' ', '_').replace('-', '_') == field_name.lower().replace(' ', '_').replace('-', '_'):
-                        mapped_columns[field_name] = column
-                        used_columns.add(column)
-                        break
-                    
-                    # Try exact match with possible names
-                    for possible_name in possible_names:
-                        if column.lower().replace(' ', '_').replace('-', '_') == possible_name.lower().replace(' ', '_').replace('-', '_'):
+            missing_required = self.get_missing_required_fields({})
+        else:
+            # Map each standardized field
+            for field_name, possible_names in column_mappings.items():
+                for column in original_columns:
+                    if column not in used_columns:
+                        # Try exact match first (case insensitive)
+                        if column.lower().replace(' ', '_').replace('-', '_') == field_name.lower().replace(' ', '_').replace('-', '_'):
                             mapped_columns[field_name] = column
                             used_columns.add(column)
                             break
-                    else:
-                        continue
-                    break
+                        
+                        # Try exact match with possible names
+                        for possible_name in possible_names:
+                            if column.lower().replace(' ', '_').replace('-', '_') == possible_name.lower().replace(' ', '_').replace('-', '_'):
+                                mapped_columns[field_name] = column
+                                used_columns.add(column)
+                                break
+                        else:
+                            continue
+                        break
+            
+            # Track unmapped columns
+            unmapped_columns = [col for col in original_columns if col not in used_columns]
+            missing_required = self.get_missing_required_fields(mapped_columns)
         
-        # Track unmapped columns
-        unmapped_columns = [col for col in original_columns if col not in used_columns]
-        
-        return mapped_columns, unmapped_columns
+        return {
+            'mapped_columns': mapped_columns,
+            'unmapped_columns': unmapped_columns,
+            'missing_required_fields': missing_required,
+            'original_columns': original_columns
+        }
     
     def _find_best_column_match(self, field_name: str, available_columns: List[str], 
                                used_columns: set) -> Optional[str]:
@@ -308,21 +314,26 @@ class ColumnMapper:
         
         return mapped_columns, unmapped_columns, confidence_scores
     
-    def transform_data(self, data: pl.DataFrame, mappings: Dict[str, str], supplier_name: str) -> pl.DataFrame:
+    def transform_data(self, data: pl.DataFrame, mappings: Dict[str, str], supplier_name: str, required_fields: List[str] = None) -> pl.DataFrame:
         """
         Transform data according to mappings.
-
+ 
         Args:
             data: DataFrame with original data
             mappings: Dictionary mapping standardized fields to column names
             supplier_name: Name of the supplier
-
+            required_fields: List of required fields to ensure presence
+        
         Returns:
             Transformed DataFrame
         """
+        if required_fields is None:
+            required_fields = []
+ 
         if data.is_empty():
-            # Create empty DataFrame with required columns
-            schema = {field: pl.Utf8 for field in list(mappings.keys()) + ['supplier_name']}
+            # Create empty DataFrame with required columns + supplier_name
+            all_fields = list(set(list(mappings.keys()) + required_fields + ['supplier_name']))
+            schema = {field: pl.Utf8 for field in all_fields}
             transformed_data = pl.DataFrame(schema=schema)
         else:
             # Create new DataFrame with mapped columns
@@ -330,21 +341,26 @@ class ColumnMapper:
             for field_name, column_name in mappings.items():
                 if column_name in data.columns:
                     select_exprs.append(pl.col(column_name).alias(field_name))
-
+ 
             if select_exprs:
                 transformed_data = data.select(select_exprs)
             else:
                 transformed_data = pl.DataFrame()
-
+ 
             # Add supplier name
             transformed_data = transformed_data.with_columns(pl.lit(supplier_name).alias('supplier_name'))
-
+ 
+            # Add missing required fields as None
+            for field in required_fields:
+                if field != 'supplier_name' and field not in transformed_data.columns:
+                    transformed_data = transformed_data.with_columns(pl.lit(None).alias(field))
+ 
             # Convert data types
             if 'unit_price' in transformed_data.columns:
                 transformed_data = transformed_data.with_columns(
                     pl.col('unit_price').cast(pl.Float64, strict=False)
                 )
-
+ 
         return transformed_data
     
     def get_missing_required_fields(self, mappings):

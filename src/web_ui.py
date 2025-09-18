@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import List, Optional
 from datetime import datetime
 
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request, HTTPException, UploadFile, File, Form
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -58,16 +58,69 @@ async def home(request: Request):
 @app.post("/upload")
 async def upload_files(
     request: Request,
-    # files: List[UploadFile] = File(...),
-    # output_filename: str = Form(...)
+    files: List[UploadFile] = File(...),
+    output_filename: str = Form("")
 ):
     """Handle file uploads and processing."""
-    # Temporarily disabled due to python-multipart installation issues
-    return templates.TemplateResponse("result.html", {
-        "request": request,
-        "success": False,
-        "error": "File upload functionality temporarily disabled. Please use CLI mode."
-    })
+    if not files:
+        return templates.TemplateResponse("result.html", {
+            "request": request,
+            "success": False,
+            "error": "No files uploaded."
+        })
+
+    # Create temp directory for uploaded files
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temp_dir:
+        uploaded_paths = []
+
+        # Save uploaded files
+        for file in files:
+            file_path = Path(temp_dir) / file.filename
+            with open(file_path, "wb") as buffer:
+                shutil.copyfileobj(file.file, buffer)
+            uploaded_paths.append(str(file_path))
+
+        try:
+            # Get consolidator
+            cons = get_consolidator()
+
+            # Set default output filename if not provided
+            if not output_filename:
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                output_filename = f"Master_Price_List_{timestamp}.xlsx"
+
+            # Ensure output directory exists
+            output_dir = Path("output")
+            output_dir.mkdir(exist_ok=True)
+            output_path = output_dir / output_filename
+
+            # Process files
+            logger.info(f"Processing {len(uploaded_paths)} uploaded files")
+            try:
+                excel_path = cons.process_supplier_files(temp_dir, str(output_path))
+
+                return templates.TemplateResponse("result.html", {
+                    "request": request,
+                    "success": True,
+                    "filename": output_filename,
+                    "processed_files": len(uploaded_paths),
+                    "total_records": cons.performance_stats['total_records']
+                })
+            except Exception as e:
+                logger.error(f"Processing failed: {e}")
+                return templates.TemplateResponse("result.html", {
+                    "request": request,
+                    "success": False,
+                    "error": str(e)
+                })
+
+        except Exception as e:
+            logger.error(f"Upload processing error: {e}")
+            return templates.TemplateResponse("result.html", {
+                "request": request,
+                "success": False,
+                "error": f"Processing error: {str(e)}"
+            })
 
 @app.get("/download/{filename}")
 async def download_file(filename: str):

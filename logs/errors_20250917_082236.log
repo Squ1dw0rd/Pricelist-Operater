@@ -1,0 +1,24 @@
+2025-09-17 08:23:00,788 - ERROR - _process_single_file_safe:312 - Failed to save intermediate CSV for Dormer: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250917_082236
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-17 08:23:01,318 - ERROR - _process_single_file_safe:312 - Failed to save intermediate CSV for Guhring: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250917_082236
+C:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-17 08:23:01,319 - ERROR - __exit__:217 - Failed Processing directory: C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z after 12.01s: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Dormer 2025.xlsx: Missing required fields: supplier_name
+  - C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Guhring Price List 2025.xlsx: Missing required fields: unit_price, supplier_name
+Session: 20250917_082236
+C:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-17 08:23:01,320 - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
+  - C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Dormer 2025.xlsx: Missing required fields: supplier_name
+  - C:\Users\Luke\AppData\Local\Temp\tmpqjzud49z\Guhring Price List 2025.xlsx: Missing required fields: unit_price, supplier_name
+Session: 20250917_082236
+C:\Users\Luke\Pricelist Operater\src\web_ui.py
+---
+
