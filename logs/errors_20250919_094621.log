@@ -1,0 +1,120 @@
+2025-09-19 09:46:21,734 - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 0.28s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:21,734 - ERROR - _process_single_file_safe:343 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:21,750 - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.02s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:21,750 - ERROR - _process_single_file_safe:343 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:22,143 - ERROR - __exit__:217 - Failed Processing Dormer after 0.39s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:22,144 - ERROR - _process_single_file_safe:343 - Error processing Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:22,185 - ERROR - __exit__:217 - Failed Processing Excision after 0.04s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:22,186 - ERROR - _process_single_file_safe:343 - Error processing Excision 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:22,854 - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.67s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:22,854 - ERROR - _process_single_file_safe:343 - Error processing EXCISION YG-1 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:22,964 - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.11s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:22,964 - ERROR - _process_single_file_safe:343 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:23,036 - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.07s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:23,036 - ERROR - _process_single_file_safe:343 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:23,143 - ERROR - __exit__:217 - Failed Processing Norton after 0.11s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:23,144 - ERROR - _process_single_file_safe:343 - Error processing Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:23,200 - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.06s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:23,200 - ERROR - _process_single_file_safe:343 - Error processing Price List - Master (01-Apr-2025).xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:23,274 - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.07s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:23,274 - ERROR - _process_single_file_safe:343 - Error processing PST_full_ pricefile_2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:23,641 - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.37s: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:23,641 - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:46:23,914 - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.27s: 'NoneType' object is not subscriptable
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:46:23,914 - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+Session: 20250919_094621
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+

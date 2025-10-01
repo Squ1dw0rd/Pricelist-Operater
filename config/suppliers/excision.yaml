@@ -16,10 +16,17 @@ column_mappings:
     - "product name"
     - "item description"
   unit_price:
+    - "1 buy price"
+    - "5  buy"
+    - "10  buy"
     - "unit price"
     - "list price"
     - "price"
     - "cost"
+    - "net price"
+    - "sell price"
+    - "retail price"
+    - "wholesale price"
   supplier_name:
     - "supplier"
     - "vendor"

@@ -42,11 +42,11 @@ class BaseParser:
     def _detect_header_row(self, df: pl.DataFrame, max_rows: int = 10) -> int:
         """
         Detect the header row in a DataFrame.
-
+ 
         Args:
             df: DataFrame to analyze
             max_rows: Maximum number of rows to check
-
+ 
         Returns:
             Index of the header row
         """
@@ -57,10 +57,16 @@ class BaseParser:
             # Check if row has reasonable number of non-null values
             non_null_count = sum(1 for val in row if val is not None and str(val).strip() != "")
             if non_null_count >= 3:  # At least 3 columns with data
-                # Check if values look like headers (strings, not numbers)
-                string_count = sum(1 for val in row if isinstance(val, str) and len(str(val).strip()) > 0)
-                if string_count >= 2:  # At least 2 string values
-                    return i
+                # Check if values look like headers (mostly strings, no heavy numerics)
+                string_count = sum(1 for val in row if isinstance(val, str) and len(str(val).strip()) > 0 and not str(val).replace('.','').replace('-','').isdigit())
+                numeric_count = sum(1 for val in row if str(val).replace('.','').replace('-','').replace(',','').isdigit() or (isinstance(val, (int, float)) and val is not None))
+                if string_count >= non_null_count * 0.6 and numeric_count < non_null_count * 0.3:  # Mostly strings, few pure numbers
+                    # Check next row for data-like content (more numerics or mixed)
+                    if i + 1 < len(df):
+                        next_row = df.row(i + 1)
+                        next_numeric = sum(1 for val in next_row if str(val).replace('.','').replace('-','').replace(',','').isdigit() or (isinstance(val, (int, float)) and val is not None))
+                        if next_numeric > 1:  # Next row has some numeric data
+                            return i
 
         return 0  # Default to first row
     
@@ -208,15 +214,17 @@ class ExcelParser(BaseParser):
                 max_rows = 0
                 for sheet in sheet_names:
                     try:
-                        temp_df = pl.read_excel(file_path, sheet_name=sheet, has_header=False, n_rows=100, engine='openpyxl')
+                        temp_df = pl.read_excel(file_path, sheet_name=sheet, has_header=False, n_rows=100, engine='openpyxl', infer_schema_length=0)
+                        temp_df = temp_df.cast(pl.Utf8)
                         if len(temp_df) > max_rows:
                             max_rows = len(temp_df)
                             target_sheet = sheet
                     except Exception:
                         continue
 
-        # Read the target sheet
-        df = pl.read_excel(file_path, sheet_name=target_sheet, has_header=False, engine='openpyxl')
+        # Read the target sheet without schema inference and cast to string to avoid type errors
+        df = pl.read_excel(file_path, sheet_name=target_sheet, has_header=False, engine='openpyxl', infer_schema_length=0)
+        df = df.cast(pl.Utf8)
         print(f"DEBUG XLSX initial read - sheet: {target_sheet}, columns: {list(df.columns)}")
         print(f"DEBUG XLSX initial read - column types: {[str(dtype) for dtype in df.dtypes]}")
         print(f"DEBUG XLSX initial read - first few rows: {df.head(2).to_dicts()}")
@@ -226,7 +234,8 @@ class ExcelParser(BaseParser):
         print(f"DEBUG XLSX detected header row: {header_row}")
 
         # Re-read full sheet without header, then slice for skip_rows
-        full_df = pl.read_excel(file_path, sheet_name=target_sheet, has_header=False, engine='openpyxl')
+        full_df = pl.read_excel(file_path, sheet_name=target_sheet, has_header=False, engine='openpyxl', infer_schema_length=0)
+        full_df = full_df.cast(pl.Utf8)
         
         # Use header_row as column names
         header_values = full_df.row(header_row)
@@ -297,8 +306,12 @@ class PDFParser(BaseParser):
                         if table and len(table) > 1:  # Must have header and at least one data row
                             print(f"DEBUG PDF page {page_num+1}, table {table_idx}: header row = {table[0]}")
                             print(f"DEBUG PDF header types: {[type(cell) for cell in table[0]]}")
-                            # Convert table to DataFrame
-                            df = pl.DataFrame(table[1:], schema=table[0])
+                            # Filter None from schema and convert to DataFrame
+                            schema = [col for col in table[0] if col is not None]
+                            if len(schema) != len(table[1][0]) if table[1] else 0:
+                                # Pad schema with default names if lengths mismatch
+                                schema += [f"col_{i}" for i in range(len(table[1][0]) - len(schema)) if table[1]]
+                            df = pl.DataFrame(table[1:], schema=schema)
                             print(f"DEBUG PDF df columns: {list(df.columns)}")
                             print(f"DEBUG PDF df column types: {[str(dtype) for dtype in df.dtypes]}")
 

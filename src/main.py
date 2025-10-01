@@ -24,13 +24,13 @@ def safe_print(message):
         print(ascii_msg)
 
 # Import our modules
-from config_manager import ConfigManager
-from file_parsers import parse_file, FileParserFactory
-from column_mapper import create_column_mapper
-from data_validator import validate_data, create_validation_report
-from excel_generator import generate_master_excel
-from logger import setup_logging, ContextualLogger, get_logger
-from cli import InteractiveCLI, create_enhanced_parser, validate_args, print_help_and_examples
+from .config_manager import ConfigManager
+from .file_parsers import parse_file, FileParserFactory
+from .column_mapper import create_column_mapper
+from .data_validator import validate_data, create_validation_report
+from .excel_generator import generate_master_excel
+from .logger import setup_logging, ContextualLogger, get_logger
+from .cli import InteractiveCLI, create_enhanced_parser, validate_args, print_help_and_examples
 
 
 class PriceListConsolidator:
@@ -305,7 +305,7 @@ class PriceListConsolidator:
                         csv_filename = f"{safe_supplier_name}_standardized.csv"
                         full_csv_path = csv_output_dir / csv_filename
 
-                        mapped_data_df.to_csv(full_csv_path, index=False, encoding='utf-8')
+                        mapped_data_df.write_csv(full_csv_path)
                         self.logger.info(f"Saved standardized data for {supplier_name} to {full_csv_path}")
                     except Exception as e_csv:
                         self.logger.error(f"Failed to save intermediate CSV for {supplier_name}: {e_csv}")

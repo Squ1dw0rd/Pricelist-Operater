@@ -1,0 +1,20 @@
+2025-09-19 10:05:44,716 - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 5.93s: column 'group' is duplicate
+Session: 20250919_100509
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 10:05:44,717 - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'group' is duplicate
+Session: 20250919_100509
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 10:05:44,978 - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.26s: data does not match the number of columns
+Session: 20250919_100509
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 10:05:44,979 - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: data does not match the number of columns
+Session: 20250919_100509
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+

@@ -995,3 +995,837 @@
 2025-09-17 11:24:47,428 - consolidator - ERROR - upload_files:110 - Processing failed: No files were successfully processed. Errors:
   - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Guhring Price List 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
   - C:\Users\Luke\AppData\Local\Temp\tmp5be5vbe1\Precision Specialty 2025.xlsx: ColumnMapper.transform_data() takes 4 positional arguments but 5 were given
+2025-09-19 09:44:07,678 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250919_094407 ===
+2025-09-19 09:44:07,678 - consolidator - INFO - log_session_start:104 - Log Level: DEBUG
+2025-09-19 09:44:07,678 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "DEBUG",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-19 09:44:07,679 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-19 09:44:07,679 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-19 09:44:07,681 - consolidator - INFO - process_supplier_files:133 - Found 15 supplier files to process
+2025-09-19 09:44:07,714 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-19 09:44:07,714 - consolidator - DEBUG - __enter__:208 - Starting Processing Narex
+2025-09-19 09:44:08,093 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 184 rows from Narex 2025.csv
+2025-09-19 09:44:08,093 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:08,094 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:08,094 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:08,094 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['201207', 'code', 'product code', 'part number']'
+2025-09-19 09:44:08,094 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['vhu 36a', 'description', 'product name']'
+2025-09-19 09:44:08,095 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['487000', 'price', 'unit price', 'list price']'
+2025-09-19 09:44:08,095 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 09:44:08,096 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:08,096 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Narex
+2025-09-19 09:44:08,101 - consolidator - DEBUG - log_column_mapping:158 - Narex - Column mappings: {}
+2025-09-19 09:44:08,101 - consolidator - WARNING - log_column_mapping:161 - Narex - Unmapped columns: ['201207', 'vhu 36a', '', '487000', '_duplicated_0', '_duplicated_1', '_duplicated_2', '_duplicated_3', '_duplicated_4']
+2025-09-19 09:44:08,102 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Narex: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:08,132 - consolidator - WARNING - log_validation_summary:150 - Narex: 9 validation warnings
+2025-09-19 09:44:08,133 - consolidator - DEBUG - __exit__:215 - Completed Processing Narex in 0.42s
+2025-09-19 09:44:08,133 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:44:08,133 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-19 09:44:08,133 - consolidator - DEBUG - __enter__:208 - Starting Processing Carbide End Mill
+2025-09-19 09:44:08,165 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 46 rows from Carbide End Mill Price List 2025.xls
+2025-09-19 09:44:08,165 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:08,165 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:08,165 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:08,166 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['flat end mill 2f4f', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 09:44:08,166 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['ball nose end mill 2f', 'ball nose end mill 4f', 'corner radius 4f', 'description', 'product name']'
+2025-09-19 09:44:08,166 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost']'
+2025-09-19 09:44:08,166 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 09:44:08,166 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:08,166 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Carbide End Mill
+2025-09-19 09:44:08,167 - consolidator - DEBUG - log_column_mapping:158 - Carbide End Mill - Column mappings: {}
+2025-09-19 09:44:08,167 - consolidator - WARNING - log_column_mapping:161 - Carbide End Mill - Unmapped columns: ['flat end mill 2f4f', 'unnamed 1', 'unnamed 2', 'unnamed 3', 'unnamed 4', 'ball nose end mill 2f', 'unnamed 6', 'unnamed 7', 'unnamed 8', 'unnamed 9', 'ball nose end mill 4f', 'unnamed 11', 'unnamed 12', 'unnamed 13', 'unnamed 14', 'corner radius 4f', 'unnamed 16', 'unnamed 17', 'unnamed 18']
+2025-09-19 09:44:08,168 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Carbide End Mill: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:08,172 - consolidator - WARNING - log_validation_summary:150 - Carbide End Mill: 9 validation warnings
+2025-09-19 09:44:08,172 - consolidator - DEBUG - __exit__:215 - Completed Processing Carbide End Mill in 0.04s
+2025-09-19 09:44:08,172 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:44:08,173 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-19 09:44:08,173 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Combined Site Book Rm
+2025-09-19 09:44:08,184 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 32 rows from Whitelaw Combined Site Price Book  2025-RM.xls
+2025-09-19 09:44:08,184 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:08,185 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:08,185 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Whitelaw Combined Site Book Rm
+2025-09-19 09:44:08,186 - consolidator - DEBUG - log_column_mapping:158 - Whitelaw Combined Site Book Rm - Column mappings: {'sku': 'sku', 'product_name': 'description', 'unit_of_measure': 'uom'}
+2025-09-19 09:44:08,186 - consolidator - WARNING - log_column_mapping:161 - Whitelaw Combined Site Book Rm - Unmapped columns: ['maketo', 'suggested qh list', 'effective july 2024', 'unnamed 6', 'unnamed 7']
+2025-09-19 09:44:08,187 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Whitelaw Combined Site Book Rm: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:08,195 - consolidator - WARNING - log_validation_summary:150 - Whitelaw Combined Site Book Rm: 50 validation warnings
+2025-09-19 09:44:08,196 - consolidator - DEBUG - __exit__:215 - Completed Processing Whitelaw Combined Site Book Rm in 0.02s
+2025-09-19 09:44:08,196 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 32 records, 0 errors, 50 warnings - WARNINGS
+2025-09-19 09:44:08,197 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-19 09:44:08,197 - consolidator - DEBUG - __enter__:208 - Starting Processing Tridon 003483 Whitelaw Tooling Supplies
+2025-09-19 09:44:09,403 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.21s: expected duration or datetime, got str
+2025-09-19 09:44:09,404 - consolidator - ERROR - _process_single_file_safe:343 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+2025-09-19 09:44:09,405 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:44:09,406 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-19 09:44:09,406 - consolidator - DEBUG - __enter__:208 - Starting Processing Au Ind For Siapower
+2025-09-19 09:44:09,534 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 65 rows from AU Ind D 2024 price List for 1550 siapower.xlsx
+2025-09-19 09:44:09,534 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:09,535 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:09,535 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Au Ind For Siapower
+2025-09-19 09:44:09,536 - consolidator - DEBUG - log_column_mapping:158 - Au Ind For Siapower - Column mappings: {}
+2025-09-19 09:44:09,536 - consolidator - WARNING - log_column_mapping:161 - Au Ind For Siapower - Unmapped columns: ['sia abrasives price list 2024  australia', 'unnamed_column_1', 'unnamed_column_2', 'unnamed_column_3', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8', 'unnamed_column_9', 'unnamed_column_10', 'unnamed_column_11', 'unnamed_column_12', 'unnamed_column_13', 'unnamed_column_14', 'unnamed_column_15', 'unnamed_column_16', 'unnamed_column_17', 'barcodes', 'unnamed_column_19', 'unnamed_column_20', 'unnamed_column_21', 'unnamed_column_22', 'unnamed_column_23', 'au d level industrial 37', 'unnamed_column_25', 'unnamed_column_26', 'unnamed_column_27', 'unnamed_column_28', 'unnamed_column_29', 'unnamed_column_30']
+2025-09-19 09:44:09,537 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Au Ind For Siapower: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:09,540 - consolidator - WARNING - log_validation_summary:150 - Au Ind For Siapower: 9 validation warnings
+2025-09-19 09:44:09,541 - consolidator - DEBUG - __exit__:215 - Completed Processing Au Ind For Siapower in 0.13s
+2025-09-19 09:44:09,541 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:44:09,541 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-19 09:44:09,542 - consolidator - DEBUG - __enter__:208 - Starting Processing Dormer
+2025-09-19 09:44:16,067 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 27609 rows from Dormer 2025.xlsx
+2025-09-19 09:44:16,067 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:16,067 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:16,068 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'unit_of_measure']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:16,068 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['code', 'product code', 'part number', 'item code']'
+2025-09-19 09:44:16,068 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['description', 'product name', 'short description']'
+2025-09-19 09:44:16,068 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['wts sell', 'unit price', 'list price', 'price']'
+2025-09-19 09:44:16,069 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 09:44:16,069 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'description' to '['note', 'description', 'long description']'
+2025-09-19 09:44:16,069 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_of_measure' to '['gross weight', 'uom', 'unit']'
+2025-09-19 09:44:16,069 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:16,069 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Dormer
+2025-09-19 09:44:16,072 - consolidator - DEBUG - log_column_mapping:158 - Dormer - Column mappings: {'sku': 'product code', 'product_name': 'short description', 'unit_price': '2025 list price', 'unit_of_measure': 'pack qty', 'stock_status': 'stock', 'discount_1': 'discount 1', 'discount_2': 'discount 2', 'net_price': '2025 net price'}
+2025-09-19 09:44:16,073 - consolidator - WARNING - log_column_mapping:161 - Dormer - Unmapped columns: ['gross weight', 'note', 'wts sell', 'unnamed_column_11']
+2025-09-19 09:44:16,073 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Dormer: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:16,475 - consolidator - WARNING - log_validation_summary:150 - Dormer: 8111 validation warnings
+2025-09-19 09:44:16,476 - consolidator - DEBUG - __exit__:215 - Completed Processing Dormer in 6.93s
+2025-09-19 09:44:16,478 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 27609 records, 0 errors, 8111 warnings - WARNINGS
+2025-09-19 09:44:16,478 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-19 09:44:16,479 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision
+2025-09-19 09:44:16,851 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 1743 rows from Excision 2025.xlsx
+2025-09-19 09:44:16,852 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:16,852 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:16,852 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:16,852 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['code', 'product code', 'part number', 'item code']'
+2025-09-19 09:44:16,852 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['description', 'product name', 'item description']'
+2025-09-19 09:44:16,852 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost']'
+2025-09-19 09:44:16,852 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 09:44:16,853 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:16,853 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision
+2025-09-19 09:44:16,855 - consolidator - DEBUG - log_column_mapping:158 - Excision - Column mappings: {'sku': 'part number', 'product_name': 'description'}
+2025-09-19 09:44:16,855 - consolidator - WARNING - log_column_mapping:161 - Excision - Unmapped columns: ['product type', 'unnamed_column_3', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8', 'unnamed_column_9', 'unnamed_column_10', 'unnamed_column_11']
+2025-09-19 09:44:16,855 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Excision: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:16,879 - consolidator - WARNING - log_validation_summary:150 - Excision: 2950 validation warnings
+2025-09-19 09:44:16,879 - consolidator - DEBUG - __exit__:215 - Completed Processing Excision in 0.40s
+2025-09-19 09:44:16,880 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 1743 records, 0 errors, 2950 warnings - WARNINGS
+2025-09-19 09:44:16,880 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-19 09:44:16,880 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision Yg
+2025-09-19 09:44:30,946 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 14 rows from EXCISION YG-1 2025.xlsx
+2025-09-19 09:44:30,947 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:30,948 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:30,948 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision Yg
+2025-09-19 09:44:30,948 - consolidator - DEBUG - log_column_mapping:158 - Excision Yg - Column mappings: {}
+2025-09-19 09:44:30,949 - consolidator - WARNING - log_column_mapping:161 - Excision Yg - Unmapped columns: ['unnamed_column_0', '31', 'hss drills', '06', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8']
+2025-09-19 09:44:30,949 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Excision Yg: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:30,955 - consolidator - WARNING - log_validation_summary:150 - Excision Yg: 9 validation warnings
+2025-09-19 09:44:30,956 - consolidator - DEBUG - __exit__:215 - Completed Processing Excision Yg in 14.08s
+2025-09-19 09:44:30,956 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:44:30,957 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-19 09:44:30,957 - consolidator - DEBUG - __enter__:208 - Starting Processing Guhring Aus Stock Reseller
+2025-09-19 09:44:32,249 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 5414 rows from Guhring AUS Stock List 2025 - Reseller.xlsx
+2025-09-19 09:44:32,251 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:32,251 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:32,251 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring Aus Stock Reseller
+2025-09-19 09:44:32,252 - consolidator - DEBUG - log_column_mapping:158 - Guhring Aus Stock Reseller - Column mappings: {'sku': 'code', 'product_name': 'description'}
+2025-09-19 09:44:32,252 - consolidator - WARNING - log_column_mapping:161 - Guhring Aus Stock Reseller - Unmapped columns: ['item code', 'list price 2025', '60 dc reseller price']
+2025-09-19 09:44:32,253 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Guhring Aus Stock Reseller: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:32,276 - consolidator - WARNING - log_validation_summary:150 - Guhring Aus Stock Reseller: 5424 validation warnings
+2025-09-19 09:44:32,277 - consolidator - DEBUG - __exit__:215 - Completed Processing Guhring Aus Stock Reseller in 1.32s
+2025-09-19 09:44:32,277 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 5414 records, 0 errors, 5424 warnings - WARNINGS
+2025-09-19 09:44:32,278 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-19 09:44:32,278 - consolidator - DEBUG - __enter__:208 - Starting Processing Mitutoyo May
+2025-09-19 09:44:32,781 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3453 rows from Mitutoyo updated Pricelist_1 May 2023.xlsx
+2025-09-19 09:44:32,781 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:32,781 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:32,782 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Mitutoyo May
+2025-09-19 09:44:32,783 - consolidator - DEBUG - log_column_mapping:158 - Mitutoyo May - Column mappings: {'sku': 'code', 'product_name': 'description', 'unit_price': 'price'}
+2025-09-19 09:44:32,783 - consolidator - WARNING - log_column_mapping:161 - Mitutoyo May - Unmapped columns: ['discount']
+2025-09-19 09:44:32,783 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Mitutoyo May: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:32,801 - consolidator - WARNING - log_validation_summary:150 - Mitutoyo May: 378 validation warnings
+2025-09-19 09:44:32,801 - consolidator - DEBUG - __exit__:215 - Completed Processing Mitutoyo May in 0.52s
+2025-09-19 09:44:32,802 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 3453 records, 0 errors, 378 warnings - WARNINGS
+2025-09-19 09:44:32,803 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-19 09:44:32,803 - consolidator - DEBUG - __enter__:208 - Starting Processing Norton
+2025-09-19 09:44:34,080 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3053 rows from Norton 2025.xlsx
+2025-09-19 09:44:34,080 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:34,081 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:34,081 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:34,081 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['v9a254', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 09:44:34,082 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['20326468_redlands recondition sup pl_sg price list 010425', 'redlands recondition sup pl', 'description', 'product name']'
+2025-09-19 09:44:34,082 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['pricing effective 01042025  price ex gst price per ea', 'price ex gst', 'unit price', 'list price', 'price']'
+2025-09-19 09:44:34,082 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 09:44:34,082 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:34,082 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Norton
+2025-09-19 09:44:34,083 - consolidator - DEBUG - log_column_mapping:158 - Norton - Column mappings: {}
+2025-09-19 09:44:34,083 - consolidator - WARNING - log_column_mapping:161 - Norton - Unmapped columns: ['v9a254', '20326468_redlands recondition sup pl_sg price list 010425', 'saintgobain price list', 'redlands recondition sup pl', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8', 'pricing effective 01042025  price ex gst price per ea']
+2025-09-19 09:44:34,083 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Norton: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:34,087 - consolidator - WARNING - log_validation_summary:150 - Norton: 9 validation warnings
+2025-09-19 09:44:34,088 - consolidator - DEBUG - __exit__:215 - Completed Processing Norton in 1.29s
+2025-09-19 09:44:34,088 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:44:34,089 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-19 09:44:34,089 - consolidator - DEBUG - __enter__:208 - Starting Processing Master 01 Apr
+2025-09-19 09:44:34,820 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3314 rows from Price List - Master (01-Apr-2025).xlsx
+2025-09-19 09:44:34,821 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:34,821 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:34,822 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Master 01 Apr
+2025-09-19 09:44:34,823 - consolidator - DEBUG - log_column_mapping:158 - Master 01 Apr - Column mappings: {'product_name': 'description'}
+2025-09-19 09:44:34,823 - consolidator - WARNING - log_column_mapping:161 - Master 01 Apr - Unmapped columns: ['brand', 'product range', 'partno', 'wholesale exgst', 'rrp incgst', 'barcode']
+2025-09-19 09:44:34,824 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Master 01 Apr: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:34,843 - consolidator - WARNING - log_validation_summary:150 - Master 01 Apr: 6632 validation warnings
+2025-09-19 09:44:34,844 - consolidator - DEBUG - __exit__:215 - Completed Processing Master 01 Apr in 0.75s
+2025-09-19 09:44:34,844 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 3314 records, 0 errors, 6632 warnings - WARNINGS
+2025-09-19 09:44:34,844 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-19 09:44:34,845 - consolidator - DEBUG - __enter__:208 - Starting Processing Pst Full Pricefile
+2025-09-19 09:44:35,915 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 4397 rows from PST_full_ pricefile_2025.xlsx
+2025-09-19 09:44:35,916 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:44:35,917 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:44:35,917 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:35,918 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['for debtor', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 09:44:35,918 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['excel price file', 'description', 'product name', 'item description']'
+2025-09-19 09:44:35,918 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost']'
+2025-09-19 09:44:35,919 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 09:44:35,919 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:44:35,919 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Pst Full Pricefile
+2025-09-19 09:44:35,920 - consolidator - DEBUG - log_column_mapping:158 - Pst Full Pricefile - Column mappings: {}
+2025-09-19 09:44:35,920 - consolidator - WARNING - log_column_mapping:161 - Pst Full Pricefile - Unmapped columns: ['for debtor', 'pricefile', 'excel price file', 'unnamed_column_3', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8', 'unnamed_column_9']
+2025-09-19 09:44:35,920 - consolidator - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Pst Full Pricefile: 'DataFrame' object has no attribute 'to_csv'
+2025-09-19 09:44:35,925 - consolidator - WARNING - log_validation_summary:150 - Pst Full Pricefile: 9 validation warnings
+2025-09-19 09:44:35,925 - consolidator - DEBUG - __exit__:215 - Completed Processing Pst Full Pricefile in 1.08s
+2025-09-19 09:44:35,925 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:44:35,926 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-19 09:44:35,926 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Bordo File Discount Structure 25 V12
+2025-09-19 09:44:44,215 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 8.29s: column 'group' is duplicate
+2025-09-19 09:44:44,215 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'group' is duplicate
+2025-09-19 09:44:44,216 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:44:44,218 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-19 09:44:44,218 - consolidator - DEBUG - __enter__:208 - Starting Processing Pointtech Wts
+2025-09-19 09:44:44,574 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.36s: 'NoneType' object is not subscriptable
+2025-09-19 09:44:44,574 - consolidator - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+2025-09-19 09:44:44,575 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:44:44,575 - consolidator - INFO - process_supplier_files:213 - Processing completed: 12 suppliers, 41571 total records, 36.90s
+2025-09-19 09:44:44,615 - consolidator - DEBUG - log_memory_usage:178 - Memory usage after file processing: 300.6 MB
+2025-09-19 09:44:44,615 - consolidator - INFO - process_supplier_files:221 - DRY RUN MODE: Skipping Excel generation
+2025-09-19 09:44:44,616 - consolidator - INFO - _log_dry_run_summary:379 - === DRY RUN SUMMARY ===
+2025-09-19 09:44:44,616 - consolidator - INFO - _log_dry_run_summary:380 - Successfully processed: 12 suppliers
+2025-09-19 09:44:44,617 - consolidator - INFO - _log_dry_run_summary:381 - Processing errors: 3
+2025-09-19 09:44:44,619 - consolidator - INFO - _log_dry_run_summary:387 - Total records: 41571
+2025-09-19 09:44:44,619 - consolidator - INFO - _log_dry_run_summary:388 - Total validation errors: 0
+2025-09-19 09:44:44,619 - consolidator - INFO - _log_dry_run_summary:389 - Total validation warnings: 23599
+2025-09-19 09:44:44,620 - consolidator - WARNING - _log_dry_run_summary:392 - Files with processing errors:
+2025-09-19 09:44:44,620 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+2025-09-19 09:44:44,620 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'group' is duplicate
+2025-09-19 09:44:44,621 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+2025-09-19 09:44:44,621 - consolidator - INFO - __exit__:215 - Completed Processing directory: supplier_data in 36.94s
+2025-09-19 09:46:21,075 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250919_094621 ===
+2025-09-19 09:46:21,077 - consolidator - INFO - log_session_start:104 - Log Level: DEBUG
+2025-09-19 09:46:21,077 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "DEBUG",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-19 09:46:21,077 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-19 09:46:21,077 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-19 09:46:21,079 - consolidator - INFO - process_supplier_files:133 - Found 15 supplier files to process
+2025-09-19 09:46:21,086 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-19 09:46:21,086 - consolidator - DEBUG - __enter__:208 - Starting Processing Narex
+2025-09-19 09:46:21,302 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 187 rows from Narex 2025.csv
+2025-09-19 09:46:21,303 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:46:21,303 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:46:21,303 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:46:21,304 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['201207', 'code', 'product code', 'part number']'
+2025-09-19 09:46:21,304 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['vhu 36a', 'description', 'product name']'
+2025-09-19 09:46:21,304 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['487000', 'price', 'unit price', 'list price']'
+2025-09-19 09:46:21,305 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 09:46:21,305 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:46:21,305 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Narex
+2025-09-19 09:46:21,312 - consolidator - DEBUG - log_column_mapping:158 - Narex - Column mappings: {}
+2025-09-19 09:46:21,312 - consolidator - WARNING - log_column_mapping:161 - Narex - Unmapped columns: ['', '_duplicated_0', '_duplicated_1', '_duplicated_2', '_duplicated_3', '_duplicated_4', '_duplicated_5', '_duplicated_6', '_duplicated_7']
+2025-09-19 09:46:21,326 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Narex to output\standardized_csvs\Narex_standardized.csv
+2025-09-19 09:46:21,365 - consolidator - WARNING - log_validation_summary:150 - Narex: 9 validation warnings
+2025-09-19 09:46:21,365 - consolidator - DEBUG - __exit__:215 - Completed Processing Narex in 0.28s
+2025-09-19 09:46:21,366 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:46:21,366 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-19 09:46:21,367 - consolidator - DEBUG - __enter__:208 - Starting Processing Carbide End Mill
+2025-09-19 09:46:21,410 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 45 rows from Carbide End Mill Price List 2025.xls
+2025-09-19 09:46:21,410 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:46:21,410 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:46:21,411 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:46:21,411 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['flat end mill 2f4f', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 09:46:21,411 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['ball nose end mill 2f', 'ball nose end mill 4f', 'corner radius 4f', 'description', 'product name']'
+2025-09-19 09:46:21,411 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost']'
+2025-09-19 09:46:21,412 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 09:46:21,412 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 09:46:21,412 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Carbide End Mill
+2025-09-19 09:46:21,414 - consolidator - DEBUG - log_column_mapping:158 - Carbide End Mill - Column mappings: {}
+2025-09-19 09:46:21,414 - consolidator - WARNING - log_column_mapping:161 - Carbide End Mill - Unmapped columns: ['size', 'hrc45 for steel 2f4f for aluminum 2f3f', 'hrc55 for steel 2f4f for aluminum 2f3f', 'hrc65', 'unnamed 4', 'size1', 'hrc45', 'hrc55', 'hrc651', 'unnamed 9', 'size2', 'hrc45 price usd', 'hrc55 price usd', 'hrc65 price usd', 'unnamed 14', 'size3', 'hrc451', 'hrc551', 'hrc652']
+2025-09-19 09:46:21,416 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Carbide End Mill to output\standardized_csvs\Carbide_End_Mill_standardized.csv
+2025-09-19 09:46:21,422 - consolidator - WARNING - log_validation_summary:150 - Carbide End Mill: 9 validation warnings
+2025-09-19 09:46:21,422 - consolidator - DEBUG - __exit__:215 - Completed Processing Carbide End Mill in 0.05s
+2025-09-19 09:46:21,423 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:46:21,423 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-19 09:46:21,424 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Combined Site Book Rm
+2025-09-19 09:46:21,443 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 28 rows from Whitelaw Combined Site Price Book  2025-RM.xls
+2025-09-19 09:46:21,444 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 09:46:21,444 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 09:46:21,444 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Whitelaw Combined Site Book Rm
+2025-09-19 09:46:21,445 - consolidator - DEBUG - log_column_mapping:158 - Whitelaw Combined Site Book Rm - Column mappings: {}
+2025-09-19 09:46:21,446 - consolidator - WARNING - log_column_mapping:161 - Whitelaw Combined Site Book Rm - Unmapped columns: ['hoc787baudl', 'hocut 787bau', 'drum', 'mts', 'unnamed 4', 'poa', 'unnamed 6', 'unnamed 7']
+2025-09-19 09:46:21,447 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Whitelaw Combined Site Book Rm to output\standardized_csvs\Whitelaw_Combined_Site_Book_Rm_standardized.csv
+2025-09-19 09:46:21,453 - consolidator - WARNING - log_validation_summary:150 - Whitelaw Combined Site Book Rm: 9 validation warnings
+2025-09-19 09:46:21,454 - consolidator - DEBUG - __exit__:215 - Completed Processing Whitelaw Combined Site Book Rm in 0.03s
+2025-09-19 09:46:21,454 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 09:46:21,455 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-19 09:46:21,455 - consolidator - DEBUG - __enter__:208 - Starting Processing Tridon 003483 Whitelaw Tooling Supplies
+2025-09-19 09:46:21,734 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 0.28s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:21,734 - consolidator - ERROR - _process_single_file_safe:343 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:21,734 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:21,735 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-19 09:46:21,735 - consolidator - DEBUG - __enter__:208 - Starting Processing Au Ind For Siapower
+2025-09-19 09:46:21,750 - consolidator - ERROR - __exit__:217 - Failed Processing Au Ind For Siapower after 0.02s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:21,750 - consolidator - ERROR - _process_single_file_safe:343 - Error processing AU Ind D 2024 price List for 1550 siapower.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:21,751 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:21,751 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-19 09:46:21,751 - consolidator - DEBUG - __enter__:208 - Starting Processing Dormer
+2025-09-19 09:46:22,143 - consolidator - ERROR - __exit__:217 - Failed Processing Dormer after 0.39s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:22,144 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:22,144 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:22,144 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-19 09:46:22,145 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision
+2025-09-19 09:46:22,185 - consolidator - ERROR - __exit__:217 - Failed Processing Excision after 0.04s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:22,186 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Excision 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:22,186 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:22,187 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-19 09:46:22,187 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision Yg
+2025-09-19 09:46:22,854 - consolidator - ERROR - __exit__:217 - Failed Processing Excision Yg after 0.67s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:22,854 - consolidator - ERROR - _process_single_file_safe:343 - Error processing EXCISION YG-1 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:22,854 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:22,855 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-19 09:46:22,855 - consolidator - DEBUG - __enter__:208 - Starting Processing Guhring Aus Stock Reseller
+2025-09-19 09:46:22,964 - consolidator - ERROR - __exit__:217 - Failed Processing Guhring Aus Stock Reseller after 0.11s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:22,964 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Guhring AUS Stock List 2025 - Reseller.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:22,965 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:22,966 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-19 09:46:22,966 - consolidator - DEBUG - __enter__:208 - Starting Processing Mitutoyo May
+2025-09-19 09:46:23,036 - consolidator - ERROR - __exit__:217 - Failed Processing Mitutoyo May after 0.07s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,036 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,036 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:23,037 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-19 09:46:23,037 - consolidator - DEBUG - __enter__:208 - Starting Processing Norton
+2025-09-19 09:46:23,143 - consolidator - ERROR - __exit__:217 - Failed Processing Norton after 0.11s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,144 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,144 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:23,144 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-19 09:46:23,144 - consolidator - DEBUG - __enter__:208 - Starting Processing Master 01 Apr
+2025-09-19 09:46:23,200 - consolidator - ERROR - __exit__:217 - Failed Processing Master 01 Apr after 0.06s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,200 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Price List - Master (01-Apr-2025).xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,201 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:23,201 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-19 09:46:23,201 - consolidator - DEBUG - __enter__:208 - Starting Processing Pst Full Pricefile
+2025-09-19 09:46:23,274 - consolidator - ERROR - __exit__:217 - Failed Processing Pst Full Pricefile after 0.07s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,274 - consolidator - ERROR - _process_single_file_safe:343 - Error processing PST_full_ pricefile_2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,274 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:23,275 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-19 09:46:23,275 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Bordo File Discount Structure 25 V12
+2025-09-19 09:46:23,641 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 0.37s: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,641 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,641 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:23,643 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-19 09:46:23,643 - consolidator - DEBUG - __enter__:208 - Starting Processing Pointtech Wts
+2025-09-19 09:46:23,914 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.27s: 'NoneType' object is not subscriptable
+2025-09-19 09:46:23,914 - consolidator - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+2025-09-19 09:46:23,914 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 09:46:23,915 - consolidator - INFO - process_supplier_files:213 - Processing completed: 3 suppliers, 3 total records, 2.84s
+2025-09-19 09:46:23,933 - consolidator - DEBUG - log_memory_usage:178 - Memory usage after file processing: 147.1 MB
+2025-09-19 09:46:23,933 - consolidator - INFO - process_supplier_files:221 - DRY RUN MODE: Skipping Excel generation
+2025-09-19 09:46:23,933 - consolidator - INFO - _log_dry_run_summary:379 - === DRY RUN SUMMARY ===
+2025-09-19 09:46:23,933 - consolidator - INFO - _log_dry_run_summary:380 - Successfully processed: 3 suppliers
+2025-09-19 09:46:23,933 - consolidator - INFO - _log_dry_run_summary:381 - Processing errors: 12
+2025-09-19 09:46:23,934 - consolidator - INFO - _log_dry_run_summary:387 - Total records: 3
+2025-09-19 09:46:23,934 - consolidator - INFO - _log_dry_run_summary:388 - Total validation errors: 0
+2025-09-19 09:46:23,934 - consolidator - INFO - _log_dry_run_summary:389 - Total validation warnings: 27
+2025-09-19 09:46:23,934 - consolidator - WARNING - _log_dry_run_summary:392 - Files with processing errors:
+2025-09-19 09:46:23,934 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,934 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,935 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Dormer 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,935 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Excision 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,935 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\EXCISION YG-1 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,935 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,935 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,935 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Norton 2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,936 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Price List - Master (01-Apr-2025).xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,936 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\PST_full_ pricefile_2025.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,936 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: read_excel() got an unexpected keyword argument 'dtypes'
+2025-09-19 09:46:23,937 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+2025-09-19 09:46:23,937 - consolidator - INFO - __exit__:215 - Completed Processing directory: supplier_data in 2.86s
+2025-09-19 10:01:53,960 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250919_100153 ===
+2025-09-19 10:01:53,961 - consolidator - INFO - log_session_start:104 - Log Level: DEBUG
+2025-09-19 10:01:53,961 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "DEBUG",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-19 10:01:53,961 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-19 10:01:53,962 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-19 10:01:53,962 - consolidator - INFO - process_supplier_files:133 - Found 15 supplier files to process
+2025-09-19 10:01:53,971 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-19 10:01:53,971 - consolidator - DEBUG - __enter__:208 - Starting Processing Narex
+2025-09-19 10:01:54,066 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 187 rows from Narex 2025.csv
+2025-09-19 10:01:54,067 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:01:54,067 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:01:54,067 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:01:54,067 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['201207', 'code', 'product code', 'part number']'
+2025-09-19 10:01:54,068 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['vhu 36a', 'description', 'product name']'
+2025-09-19 10:01:54,068 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['487000', 'price', 'unit price', 'list price']'
+2025-09-19 10:01:54,068 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 10:01:54,068 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:01:54,069 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Narex
+2025-09-19 10:01:54,069 - consolidator - DEBUG - log_column_mapping:158 - Narex - Column mappings: {}
+2025-09-19 10:01:54,070 - consolidator - WARNING - log_column_mapping:161 - Narex - Unmapped columns: ['', '_duplicated_0', '_duplicated_1', '_duplicated_2', '_duplicated_3', '_duplicated_4', '_duplicated_5', '_duplicated_6', '_duplicated_7']
+2025-09-19 10:01:54,071 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Narex to output\standardized_csvs\Narex_standardized.csv
+2025-09-19 10:01:54,079 - consolidator - WARNING - log_validation_summary:150 - Narex: 9 validation warnings
+2025-09-19 10:01:54,080 - consolidator - DEBUG - __exit__:215 - Completed Processing Narex in 0.11s
+2025-09-19 10:01:54,080 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:01:54,080 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-19 10:01:54,081 - consolidator - DEBUG - __enter__:208 - Starting Processing Carbide End Mill
+2025-09-19 10:01:54,098 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 45 rows from Carbide End Mill Price List 2025.xls
+2025-09-19 10:01:54,099 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:01:54,099 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:01:54,099 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:01:54,099 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['flat end mill 2f4f', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 10:01:54,100 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['ball nose end mill 2f', 'ball nose end mill 4f', 'corner radius 4f', 'description', 'product name']'
+2025-09-19 10:01:54,100 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost']'
+2025-09-19 10:01:54,100 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 10:01:54,100 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:01:54,100 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Carbide End Mill
+2025-09-19 10:01:54,101 - consolidator - DEBUG - log_column_mapping:158 - Carbide End Mill - Column mappings: {}
+2025-09-19 10:01:54,101 - consolidator - WARNING - log_column_mapping:161 - Carbide End Mill - Unmapped columns: ['size', 'hrc45 for steel 2f4f for aluminum 2f3f', 'hrc55 for steel 2f4f for aluminum 2f3f', 'hrc65', 'unnamed 4', 'size1', 'hrc45', 'hrc55', 'hrc651', 'unnamed 9', 'size2', 'hrc45 price usd', 'hrc55 price usd', 'hrc65 price usd', 'unnamed 14', 'size3', 'hrc451', 'hrc551', 'hrc652']
+2025-09-19 10:01:54,103 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Carbide End Mill to output\standardized_csvs\Carbide_End_Mill_standardized.csv
+2025-09-19 10:01:54,107 - consolidator - WARNING - log_validation_summary:150 - Carbide End Mill: 9 validation warnings
+2025-09-19 10:01:54,107 - consolidator - DEBUG - __exit__:215 - Completed Processing Carbide End Mill in 0.03s
+2025-09-19 10:01:54,107 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:01:54,108 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-19 10:01:54,108 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Combined Site Book Rm
+2025-09-19 10:01:54,118 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 28 rows from Whitelaw Combined Site Price Book  2025-RM.xls
+2025-09-19 10:01:54,119 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:01:54,119 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:01:54,119 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Whitelaw Combined Site Book Rm
+2025-09-19 10:01:54,120 - consolidator - DEBUG - log_column_mapping:158 - Whitelaw Combined Site Book Rm - Column mappings: {}
+2025-09-19 10:01:54,120 - consolidator - WARNING - log_column_mapping:161 - Whitelaw Combined Site Book Rm - Unmapped columns: ['hoc787baudl', 'hocut 787bau', 'drum', 'mts', 'unnamed 4', 'poa', 'unnamed 6', 'unnamed 7']
+2025-09-19 10:01:54,121 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Whitelaw Combined Site Book Rm to output\standardized_csvs\Whitelaw_Combined_Site_Book_Rm_standardized.csv
+2025-09-19 10:01:54,125 - consolidator - WARNING - log_validation_summary:150 - Whitelaw Combined Site Book Rm: 9 validation warnings
+2025-09-19 10:01:54,125 - consolidator - DEBUG - __exit__:215 - Completed Processing Whitelaw Combined Site Book Rm in 0.02s
+2025-09-19 10:01:54,126 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:01:54,126 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-19 10:01:54,126 - consolidator - DEBUG - __enter__:208 - Starting Processing Tridon 003483 Whitelaw Tooling Supplies
+2025-09-19 10:01:55,313 - consolidator - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.19s: expected duration or datetime, got str
+2025-09-19 10:01:55,314 - consolidator - ERROR - _process_single_file_safe:343 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+2025-09-19 10:01:55,316 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 10:01:55,316 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-19 10:01:55,316 - consolidator - DEBUG - __enter__:208 - Starting Processing Au Ind For Siapower
+2025-09-19 10:01:55,516 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 63 rows from AU Ind D 2024 price List for 1550 siapower.xlsx
+2025-09-19 10:01:55,517 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:01:55,517 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:01:55,517 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Au Ind For Siapower
+2025-09-19 10:01:55,519 - consolidator - DEBUG - log_column_mapping:158 - Au Ind For Siapower - Column mappings: {}
+2025-09-19 10:01:55,520 - consolidator - WARNING - log_column_mapping:161 - Au Ind For Siapower - Unmapped columns: ['sia part number', 'reference number', 'new description', 'series', 'item status', 'au local stock status', 'nz local stock status', 'series extension', 'width mm', 'length mm', 'thickness mm', 'diameter mm', 'bore mm  connector', 'dust ext holes', 'grit  grade', 'piece per pack qty', 'min order qty', 'trade unit qty', 'ea qty', 'ea barcode', 'tu trade unit qty', 'tu barcode', 'lu logistics unit qty', 'lu barcode', 'core  noncore', '2024 list price', '2024 distributor nett price a', '2024 bulk 1 quantity', '2024 bulk 1 price', '2024 bulk 2 quantity', '2024 bulk 2 price']
+2025-09-19 10:01:55,522 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Au Ind For Siapower to output\standardized_csvs\Au_Ind_For_Siapower_standardized.csv
+2025-09-19 10:01:55,529 - consolidator - WARNING - log_validation_summary:150 - Au Ind For Siapower: 9 validation warnings
+2025-09-19 10:01:55,530 - consolidator - DEBUG - __exit__:215 - Completed Processing Au Ind For Siapower in 0.21s
+2025-09-19 10:01:55,530 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:01:55,531 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-19 10:01:55,531 - consolidator - DEBUG - __enter__:208 - Starting Processing Dormer
+2025-09-19 10:02:02,370 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 27609 rows from Dormer 2025.xlsx
+2025-09-19 10:02:02,371 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:02:02,371 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:02:02,372 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'unit_of_measure']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:02:02,373 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['code', 'product code', 'part number', 'item code']'
+2025-09-19 10:02:02,374 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['description', 'product name', 'short description']'
+2025-09-19 10:02:02,374 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['wts sell', 'unit price', 'list price', 'price']'
+2025-09-19 10:02:02,374 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 10:02:02,374 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'description' to '['note', 'description', 'long description']'
+2025-09-19 10:02:02,374 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_of_measure' to '['gross weight', 'uom', 'unit']'
+2025-09-19 10:02:02,375 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:02:02,375 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Dormer
+2025-09-19 10:02:02,377 - consolidator - DEBUG - log_column_mapping:158 - Dormer - Column mappings: {'sku': 'product code', 'product_name': 'short description', 'unit_price': '2025 list price', 'unit_of_measure': 'pack qty', 'stock_status': 'stock', 'discount_1': 'discount 1', 'discount_2': 'discount 2', 'net_price': '2025 net price'}
+2025-09-19 10:02:02,378 - consolidator - WARNING - log_column_mapping:161 - Dormer - Unmapped columns: ['gross weight', 'note', 'wts sell', 'unnamed_column_11']
+2025-09-19 10:02:02,383 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Dormer to output\standardized_csvs\Dormer_standardized.csv
+2025-09-19 10:02:02,807 - consolidator - WARNING - log_validation_summary:150 - Dormer: 8111 validation warnings
+2025-09-19 10:02:02,807 - consolidator - DEBUG - __exit__:215 - Completed Processing Dormer in 7.28s
+2025-09-19 10:02:02,808 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 27609 records, 0 errors, 8111 warnings - WARNINGS
+2025-09-19 10:02:02,809 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-19 10:02:02,810 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision
+2025-09-19 10:02:03,229 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 1741 rows from Excision 2025.xlsx
+2025-09-19 10:02:03,230 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:02:03,230 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:02:03,231 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:02:03,231 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['code', 'product code', 'part number', 'item code']'
+2025-09-19 10:02:03,231 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['description', 'product name', 'item description']'
+2025-09-19 10:02:03,232 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost', 'net price', 'sell price', 'retail price', 'wholesale price']'
+2025-09-19 10:02:03,232 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 10:02:03,232 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:02:03,232 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision
+2025-09-19 10:02:03,234 - consolidator - DEBUG - log_column_mapping:158 - Excision - Column mappings: {}
+2025-09-19 10:02:03,234 - consolidator - WARNING - log_column_mapping:161 - Excision - Unmapped columns: ['6 x 09 10 x 09 13 x 05 13 x 06 13 x 09', 'unnamed_column_1', 'unnamed_column_2', 'unnamed_column_3', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8', '1 buy price', '5  buy', '10  buy']
+2025-09-19 10:02:03,239 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Excision to output\standardized_csvs\Excision_standardized.csv
+2025-09-19 10:02:03,245 - consolidator - WARNING - log_validation_summary:150 - Excision: 9 validation warnings
+2025-09-19 10:02:03,246 - consolidator - DEBUG - __exit__:215 - Completed Processing Excision in 0.44s
+2025-09-19 10:02:03,246 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:02:03,247 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-19 10:02:03,247 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision Yg
+2025-09-19 10:02:18,098 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 19 rows from EXCISION YG-1 2025.xlsx
+2025-09-19 10:02:18,099 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:02:18,099 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:02:18,100 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision Yg
+2025-09-19 10:02:18,100 - consolidator - DEBUG - log_column_mapping:158 - Excision Yg - Column mappings: {}
+2025-09-19 10:02:18,100 - consolidator - WARNING - log_column_mapping:161 - Excision Yg - Unmapped columns: ['unnamed_column_0', 'unnamed_column_1', 'unnamed_column_2', 'customer discounts', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8']
+2025-09-19 10:02:18,103 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Excision Yg to output\standardized_csvs\Excision_Yg_standardized.csv
+2025-09-19 10:02:18,106 - consolidator - WARNING - log_validation_summary:150 - Excision Yg: 9 validation warnings
+2025-09-19 10:02:18,107 - consolidator - DEBUG - __exit__:215 - Completed Processing Excision Yg in 14.86s
+2025-09-19 10:02:18,107 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:02:18,108 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-19 10:02:18,108 - consolidator - DEBUG - __enter__:208 - Starting Processing Guhring Aus Stock Reseller
+2025-09-19 10:02:19,316 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 5414 rows from Guhring AUS Stock List 2025 - Reseller.xlsx
+2025-09-19 10:02:19,317 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:02:19,317 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:02:19,317 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring Aus Stock Reseller
+2025-09-19 10:02:19,318 - consolidator - DEBUG - log_column_mapping:158 - Guhring Aus Stock Reseller - Column mappings: {'sku': 'code', 'product_name': 'description'}
+2025-09-19 10:02:19,318 - consolidator - WARNING - log_column_mapping:161 - Guhring Aus Stock Reseller - Unmapped columns: ['item code', 'list price 2025', '60 dc reseller price']
+2025-09-19 10:02:19,322 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Guhring Aus Stock Reseller to output\standardized_csvs\Guhring_Aus_Stock_Reseller_standardized.csv
+2025-09-19 10:02:19,345 - consolidator - WARNING - log_validation_summary:150 - Guhring Aus Stock Reseller: 5424 validation warnings
+2025-09-19 10:02:19,345 - consolidator - DEBUG - __exit__:215 - Completed Processing Guhring Aus Stock Reseller in 1.24s
+2025-09-19 10:02:19,346 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 5414 records, 0 errors, 5424 warnings - WARNINGS
+2025-09-19 10:02:19,346 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-19 10:02:19,346 - consolidator - DEBUG - __enter__:208 - Starting Processing Mitutoyo May
+2025-09-19 10:02:19,772 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3448 rows from Mitutoyo updated Pricelist_1 May 2023.xlsx
+2025-09-19 10:02:19,773 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:02:19,773 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:02:19,773 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Mitutoyo May
+2025-09-19 10:02:19,773 - consolidator - DEBUG - log_column_mapping:158 - Mitutoyo May - Column mappings: {}
+2025-09-19 10:02:19,774 - consolidator - WARNING - log_column_mapping:161 - Mitutoyo May - Unmapped columns: ['1003tb', 'dial indicator', '18587', 'a']
+2025-09-19 10:02:19,775 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Mitutoyo May to output\standardized_csvs\Mitutoyo_May_standardized.csv
+2025-09-19 10:02:19,783 - consolidator - WARNING - log_validation_summary:150 - Mitutoyo May: 9 validation warnings
+2025-09-19 10:02:19,784 - consolidator - DEBUG - __exit__:215 - Completed Processing Mitutoyo May in 0.44s
+2025-09-19 10:02:19,784 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:02:19,784 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-19 10:02:19,785 - consolidator - DEBUG - __enter__:208 - Starting Processing Norton
+2025-09-19 10:02:21,090 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3052 rows from Norton 2025.xlsx
+2025-09-19 10:02:21,090 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:02:21,091 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:02:21,091 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:02:21,091 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['v9a254', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 10:02:21,091 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['20326468_redlands recondition sup pl_sg price list 010425', 'redlands recondition sup pl', 'description', 'product name']'
+2025-09-19 10:02:21,092 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['pricing effective 01042025  price ex gst price per ea', 'price ex gst', 'unit price', 'list price', 'price']'
+2025-09-19 10:02:21,092 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 10:02:21,092 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:02:21,092 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Norton
+2025-09-19 10:02:21,093 - consolidator - DEBUG - log_column_mapping:158 - Norton - Column mappings: {'product_name': 'description', 'unit_price': 'list price'}
+2025-09-19 10:02:21,093 - consolidator - WARNING - log_column_mapping:161 - Norton - Unmapped columns: ['brand', 'product group', 'product type', 'product', 'item', 'barcode', 'moq', 'nett']
+2025-09-19 10:02:21,096 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Norton to output\standardized_csvs\Norton_standardized.csv
+2025-09-19 10:02:21,124 - consolidator - WARNING - log_validation_summary:150 - Norton: 3435 validation warnings
+2025-09-19 10:02:21,124 - consolidator - DEBUG - __exit__:215 - Completed Processing Norton in 1.34s
+2025-09-19 10:02:21,125 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 3052 records, 0 errors, 3435 warnings - WARNINGS
+2025-09-19 10:02:21,125 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-19 10:02:21,126 - consolidator - DEBUG - __enter__:208 - Starting Processing Master 01 Apr
+2025-09-19 10:02:21,803 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3314 rows from Price List - Master (01-Apr-2025).xlsx
+2025-09-19 10:02:21,804 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:02:21,805 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:02:21,805 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Master 01 Apr
+2025-09-19 10:02:21,806 - consolidator - DEBUG - log_column_mapping:158 - Master 01 Apr - Column mappings: {'product_name': 'description'}
+2025-09-19 10:02:21,806 - consolidator - WARNING - log_column_mapping:161 - Master 01 Apr - Unmapped columns: ['brand', 'product range', 'partno', 'wholesale exgst', 'rrp incgst', 'barcode']
+2025-09-19 10:02:21,808 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Master 01 Apr to output\standardized_csvs\Master_01_Apr_standardized.csv
+2025-09-19 10:02:21,824 - consolidator - WARNING - log_validation_summary:150 - Master 01 Apr: 6632 validation warnings
+2025-09-19 10:02:21,824 - consolidator - DEBUG - __exit__:215 - Completed Processing Master 01 Apr in 0.70s
+2025-09-19 10:02:21,825 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 3314 records, 0 errors, 6632 warnings - WARNINGS
+2025-09-19 10:02:21,825 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-19 10:02:21,825 - consolidator - DEBUG - __enter__:208 - Starting Processing Pst Full Pricefile
+2025-09-19 10:02:22,853 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 4396 rows from PST_full_ pricefile_2025.xlsx
+2025-09-19 10:02:22,853 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:02:22,854 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:02:22,854 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:02:22,855 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['for debtor', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 10:02:22,855 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['excel price file', 'description', 'product name', 'item description']'
+2025-09-19 10:02:22,855 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost']'
+2025-09-19 10:02:22,855 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 10:02:22,856 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:02:22,856 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Pst Full Pricefile
+2025-09-19 10:02:22,856 - consolidator - DEBUG - log_column_mapping:158 - Pst Full Pricefile - Column mappings: {}
+2025-09-19 10:02:22,856 - consolidator - WARNING - log_column_mapping:161 - Pst Full Pricefile - Unmapped columns: ['item number', 'description of item', 'barcode number', 'weight kg', 'height cm', 'width cm', 'length cm', 'list ', 'nett', 'tax']
+2025-09-19 10:02:22,858 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Pst Full Pricefile to output\standardized_csvs\Pst_Full_Pricefile_standardized.csv
+2025-09-19 10:02:22,862 - consolidator - WARNING - log_validation_summary:150 - Pst Full Pricefile: 9 validation warnings
+2025-09-19 10:02:22,863 - consolidator - DEBUG - __exit__:215 - Completed Processing Pst Full Pricefile in 1.04s
+2025-09-19 10:02:22,863 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:02:22,863 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-19 10:02:22,863 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Bordo File Discount Structure 25 V12
+2025-09-19 10:02:30,518 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 7.65s: column 'group' is duplicate
+2025-09-19 10:02:30,520 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'group' is duplicate
+2025-09-19 10:02:30,521 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 10:02:30,521 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-19 10:02:30,521 - consolidator - DEBUG - __enter__:208 - Starting Processing Pointtech Wts
+2025-09-19 10:02:30,872 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.35s: data does not match the number of columns
+2025-09-19 10:02:30,872 - consolidator - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: data does not match the number of columns
+2025-09-19 10:02:30,873 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 10:02:30,874 - consolidator - INFO - process_supplier_files:213 - Processing completed: 12 suppliers, 39397 total records, 36.91s
+2025-09-19 10:02:30,894 - consolidator - DEBUG - log_memory_usage:178 - Memory usage after file processing: 310.7 MB
+2025-09-19 10:02:30,895 - consolidator - INFO - process_supplier_files:221 - DRY RUN MODE: Skipping Excel generation
+2025-09-19 10:02:30,895 - consolidator - INFO - _log_dry_run_summary:379 - === DRY RUN SUMMARY ===
+2025-09-19 10:02:30,896 - consolidator - INFO - _log_dry_run_summary:380 - Successfully processed: 12 suppliers
+2025-09-19 10:02:30,896 - consolidator - INFO - _log_dry_run_summary:381 - Processing errors: 3
+2025-09-19 10:02:30,897 - consolidator - INFO - _log_dry_run_summary:387 - Total records: 39397
+2025-09-19 10:02:30,897 - consolidator - INFO - _log_dry_run_summary:388 - Total validation errors: 0
+2025-09-19 10:02:30,897 - consolidator - INFO - _log_dry_run_summary:389 - Total validation warnings: 23674
+2025-09-19 10:02:30,898 - consolidator - WARNING - _log_dry_run_summary:392 - Files with processing errors:
+2025-09-19 10:02:30,898 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+2025-09-19 10:02:30,898 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'group' is duplicate
+2025-09-19 10:02:30,898 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\POINTTECH_pricelist_WTS.pdf: data does not match the number of columns
+2025-09-19 10:02:30,898 - consolidator - INFO - __exit__:215 - Completed Processing directory: supplier_data in 36.94s
+2025-09-19 10:05:09,295 - consolidator - INFO - log_session_start:103 - === SESSION START: 20250919_100509 ===
+2025-09-19 10:05:09,295 - consolidator - INFO - log_session_start:104 - Log Level: DEBUG
+2025-09-19 10:05:09,295 - consolidator - INFO - log_session_start:105 - Configuration: {
+  "level": "DEBUG",
+  "log_directory": "logs",
+  "file_rotation": true,
+  "max_log_files": 5,
+  "max_log_size_mb": 10,
+  "console_output": true,
+  "performance_logging": true,
+  "memory_monitoring": false,
+  "session_tracking": true
+}
+2025-09-19 10:05:09,295 - consolidator - INFO - __init__:93 - Price List Consolidator initialized successfully.
+2025-09-19 10:05:09,296 - consolidator - INFO - __enter__:208 - Starting Processing directory: supplier_data
+2025-09-19 10:05:09,296 - consolidator - INFO - process_supplier_files:133 - Found 15 supplier files to process
+2025-09-19 10:05:09,302 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Narex 2025.csv (10,736 bytes)
+2025-09-19 10:05:09,302 - consolidator - DEBUG - __enter__:208 - Starting Processing Narex
+2025-09-19 10:05:09,400 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 187 rows from Narex 2025.csv
+2025-09-19 10:05:09,401 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:09,401 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:09,401 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:09,401 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['201207', 'code', 'product code', 'part number']'
+2025-09-19 10:05:09,401 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['vhu 36a', 'description', 'product name']'
+2025-09-19 10:05:09,402 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['487000', 'price', 'unit price', 'list price']'
+2025-09-19 10:05:09,402 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 10:05:09,402 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:09,402 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Narex
+2025-09-19 10:05:09,403 - consolidator - DEBUG - log_column_mapping:158 - Narex - Column mappings: {}
+2025-09-19 10:05:09,403 - consolidator - WARNING - log_column_mapping:161 - Narex - Unmapped columns: ['', '_duplicated_0', '_duplicated_1', '_duplicated_2', '_duplicated_3', '_duplicated_4', '_duplicated_5', '_duplicated_6', '_duplicated_7']
+2025-09-19 10:05:09,404 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Narex to output\standardized_csvs\Narex_standardized.csv
+2025-09-19 10:05:09,412 - consolidator - WARNING - log_validation_summary:150 - Narex: 9 validation warnings
+2025-09-19 10:05:09,413 - consolidator - DEBUG - __exit__:215 - Completed Processing Narex in 0.11s
+2025-09-19 10:05:09,413 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Narex 2025.csv: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:05:09,413 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Carbide End Mill Price List 2025.xls (455,680 bytes)
+2025-09-19 10:05:09,413 - consolidator - DEBUG - __enter__:208 - Starting Processing Carbide End Mill
+2025-09-19 10:05:09,432 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 45 rows from Carbide End Mill Price List 2025.xls
+2025-09-19 10:05:09,432 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:09,432 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:09,432 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:09,433 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['flat end mill 2f4f', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 10:05:09,433 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['ball nose end mill 2f', 'ball nose end mill 4f', 'corner radius 4f', 'description', 'product name']'
+2025-09-19 10:05:09,433 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost']'
+2025-09-19 10:05:09,433 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 10:05:09,434 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:09,434 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Carbide End Mill
+2025-09-19 10:05:09,435 - consolidator - DEBUG - log_column_mapping:158 - Carbide End Mill - Column mappings: {}
+2025-09-19 10:05:09,435 - consolidator - WARNING - log_column_mapping:161 - Carbide End Mill - Unmapped columns: ['size', 'hrc45 for steel 2f4f for aluminum 2f3f', 'hrc55 for steel 2f4f for aluminum 2f3f', 'hrc65', 'unnamed 4', 'size1', 'hrc45', 'hrc55', 'hrc651', 'unnamed 9', 'size2', 'hrc45 price usd', 'hrc55 price usd', 'hrc65 price usd', 'unnamed 14', 'size3', 'hrc451', 'hrc551', 'hrc652']
+2025-09-19 10:05:09,436 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Carbide End Mill to output\standardized_csvs\Carbide_End_Mill_standardized.csv
+2025-09-19 10:05:09,442 - consolidator - WARNING - log_validation_summary:150 - Carbide End Mill: 9 validation warnings
+2025-09-19 10:05:09,442 - consolidator - DEBUG - __exit__:215 - Completed Processing Carbide End Mill in 0.03s
+2025-09-19 10:05:09,442 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Carbide End Mill Price List 2025.xls: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:05:09,443 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls (39,424 bytes)
+2025-09-19 10:05:09,443 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Combined Site Book Rm
+2025-09-19 10:05:09,453 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 28 rows from Whitelaw Combined Site Price Book  2025-RM.xls
+2025-09-19 10:05:09,453 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:09,453 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:09,454 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Whitelaw Combined Site Book Rm
+2025-09-19 10:05:09,454 - consolidator - DEBUG - log_column_mapping:158 - Whitelaw Combined Site Book Rm - Column mappings: {}
+2025-09-19 10:05:09,454 - consolidator - WARNING - log_column_mapping:161 - Whitelaw Combined Site Book Rm - Unmapped columns: ['hoc787baudl', 'hocut 787bau', 'drum', 'mts', 'unnamed 4', 'poa', 'unnamed 6', 'unnamed 7']
+2025-09-19 10:05:09,455 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Whitelaw Combined Site Book Rm to output\standardized_csvs\Whitelaw_Combined_Site_Book_Rm_standardized.csv
+2025-09-19 10:05:09,459 - consolidator - WARNING - log_validation_summary:150 - Whitelaw Combined Site Book Rm: 9 validation warnings
+2025-09-19 10:05:09,459 - consolidator - DEBUG - __exit__:215 - Completed Processing Whitelaw Combined Site Book Rm in 0.02s
+2025-09-19 10:05:09,460 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Combined Site Price Book  2025-RM.xls: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:05:09,460 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx (736,894 bytes)
+2025-09-19 10:05:09,460 - consolidator - DEBUG - __enter__:208 - Starting Processing Tridon 003483 Whitelaw Tooling Supplies
+2025-09-19 10:05:12,202 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 9741 rows from 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx
+2025-09-19 10:05:12,203 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:12,204 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:12,204 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Tridon 003483 Whitelaw Tooling Supplies
+2025-09-19 10:05:12,205 - consolidator - DEBUG - log_column_mapping:158 - Tridon 003483 Whitelaw Tooling Supplies - Column mappings: {'description': 'product description'}
+2025-09-19 10:05:12,205 - consolidator - WARNING - log_column_mapping:161 - Tridon 003483 Whitelaw Tooling Supplies - Unmapped columns: ['part no', 'price ex gst', 'price inc gst', 'barcode', 'unit code', 'buying unit', 'moq', 'brand', 'unnamed_column_9']
+2025-09-19 10:05:12,209 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Tridon 003483 Whitelaw Tooling Supplies to output\standardized_csvs\Tridon_003483_Whitelaw_Tooling_Supplies_standardized.csv
+2025-09-19 10:05:12,273 - consolidator - WARNING - log_validation_summary:150 - Tridon 003483 Whitelaw Tooling Supplies: 29229 validation warnings
+2025-09-19 10:05:12,275 - consolidator - DEBUG - __exit__:215 - Completed Processing Tridon 003483 Whitelaw Tooling Supplies in 2.82s
+2025-09-19 10:05:12,276 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: 9741 records, 0 errors, 29229 warnings - WARNINGS
+2025-09-19 10:05:12,277 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx (81,106 bytes)
+2025-09-19 10:05:12,277 - consolidator - DEBUG - __enter__:208 - Starting Processing Au Ind For Siapower
+2025-09-19 10:05:12,380 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 63 rows from AU Ind D 2024 price List for 1550 siapower.xlsx
+2025-09-19 10:05:12,381 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:12,381 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:12,381 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Au Ind For Siapower
+2025-09-19 10:05:12,382 - consolidator - DEBUG - log_column_mapping:158 - Au Ind For Siapower - Column mappings: {}
+2025-09-19 10:05:12,382 - consolidator - WARNING - log_column_mapping:161 - Au Ind For Siapower - Unmapped columns: ['sia part number', 'reference number', 'new description', 'series', 'item status', 'au local stock status', 'nz local stock status', 'series extension', 'width mm', 'length mm', 'thickness mm', 'diameter mm', 'bore mm  connector', 'dust ext holes', 'grit  grade', 'piece per pack qty', 'min order qty', 'trade unit qty', 'ea qty', 'ea barcode', 'tu trade unit qty', 'tu barcode', 'lu logistics unit qty', 'lu barcode', 'core  noncore', '2024 list price', '2024 distributor nett price a', '2024 bulk 1 quantity', '2024 bulk 1 price', '2024 bulk 2 quantity', '2024 bulk 2 price']
+2025-09-19 10:05:12,383 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Au Ind For Siapower to output\standardized_csvs\Au_Ind_For_Siapower_standardized.csv
+2025-09-19 10:05:12,389 - consolidator - WARNING - log_validation_summary:150 - Au Ind For Siapower: 9 validation warnings
+2025-09-19 10:05:12,389 - consolidator - DEBUG - __exit__:215 - Completed Processing Au Ind For Siapower in 0.11s
+2025-09-19 10:05:12,390 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\AU Ind D 2024 price List for 1550 siapower.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:05:12,390 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Dormer 2025.xlsx (1,916,645 bytes)
+2025-09-19 10:05:12,390 - consolidator - DEBUG - __enter__:208 - Starting Processing Dormer
+2025-09-19 10:05:20,749 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 27609 rows from Dormer 2025.xlsx
+2025-09-19 10:05:20,750 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:20,750 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:20,750 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'unit_of_measure']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:20,751 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['code', 'product code', 'part number', 'item code']'
+2025-09-19 10:05:20,751 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['description', 'product name', 'short description']'
+2025-09-19 10:05:20,752 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['wts sell', 'unit price', 'list price', 'price']'
+2025-09-19 10:05:20,752 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 10:05:20,752 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'description' to '['note', 'description', 'long description']'
+2025-09-19 10:05:20,752 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_of_measure' to '['gross weight', 'uom', 'unit']'
+2025-09-19 10:05:20,752 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:20,752 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Dormer
+2025-09-19 10:05:20,754 - consolidator - DEBUG - log_column_mapping:158 - Dormer - Column mappings: {'sku': 'product code', 'product_name': 'short description', 'unit_price': '2025 list price', 'unit_of_measure': 'pack qty', 'stock_status': 'stock', 'discount_1': 'discount 1', 'discount_2': 'discount 2', 'net_price': '2025 net price'}
+2025-09-19 10:05:20,755 - consolidator - WARNING - log_column_mapping:161 - Dormer - Unmapped columns: ['gross weight', 'note', 'wts sell', 'unnamed_column_11']
+2025-09-19 10:05:20,760 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Dormer to output\standardized_csvs\Dormer_standardized.csv
+2025-09-19 10:05:20,985 - consolidator - WARNING - log_validation_summary:150 - Dormer: 8111 validation warnings
+2025-09-19 10:05:20,986 - consolidator - DEBUG - __exit__:215 - Completed Processing Dormer in 8.60s
+2025-09-19 10:05:20,987 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Dormer 2025.xlsx: 27609 records, 0 errors, 8111 warnings - WARNINGS
+2025-09-19 10:05:20,987 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Excision 2025.xlsx (184,083 bytes)
+2025-09-19 10:05:20,988 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision
+2025-09-19 10:05:21,633 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 1741 rows from Excision 2025.xlsx
+2025-09-19 10:05:21,634 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:21,634 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:21,634 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:21,635 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['code', 'product code', 'part number', 'item code']'
+2025-09-19 10:05:21,635 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['description', 'product name', 'item description']'
+2025-09-19 10:05:21,635 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['1 buy price', '5  buy', '10  buy', 'unit price', 'list price', 'price', 'cost', 'net price', 'sell price', 'retail price', 'wholesale price']'
+2025-09-19 10:05:21,636 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor']'
+2025-09-19 10:05:21,636 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:21,636 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision
+2025-09-19 10:05:21,637 - consolidator - DEBUG - log_column_mapping:158 - Excision - Column mappings: {}
+2025-09-19 10:05:21,637 - consolidator - WARNING - log_column_mapping:161 - Excision - Unmapped columns: ['6 x 09 10 x 09 13 x 05 13 x 06 13 x 09', 'unnamed_column_1', 'unnamed_column_2', 'unnamed_column_3', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8', '1 buy price', '5  buy', '10  buy']
+2025-09-19 10:05:21,638 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Excision to output\standardized_csvs\Excision_standardized.csv
+2025-09-19 10:05:21,643 - consolidator - WARNING - log_validation_summary:150 - Excision: 9 validation warnings
+2025-09-19 10:05:21,643 - consolidator - DEBUG - __exit__:215 - Completed Processing Excision in 0.65s
+2025-09-19 10:05:21,644 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Excision 2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:05:21,645 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\EXCISION YG-1 2025.xlsx (4,345,018 bytes)
+2025-09-19 10:05:21,645 - consolidator - DEBUG - __enter__:208 - Starting Processing Excision Yg
+2025-09-19 10:05:34,390 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 19 rows from EXCISION YG-1 2025.xlsx
+2025-09-19 10:05:34,391 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:34,391 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:34,391 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Excision Yg
+2025-09-19 10:05:34,392 - consolidator - DEBUG - log_column_mapping:158 - Excision Yg - Column mappings: {}
+2025-09-19 10:05:34,392 - consolidator - WARNING - log_column_mapping:161 - Excision Yg - Unmapped columns: ['unnamed_column_0', 'unnamed_column_1', 'unnamed_column_2', 'customer discounts', 'unnamed_column_4', 'unnamed_column_5', 'unnamed_column_6', 'unnamed_column_7', 'unnamed_column_8']
+2025-09-19 10:05:34,393 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Excision Yg to output\standardized_csvs\Excision_Yg_standardized.csv
+2025-09-19 10:05:34,400 - consolidator - WARNING - log_validation_summary:150 - Excision Yg: 9 validation warnings
+2025-09-19 10:05:34,401 - consolidator - DEBUG - __exit__:215 - Completed Processing Excision Yg in 12.76s
+2025-09-19 10:05:34,401 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\EXCISION YG-1 2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:05:34,402 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx (262,440 bytes)
+2025-09-19 10:05:34,402 - consolidator - DEBUG - __enter__:208 - Starting Processing Guhring Aus Stock Reseller
+2025-09-19 10:05:35,522 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 5414 rows from Guhring AUS Stock List 2025 - Reseller.xlsx
+2025-09-19 10:05:35,522 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:35,523 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:35,523 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Guhring Aus Stock Reseller
+2025-09-19 10:05:35,524 - consolidator - DEBUG - log_column_mapping:158 - Guhring Aus Stock Reseller - Column mappings: {'sku': 'code', 'product_name': 'description'}
+2025-09-19 10:05:35,524 - consolidator - WARNING - log_column_mapping:161 - Guhring Aus Stock Reseller - Unmapped columns: ['item code', 'list price 2025', '60 dc reseller price']
+2025-09-19 10:05:35,526 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Guhring Aus Stock Reseller to output\standardized_csvs\Guhring_Aus_Stock_Reseller_standardized.csv
+2025-09-19 10:05:35,594 - consolidator - WARNING - log_validation_summary:150 - Guhring Aus Stock Reseller: 5424 validation warnings
+2025-09-19 10:05:35,595 - consolidator - DEBUG - __exit__:215 - Completed Processing Guhring Aus Stock Reseller in 1.19s
+2025-09-19 10:05:35,595 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Guhring AUS Stock List 2025 - Reseller.xlsx: 5414 records, 0 errors, 5424 warnings - WARNINGS
+2025-09-19 10:05:35,596 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx (290,572 bytes)
+2025-09-19 10:05:35,596 - consolidator - DEBUG - __enter__:208 - Starting Processing Mitutoyo May
+2025-09-19 10:05:36,008 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3448 rows from Mitutoyo updated Pricelist_1 May 2023.xlsx
+2025-09-19 10:05:36,009 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:36,009 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:36,009 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Mitutoyo May
+2025-09-19 10:05:36,010 - consolidator - DEBUG - log_column_mapping:158 - Mitutoyo May - Column mappings: {}
+2025-09-19 10:05:36,010 - consolidator - WARNING - log_column_mapping:161 - Mitutoyo May - Unmapped columns: ['1003tb', 'dial indicator', '18587', 'a']
+2025-09-19 10:05:36,012 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Mitutoyo May to output\standardized_csvs\Mitutoyo_May_standardized.csv
+2025-09-19 10:05:36,016 - consolidator - WARNING - log_validation_summary:150 - Mitutoyo May: 9 validation warnings
+2025-09-19 10:05:36,016 - consolidator - DEBUG - __exit__:215 - Completed Processing Mitutoyo May in 0.42s
+2025-09-19 10:05:36,016 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Mitutoyo updated Pricelist_1 May 2023.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:05:36,017 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Norton 2025.xlsx (529,342 bytes)
+2025-09-19 10:05:36,017 - consolidator - DEBUG - __enter__:208 - Starting Processing Norton
+2025-09-19 10:05:37,059 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3052 rows from Norton 2025.xlsx
+2025-09-19 10:05:37,059 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:37,059 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:37,059 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:37,060 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['v9a254', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 10:05:37,060 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['20326468_redlands recondition sup pl_sg price list 010425', 'redlands recondition sup pl', 'description', 'product name']'
+2025-09-19 10:05:37,060 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['pricing effective 01042025  price ex gst price per ea', 'price ex gst', 'unit price', 'list price', 'price']'
+2025-09-19 10:05:37,060 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 10:05:37,060 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:37,061 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Norton
+2025-09-19 10:05:37,062 - consolidator - DEBUG - log_column_mapping:158 - Norton - Column mappings: {'product_name': 'description', 'unit_price': 'list price'}
+2025-09-19 10:05:37,062 - consolidator - WARNING - log_column_mapping:161 - Norton - Unmapped columns: ['brand', 'product group', 'product type', 'product', 'item', 'barcode', 'moq', 'nett']
+2025-09-19 10:05:37,065 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Norton to output\standardized_csvs\Norton_standardized.csv
+2025-09-19 10:05:37,088 - consolidator - WARNING - log_validation_summary:150 - Norton: 3435 validation warnings
+2025-09-19 10:05:37,089 - consolidator - DEBUG - __exit__:215 - Completed Processing Norton in 1.07s
+2025-09-19 10:05:37,089 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Norton 2025.xlsx: 3052 records, 0 errors, 3435 warnings - WARNINGS
+2025-09-19 10:05:37,090 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Price List - Master (01-Apr-2025).xlsx (200,244 bytes)
+2025-09-19 10:05:37,090 - consolidator - DEBUG - __enter__:208 - Starting Processing Master 01 Apr
+2025-09-19 10:05:37,746 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 3314 rows from Price List - Master (01-Apr-2025).xlsx
+2025-09-19 10:05:37,746 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:37,747 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:37,747 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Master 01 Apr
+2025-09-19 10:05:37,747 - consolidator - DEBUG - log_column_mapping:158 - Master 01 Apr - Column mappings: {'product_name': 'description'}
+2025-09-19 10:05:37,748 - consolidator - WARNING - log_column_mapping:161 - Master 01 Apr - Unmapped columns: ['brand', 'product range', 'partno', 'wholesale exgst', 'rrp incgst', 'barcode']
+2025-09-19 10:05:37,750 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Master 01 Apr to output\standardized_csvs\Master_01_Apr_standardized.csv
+2025-09-19 10:05:37,771 - consolidator - WARNING - log_validation_summary:150 - Master 01 Apr: 6632 validation warnings
+2025-09-19 10:05:37,772 - consolidator - DEBUG - __exit__:215 - Completed Processing Master 01 Apr in 0.68s
+2025-09-19 10:05:37,772 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Price List - Master (01-Apr-2025).xlsx: 3314 records, 0 errors, 6632 warnings - WARNINGS
+2025-09-19 10:05:37,773 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\PST_full_ pricefile_2025.xlsx (307,082 bytes)
+2025-09-19 10:05:37,773 - consolidator - DEBUG - __enter__:208 - Starting Processing Pst Full Pricefile
+2025-09-19 10:05:38,769 - consolidator - DEBUG - _process_single_file_safe:265 - Parsed 4396 rows from PST_full_ pricefile_2025.xlsx
+2025-09-19 10:05:38,770 - consolidator - DEBUG - get_supplier_config:99 - get_supplier_config: Initial merged_config (from default): dict_keys(['master_schema', 'default_column_mappings', 'validation_rules', 'file_processing', 'output', 'output_options', 'logging', 'error_handling', 'ui', 'performance'])
+2025-09-19 10:05:38,771 - consolidator - DEBUG - get_supplier_config:108 - get_supplier_config: Final merged_config transformations: None
+2025-09-19 10:05:38,771 - consolidator - DEBUG - _deep_merge:255 - _deep_merge: Merging dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name']) into dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:38,772 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'sku' to '['for debtor', 'code', 'product code', 'part number', 'item code']'
+2025-09-19 10:05:38,772 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'product_name' to '['excel price file', 'description', 'product name', 'item description']'
+2025-09-19 10:05:38,772 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'unit_price' to '['unit price', 'list price', 'price', 'cost']'
+2025-09-19 10:05:38,772 - consolidator - DEBUG - _deep_merge:262 - _deep_merge: Setting key 'supplier_name' to '['supplier', 'vendor', 'manufacturer']'
+2025-09-19 10:05:38,772 - consolidator - DEBUG - _deep_merge:265 - _deep_merge: Resulting dict keys: dict_keys(['sku', 'product_name', 'unit_price', 'supplier_name', 'description', 'category', 'unit_of_measure', 'currency', 'stock_status', 'discount_1', 'discount_2', 'net_price'])
+2025-09-19 10:05:38,772 - consolidator - INFO - _get_column_mappings:62 - Loaded supplier-specific mappings for Pst Full Pricefile
+2025-09-19 10:05:38,773 - consolidator - DEBUG - log_column_mapping:158 - Pst Full Pricefile - Column mappings: {}
+2025-09-19 10:05:38,773 - consolidator - WARNING - log_column_mapping:161 - Pst Full Pricefile - Unmapped columns: ['item number', 'description of item', 'barcode number', 'weight kg', 'height cm', 'width cm', 'length cm', 'list ', 'nett', 'tax']
+2025-09-19 10:05:38,775 - consolidator - INFO - _process_single_file_safe:309 - Saved standardized data for Pst Full Pricefile to output\standardized_csvs\Pst_Full_Pricefile_standardized.csv
+2025-09-19 10:05:38,780 - consolidator - WARNING - log_validation_summary:150 - Pst Full Pricefile: 9 validation warnings
+2025-09-19 10:05:38,780 - consolidator - DEBUG - __exit__:215 - Completed Processing Pst Full Pricefile in 1.01s
+2025-09-19 10:05:38,780 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\PST_full_ pricefile_2025.xlsx: 1 records, 0 errors, 9 warnings - WARNINGS
+2025-09-19 10:05:38,781 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx (2,404,606 bytes)
+2025-09-19 10:05:38,781 - consolidator - DEBUG - __enter__:208 - Starting Processing Whitelaw Bordo File Discount Structure 25 V12
+2025-09-19 10:05:44,716 - consolidator - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 5.93s: column 'group' is duplicate
+2025-09-19 10:05:44,717 - consolidator - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'group' is duplicate
+2025-09-19 10:05:44,717 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 10:05:44,718 - consolidator - INFO - log_file_processing_start:124 - Processing file: supplier_data\POINTTECH_pricelist_WTS.pdf (478,752 bytes)
+2025-09-19 10:05:44,718 - consolidator - DEBUG - __enter__:208 - Starting Processing Pointtech Wts
+2025-09-19 10:05:44,978 - consolidator - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.26s: data does not match the number of columns
+2025-09-19 10:05:44,979 - consolidator - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: data does not match the number of columns
+2025-09-19 10:05:44,979 - consolidator - INFO - log_file_processing_end:139 - Completed supplier_data\POINTTECH_pricelist_WTS.pdf: 0 records, 1 errors, 0 warnings - ERRORS
+2025-09-19 10:05:44,980 - consolidator - INFO - process_supplier_files:213 - Processing completed: 13 suppliers, 49138 total records, 35.68s
+2025-09-19 10:05:44,997 - consolidator - DEBUG - log_memory_usage:178 - Memory usage after file processing: 323.5 MB
+2025-09-19 10:05:44,998 - consolidator - INFO - process_supplier_files:221 - DRY RUN MODE: Skipping Excel generation
+2025-09-19 10:05:44,998 - consolidator - INFO - _log_dry_run_summary:379 - === DRY RUN SUMMARY ===
+2025-09-19 10:05:44,998 - consolidator - INFO - _log_dry_run_summary:380 - Successfully processed: 13 suppliers
+2025-09-19 10:05:44,999 - consolidator - INFO - _log_dry_run_summary:381 - Processing errors: 2
+2025-09-19 10:05:45,001 - consolidator - INFO - _log_dry_run_summary:387 - Total records: 49138
+2025-09-19 10:05:45,001 - consolidator - INFO - _log_dry_run_summary:388 - Total validation errors: 0
+2025-09-19 10:05:45,001 - consolidator - INFO - _log_dry_run_summary:389 - Total validation warnings: 52903
+2025-09-19 10:05:45,002 - consolidator - WARNING - _log_dry_run_summary:392 - Files with processing errors:
+2025-09-19 10:05:45,002 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'group' is duplicate
+2025-09-19 10:05:45,002 - consolidator - WARNING - _log_dry_run_summary:394 -   - supplier_data\POINTTECH_pricelist_WTS.pdf: data does not match the number of columns
+2025-09-19 10:05:45,002 - consolidator - INFO - __exit__:215 - Completed Processing directory: supplier_data in 35.71s

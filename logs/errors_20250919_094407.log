@@ -1,0 +1,90 @@
+2025-09-19 09:44:08,102 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Narex: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:08,168 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Carbide End Mill: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:08,187 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Whitelaw Combined Site Book Rm: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:09,403 - ERROR - __exit__:217 - Failed Processing Tridon 003483 Whitelaw Tooling Supplies after 1.21s: expected duration or datetime, got str
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:44:09,404 - ERROR - _process_single_file_safe:343 - Error processing 2025 Tridon Price List - 003483 Whitelaw Tooling Supplies.xlsx: expected duration or datetime, got str
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:09,537 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Au Ind For Siapower: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:16,073 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Dormer: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:16,855 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Excision: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:30,949 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Excision Yg: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:32,253 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Guhring Aus Stock Reseller: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:32,783 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Mitutoyo May: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:34,083 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Norton: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:34,824 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Master 01 Apr: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:35,920 - ERROR - _process_single_file_safe:311 - Failed to save intermediate CSV for Pst Full Pricefile: 'DataFrame' object has no attribute 'to_csv'
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:44,215 - ERROR - __exit__:217 - Failed Processing Whitelaw Bordo File Discount Structure 25 V12 after 8.29s: column 'group' is duplicate
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:44:44,215 - ERROR - _process_single_file_safe:343 - Error processing Whitelaw Bordo Price File_Discount Structure 3-25 V1.2.xlsx: column 'group' is duplicate
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+
+2025-09-19 09:44:44,574 - ERROR - __exit__:217 - Failed Processing Pointtech Wts after 0.36s: 'NoneType' object is not subscriptable
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\logger.py
+---
+
+2025-09-19 09:44:44,574 - ERROR - _process_single_file_safe:343 - Error processing POINTTECH_pricelist_WTS.pdf: 'NoneType' object is not subscriptable
+Session: 20250919_094407
+c:\Users\Luke\Pricelist Operater\src\main.py
+---
+

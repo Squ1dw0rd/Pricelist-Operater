@@ -16,9 +16,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import uvicorn
 
-from main import PriceListConsolidator
-from cli import create_enhanced_parser
-from logger import get_logger
+from .main import PriceListConsolidator
+from .cli import create_enhanced_parser
+from .logger import get_logger
 
 # Create templates directory if it doesn't exist
 templates_dir = Path(__file__).parent.parent / "templates"

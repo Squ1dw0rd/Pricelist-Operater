@@ -7,16 +7,20 @@ file_patterns:
 # Column mappings for SIA Abrasives files
 column_mappings:
   sku:
+    - "sia part number"
     - "au d level industrial 37"  # Product level column
     - "code"
     - "product code"
     - "part number"
     - "item code"
   product_name:
+    - "new description"
     - "sia abrasives price list 2024  australia"  # Title column
     - "description"
     - "product name"
   unit_price:
+    - "2024 list price"
+    - "2024 distributor nett price a"
     - "unit price"
     - "list price"
     - "price"
